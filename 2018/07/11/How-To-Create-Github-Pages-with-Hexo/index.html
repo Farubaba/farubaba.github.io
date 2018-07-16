@@ -1,232 +1,262 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  
-  <title>How To Create Github Pages with Hexo | Farubaba</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Guide全面官方文档github-help-all github-pages-guide jekyll-guide customizing-github-pages Hexo命令 Quick StartCreate a new post1$ hexo new &quot;My New Post&quot; More info: Writing Run server1$ hexo server More info:">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Guide 全面官方文档 github-help-all github-pages-guide jekyll-guide customizing-github-pages Hexo命令 Quick Start Create a new post 1$ hexo new &quot;My New Post&quot; More info: Writing Run server 1$ hexo server More i">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How To Create Github Pages with Hexo">
 <meta property="og:url" content="http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/index.html">
 <meta property="og:site_name" content="Farubaba">
-<meta property="og:description" content="Guide全面官方文档github-help-all github-pages-guide jekyll-guide customizing-github-pages Hexo命令 Quick StartCreate a new post1$ hexo new &quot;My New Post&quot; More info: Writing Run server1$ hexo server More info:">
+<meta property="og:description" content="Guide 全面官方文档 github-help-all github-pages-guide jekyll-guide customizing-github-pages Hexo命令 Quick Start Create a new post 1$ hexo new &quot;My New Post&quot; More info: Writing Run server 1$ hexo server More i">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-07-16T04:14:54.351Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How To Create Github Pages with Hexo">
-<meta name="twitter:description" content="Guide全面官方文档github-help-all github-pages-guide jekyll-guide customizing-github-pages Hexo命令 Quick StartCreate a new post1$ hexo new &quot;My New Post&quot; More info: Writing Run server1$ hexo server More info:">
-  
-    <link rel="alternate" href="/atom.xml" title="Farubaba" type="application/atom+xml">
-  
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
-
-  <link rel="stylesheet" href="/css/styles.css">
-  
-
+<meta name="twitter:description" content="Guide 全面官方文档 github-help-all github-pages-guide jekyll-guide customizing-github-pages Hexo命令 Quick Start Create a new post 1$ hexo new &quot;My New Post&quot; More info: Writing Run server 1$ hexo server More i">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>How To Create Github Pages with Hexo</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
 </head>
 
-<body>
-  <nav class="navbar navbar-inverse">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/farubaba">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/07/15/Android版本特性及minSDKVersion设置/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/&text=How To Create Github Pages with Hexo"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/&title=How To Create Github Pages with Hexo"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/&is_video=false&description=How To Create Github Pages with Hexo"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=How To Create Github Pages with Hexo&body=Check out this article: http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/&title=How To Create Github Pages with Hexo"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/&title=How To Create Github Pages with Hexo"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/&title=How To Create Github Pages with Hexo"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/&title=How To Create Github Pages with Hexo"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/&name=How To Create Github Pages with Hexo&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">Guide</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">全面官方文档</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">Hexo命令 Quick Start</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">2.4.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">2.5.</span> <span class="toc-text">Deploy to remote sites</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">2.6.</span> <span class="toc-text">Add Theme &quot;next&quot;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">2.7.</span> <span class="toc-text">Add Theme &quot;even&quot;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">2.8.</span> <span class="toc-text">Add Comments</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">超链接</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        How To Create Github Pages with Hexo
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Farubaba</span>
+      </span>
       
+    <div class="postdate">
+        <time datetime="2018-07-10T17:13:40.000Z" itemprop="datePublished">2018-07-11</time>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="main-menu-navbar">
-      <ul class="nav navbar-nav">
-        
-          <li><a class=""
-                 href="/index.html">Home</a></li>
-        
-          <li><a class=""
-                 href="/archives/">Archives</a></li>
-        
-      </ul>
 
-      <!--
-      <ul class="nav navbar-nav navbar-right">
-        
-          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
-        
-      </ul>
-      -->
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-  <div class="container">
-    <div class="blog-header">
-  <h1 class="blog-title">Farubaba</h1>
-  
-    <p class="lead blog-description">人生总是柳暗花明，只怕你停了脚步，丧了意志！</p>
-  
-</div>
-
-    <div class="row">
-        <div class="col-sm-8 blog-main">
-          <article id="post-How-To-Create-Github-Pages-with-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 class="article-title" itemprop="name">
-      How To Create Github Pages with Hexo
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2018/07/11/How-To-Create-Github-Pages-with-Hexo/" class="article-date"><time datetime="2018-07-10T17:13:40.000Z" itemprop="datePublished">2018-07-11</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="Guide"><a href="#Guide" class="headerlink" title="Guide"></a>Guide</h4><h4 id="全面官方文档"><a href="#全面官方文档" class="headerlink" title="全面官方文档"></a>全面官方文档</h4><p><a href="https://help.github.com/" target="_blank" rel="noopener">github-help-all</a></p>
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h4>Guide</h4>
+<h4>全面官方文档</h4>
+<p><a href="https://help.github.com/" target="_blank" rel="noopener">github-help-all</a></p>
 <p><a href="https://help.github.com/categories/github-pages-basics/" target="_blank" rel="noopener">github-pages-guide</a></p>
 <p><a href="https://jekyllrb.com/docs/home/" target="_blank" rel="noopener">jekyll-guide</a></p>
 <p><a href="https://help.github.com/categories/customizing-github-pages/" target="_blank" rel="noopener">customizing-github-pages</a></p>
-<h5 id="Hexo命令-Quick-Start"><a href="#Hexo命令-Quick-Start" class="headerlink" title="Hexo命令 Quick Start"></a>Hexo命令 Quick Start</h5><h5 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<h5>Hexo命令 Quick Start</h5>
+<h5>Create a new post</h5>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure></p>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h5 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h5>Run server</h5>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></p>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h5 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h5>Generate static files</h5>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></p>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h5 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h5>Deploy to remote sites</h5>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></p>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<h5 id="Add-Theme-“next”"><a href="#Add-Theme-“next”" class="headerlink" title="Add Theme “next”"></a>Add Theme “next”</h5><pre><code>git clone --branch v5.1.2 https://github.com/iissnan/hexo-theme-next themes/next
-</code></pre><p>more info: <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">hexo-theme-next</a></p>
-<h5 id="Add-Theme-“even”"><a href="#Add-Theme-“even”" class="headerlink" title="Add Theme “even”"></a>Add Theme “even”</h5><pre><code>git clone https://github.com/ahonn/hexo-theme-even themes/even
-</code></pre><h5 id="Add-Comments"><a href="#Add-Comments" class="headerlink" title="Add Comments"></a>Add Comments</h5><p><a href="https://widgetpack.com/" target="_blank" rel="noopener">add comments</a></p>
-<h4 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h4>
-      
-    </div>
+<h5>Add Theme &quot;next&quot;</h5>
+<pre><code>git clone --branch v5.1.2 https://github.com/iissnan/hexo-theme-next themes/next
+</code></pre>
+<p>more info: <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">hexo-theme-next</a></p>
+<h5>Add Theme &quot;even&quot;</h5>
+<pre><code>git clone https://github.com/ahonn/hexo-theme-even themes/even
+</code></pre>
+<h5>Add Comments</h5>
+<p><a href="https://widgetpack.com/" target="_blank" rel="noopener">add comments</a></p>
+<h4>超链接</h4>
 
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/" data-id="cjjns5kq80000q18xxfujs2g3" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-
-    </footer>
   </div>
-  
-    
-<ul id="article-nav" class="nav nav-pills nav-justified">
-  
-  
-  <li role="presentation">
-    <a href="/2018/07/15/Android版本特性及minSDKVersion设置/" id="article-nav-newer" class="article-nav-link-wrap">
-      <span class="article-nav-link-title">Android版本特性及minSDKVersion设置</span>
-      <i class="fa fa-chevron-right pull-right"></i>
-    </a>
-  </li>
-  
-</ul>
-
-
-  
 </article>
 
 
 
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
 
-        </div>
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-          
-  <div class="sidebar-module sidebar-module-inset">
-  <h4>About</h4>
-  <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/farubaba">Projects</a></li>
+        
+      </ul>
+    </div>
 
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">Guide</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">全面官方文档</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">Hexo命令 Quick Start</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">2.4.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">2.5.</span> <span class="toc-text">Deploy to remote sites</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">2.6.</span> <span class="toc-text">Add Theme &quot;next&quot;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">2.7.</span> <span class="toc-text">Add Theme &quot;even&quot;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">2.8.</span> <span class="toc-text">Add Comments</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">超链接</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/&text=How To Create Github Pages with Hexo"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/&title=How To Create Github Pages with Hexo"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/&is_video=false&description=How To Create Github Pages with Hexo"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=How To Create Github Pages with Hexo&body=Check out this article: http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/&title=How To Create Github Pages with Hexo"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/&title=How To Create Github Pages with Hexo"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/&title=How To Create Github Pages with Hexo"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/&title=How To Create Github Pages with Hexo"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/&name=How To Create Github Pages with Hexo&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
 </div>
 
-
-  
-
-
-  
-
-
-  
-
-  
-  <div class="sidebar-module">
-    <h4>Archives</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">2</span></li></ul>
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Farubaba
   </div>
-
-
-
-  
-  <div class="sidebar-module">
-    <h4>Recents</h4>
-    <ul class="sidebar-module-list">
-      
-        <li>
-          <a href="/2018/07/15/Android版本特性及minSDKVersion设置/">Android版本特性及minSDKVersion设置</a>
-        </li>
-      
-        <li>
-          <a href="/2018/07/11/How-To-Create-Github-Pages-with-Hexo/">How To Create Github Pages with Hexo</a>
-        </li>
-      
-    </ul>
-  </div>
-
-
-
-        </div>
-    </div>
-  </div>
-  <footer class="blog-footer">
-  <div class="container">
-    <div id="footer-info" class="inner">
-      &copy; 2018 Farubaba<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/farubaba">Projects</a></li>
+        
+      </ul>
+    </nav>
   </div>
 </footer>
 
-  
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-
-
-<script src="/js/script.js"></script>
-
 </body>
 </html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
