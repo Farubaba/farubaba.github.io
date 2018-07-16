@@ -431,17 +431,27 @@ should always declare this attribute.
 </tbody>
 </table>
 <h4 id="八、结论"><a href="#八、结论" class="headerlink" title="八、结论"></a>八、结论</h4><h5 id="1、设置minSDKVersion-17"><a href="#1、设置minSDKVersion-17" class="headerlink" title="1、设置minSDKVersion=17"></a>1、设置minSDKVersion=17</h5><blockquote>
+<blockquote>
+<blockquote>
 <ol>
 <li>Android 4.2及以上版本已经覆盖96%的机型。</li>
 <li>微信采用minSDKVersion=17，最小支持到android 4.2版本，我们有理由设想，使用我们应用的用户，一定会使用微信，所以和微信采用相同minSDKVersion即可。</li>
 <li>支付宝minSDKVersion=18，携程minSDKVersion=19，我们采用17不会有问题。</li>
 </ol>
 </blockquote>
-<h4 id="2、图片适配屏幕密度xhdpi"><a href="#2、图片适配屏幕密度xhdpi" class="headerlink" title="2、图片适配屏幕密度xhdpi"></a>2、图片适配屏幕密度xhdpi</h4><pre><code>1. 大部分的设备属于xhdpi屏幕密度范围,xxhdpi设备也有相当保有量。
-2. 分辨率太低的图片，在高密度设备下会被放大儿变模糊，hdpi中的图片会在xhdpi和xxhdpi设备中变得模糊，所以不采用hdpi来适配。
-3. 分辨率太高的图片，android系统缩放时消耗过多内存，例如xxhdpi中的图片再xhdpi和hdpi设备上，会被缩小，分辨率越高，占用内存越多，所以也不适合使用xxhdpi来适配。
-4. 大部分的设备属于xhdpi屏幕密度范围，我们只提供xhdpi一套图片即可完成图片适配。这样在面对hdpi和xxhdpi的设备时候，性能和显示清晰度都可以做到不错。
-</code></pre><p><font color="red">推荐：minSDKVersion = 17</font><br></p>
+</blockquote>
+</blockquote>
+<h4 id="2、图片适配屏幕密度xhdpi"><a href="#2、图片适配屏幕密度xhdpi" class="headerlink" title="2、图片适配屏幕密度xhdpi"></a>2、图片适配屏幕密度xhdpi</h4><blockquote>
+<blockquote>
+<ol>
+<li>大部分的设备属于xhdpi屏幕密度范围,xxhdpi设备也有相当保有量。</li>
+<li>分辨率太低的图片，在高密度设备下会被放大儿变模糊，hdpi中的图片会在xhdpi和xxhdpi设备中变得模糊，所以不采用hdpi来适配。</li>
+<li>分辨率太高的图片，android系统缩放时消耗过多内存，例如xxhdpi中的图片再xhdpi和hdpi设备上，会被缩小，分辨率越高，占用内存越多，所以也不适合使用xxhdpi来适配。</li>
+<li>大部分的设备属于xhdpi屏幕密度范围，我们只提供xhdpi一套图片即可完成图片适配。这样在面对hdpi和xxhdpi的设备时候，性能和显示清晰度都可以做到不错。</li>
+</ol>
+</blockquote>
+</blockquote>
+<p><font color="red">推荐：minSDKVersion = 17</font><br></p>
 <p><font color="red">推荐：想要缩小apk 体积，则提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。</font></p>
 <p>官方推荐：提供一套 xxhdpi （UI设计按：1080x1920设计）图片来做大部分图片缩放适配。如下图<br><br><img src="http://upload-images.jianshu.io/upload_images/6322932-89d993c158f0125b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片适配xxhdpi"></p>
 <p><a href="http://www.jb51.net/article/84613.htm" target="_blank" rel="noopener">Vector Drawable 中文</a></p>
@@ -449,7 +459,7 @@ should always declare this attribute.
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/15/【Android新特性】Android版本特性及minSDKVersion设置/" data-id="cjjmsdrfv0000qj8xxukm1f52" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/15/【Android新特性】Android版本特性及minSDKVersion设置/" data-id="cjjnmmg6f00012f8x4lxawa07" class="article-share-link">Share</a>
       
       
     </footer>
@@ -497,7 +507,7 @@ should always declare this attribute.
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/" data-id="cjjmsdrg00001qj8xw2m33kp0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/11/How-To-Create-Github-Pages-with-Hexo/" data-id="cjjnmmg6b00002f8xaycvzp1d" class="article-share-link">Share</a>
       
       
     </footer>
