@@ -1,44 +1,342 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Android版本特性及minSDKVersion设置 | lyyourc</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="stylesheet" href="/css/app.css">
-  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
+
+
+
   
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Android版本特性及minSDKVersion设置推荐：minSDKVersion=17  推荐：提供一套 xxhdpi （UI设计按：1080x1920设计）图片来做大部分图片缩放适配。  如果想要减小apk大小： 推荐：提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。          下面内容是详细分析过程。 一、参考资料Android dashbo">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android版本特性及minSDKVersion设置">
+<meta property="og:url" content="http://yoursite.com/2018/07/15/【Android新特性】Android版本特性及minSDKVersion设置/index.html">
+<meta property="og:site_name" content="Farubaba">
+<meta property="og:description" content="Android版本特性及minSDKVersion设置推荐：minSDKVersion=17  推荐：提供一套 xxhdpi （UI设计按：1080x1920设计）图片来做大部分图片缩放适配。  如果想要减小apk大小： 推荐：提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。          下面内容是详细分析过程。 一、参考资料Android dashbo">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6322932-b814708f69f28120.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6322932-6a2811470cd8a4ea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6322932-3c5ac8a7f5a19fc0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6322932-fb082a2bb4321371.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6322932-89d993c158f0125b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-07-16T03:30:36.034Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android版本特性及minSDKVersion设置">
+<meta name="twitter:description" content="Android版本特性及minSDKVersion设置推荐：minSDKVersion=17  推荐：提供一套 xxhdpi （UI设计按：1080x1920设计）图片来做大部分图片缩放适配。  如果想要减小apk大小： 推荐：提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。          下面内容是详细分析过程。 一、参考资料Android dashbo">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/6322932-b814708f69f28120.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/15/【Android新特性】Android版本特性及minSDKVersion设置/"/>
+
+
+
+
+
+  <title>Android版本特性及minSDKVersion设置 | Farubaba</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 
-<body>
-  <nav class="app-nav">
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
   
     
-      <a href="/.">home</a>
-    
   
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
     
-      <a href="/archives">archive</a>
-    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Farubaba</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">人生总是柳暗花明，只怕你停了脚步，丧了意志！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
   
-    
-      <a href="/atom.xml">rss</a>
-    
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
   
 </nav>
 
-  <main class="post">
-  <article>
-  <h1 class="article-title">
-    <a href="/2018/07/15/【Android新特性】Android版本特性及minSDKVersion设置/">Android版本特性及minSDKVersion设置</a>
-  </h1>
 
-  <section class="article-meta">
-    <p class="article-date">July 15 2018</p>
-  </section>
 
-  <section class="article-entry">
-    <h3 id="Android版本特性及minSDKVersion设置"><a href="#Android版本特性及minSDKVersion设置" class="headerlink" title="Android版本特性及minSDKVersion设置"></a>Android版本特性及minSDKVersion设置</h3><pre><code>推荐：minSDKVersion=17 
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/15/【Android新特性】Android版本特性及minSDKVersion设置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Farubaba">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Farubaba">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android版本特性及minSDKVersion设置</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-15T19:47:20+08:00">
+                2018-07-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Android版本特性及minSDKVersion设置"><a href="#Android版本特性及minSDKVersion设置" class="headerlink" title="Android版本特性及minSDKVersion设置"></a>Android版本特性及minSDKVersion设置</h3><pre><code>推荐：minSDKVersion=17 
 推荐：提供一套 xxhdpi （UI设计按：1080x1920设计）图片来做大部分图片缩放适配。
 
 如果想要减小apk大小：
@@ -396,78 +694,328 @@ should always declare this attribute.
 <p><font color="red">官方推荐：提供一套 xxhdpi （UI设计按：1080x1920设计）图片来做大部分图片缩放适配。如下图<br></font><br><img src="http://upload-images.jianshu.io/upload_images/6322932-89d993c158f0125b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片适配xxhdpi"></p>
 <p><a href="http://www.jb51.net/article/84613.htm" target="_blank" rel="noopener">Vector Drawable 中文</a></p>
 
-  </section>
-</article>
+      
+    </div>
+    
+    
+    
 
-  <div class="sharing grid">
-  <section class="profile grid-item grid">
-    <img class="avatar" src="http://7xrcp8.com1.z0.glb.clouddn.com/avatar.png" alt="avatar" />
-    <div class="grid-item">
-      <p class="title"> lyyourc </p>
-      <p class="subtitle"> You Are The JavaScript In My HTML </p>
-    <div>
-  </section>
+    
 
-  <section class="share-btns">
-    <!-- <p> share it if you like it~ </p> -->
-    <a
-  class="twitter-share-button"
-  data-size="large"
-  data-via="DrakeLeung"
-  href="https://twitter.com/intent/tweet?text= id="Android版本特性及min"
->
-  Tweet
-</a>
+    
 
-<script>
-  window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  js.async = true;
-  fjs.parentNode.insertBefore(js, fjs);
+    
 
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
+    <footer class="post-footer">
+      
 
-  return t;
-}(document, "script", "twitter-wjs"));
-</script>
+      
+      
+      
 
-  </section>
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/11/How-To-Create-Github-Pages-with-Hexo/" rel="next" title="How To Create Github Pages with Hexo">
+                <i class="fa fa-chevron-left"></i> How To Create Github Pages with Hexo
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Farubaba" />
+          <p class="site-author-name" itemprop="name">Farubaba</p>
+           
+              <p class="site-description motion-element" itemprop="description">des人生总是柳暗花明，只怕你停了脚步，丧了意志！</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Android版本特性及minSDKVersion设置"><span class="nav-number">1.</span> <span class="nav-text">Android版本特性及minSDKVersion设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、参考资料"><span class="nav-number">1.1.</span> <span class="nav-text">一、参考资料</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、Android系统版本特性"><span class="nav-number">1.2.</span> <span class="nav-text">二、Android系统版本特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、Android各系统版本占有率分布"><span class="nav-number">1.3.</span> <span class="nav-text">三、Android各系统版本占有率分布</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、实时数据参考：Android-dashboards"><span class="nav-number">1.3.1.</span> <span class="nav-text">1、实时数据参考：Android dashboards</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、Android-Studio中创建项目时提供参考数据"><span class="nav-number">1.3.2.</span> <span class="nav-text">2、Android Studio中创建项目时提供参考数据</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、Android现有设备屏幕密度分布"><span class="nav-number">1.4.</span> <span class="nav-text">四、Android现有设备屏幕密度分布</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、实时数据参考：Android-dashboards-1"><span class="nav-number">1.4.1.</span> <span class="nav-text">1、实时数据参考：Android dashboards</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五、Android屏幕密度及代表分辨率"><span class="nav-number">1.5.</span> <span class="nav-text">五、Android屏幕密度及代表分辨率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#六、OpenGL-版本支持"><span class="nav-number">1.6.</span> <span class="nav-text">六、OpenGL 版本支持</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#七、主流App支持minSdkVersion"><span class="nav-number">1.7.</span> <span class="nav-text">七、主流App支持minSdkVersion</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#八、结论"><span class="nav-number">1.8.</span> <span class="nav-text">八、结论</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、设置minSDKVersion-17"><span class="nav-number">1.8.1.</span> <span class="nav-text">1、设置minSDKVersion=17</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、图片适配屏幕密度xhdpi"><span class="nav-number">1.9.</span> <span class="nav-text">2、图片适配屏幕密度xhdpi</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Farubaba</span>
 </div>
 
 
-  
-    
-<section class="article-comment">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
 
-<script>
-  var disqus_shortname = 'drakeleung';
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
   
-  var disqus_url = 'http://yoursite.com/2018/07/15/【Android新特性】Android版本特性及minSDKVersion设置/';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
+
+
+
+
+
+
+
   
-</main>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>
