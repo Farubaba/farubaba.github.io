@@ -538,7 +538,7 @@ body {
   }
 }
 .max-width {
-  max-width: 60rem;
+  max-width: 56rem;
 }
 @media (max-width: 480px) {
   .px3 {
@@ -1040,7 +1040,7 @@ body {
 }
 article header .posttitle {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 10px;
   text-transform: none;
   font-size: 1.5em;
   line-height: 1.25;
@@ -1054,7 +1054,6 @@ article header .meta * {
   font-size: 0.85rem;
 }
 article header .author {
-  text-transform: uppercase;
   letter-spacing: 0.01em;
   font-weight: 700;
 }
