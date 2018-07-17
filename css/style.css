@@ -589,6 +589,9 @@ body {
   background-repeat: no-repeat;
   -webkit-filter: grayscale(100%);
 }
+#header #title h1 {
+  color: #c9cacc;
+}
 #header #nav {
   color: #2bbc8a;
   letter-spacing: 0.01em;
@@ -598,6 +601,7 @@ body {
 }
 #header #nav ul {
   margin: 0;
+  margin-top: 8px;
   padding: 0;
   list-style-type: none;
   line-height: 15px;
@@ -1027,20 +1031,27 @@ body {
   .post-list .post-item .meta {
     text-align: left;
   }
-}
-.project-list {
-  padding: 0;
-  list-style: none;
-}
-.project-list .project-item {
-  margin-bottom: 5px;
-}
-.project-list .project-item p {
-  display: inline;
+  .post-list .post-item a {
+    background-image: none;
+    background-position: bottom;
+    background-size: 0% 0px;
+    background-repeat: no-repeat;
+    color: #2bbc8a;
+  }
+  .post-list .post-item a .project-list {
+    padding: 0;
+    list-style: none;
+  }
+  .post-list .post-item a .project-list .project-item {
+    margin-bottom: 5px;
+  }
+  .post-list .post-item a .project-list .project-item p {
+    display: inline;
+  }
 }
 article header .posttitle {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   text-transform: none;
   font-size: 1.5em;
   line-height: 1.25;
@@ -1195,6 +1206,16 @@ article .content .caption {
   #archive .post-list .post-item .meta {
     text-align: left;
   }
+  #archive .post-list .post-item a {
+    background-image: none;
+    background-position: bottom;
+    background-size: 0% 0px;
+    background-repeat: no-repeat;
+    color: #c9cacc;
+  }
+  #archive .post-list .post-item a:hover {
+    color: #2bbc8a;
+  }
 }
 .blog-post-comments {
   margin-top: 4rem;
@@ -1204,7 +1225,7 @@ article .content .caption {
   color: #666;
   vertical-align: top;
   text-align: center;
-  font-size: 11px;
+  font-size: 12px;
 }
 #footer ul {
   margin: 0;
@@ -1231,7 +1252,7 @@ article .content .caption {
   color: #666;
 }
 #footer a:hover {
-  color: #858585;
+  color: #2bbc8a;
 }
 #footer .footer-left {
   height: 20px;
@@ -1323,6 +1344,30 @@ article .content .caption {
   display: none;
   padding-bottom: 0.5em;
   color: #c9cacc;
+}
+.content .post-list .post-summery {
+  margin-left: 18px;
+  margin-right: 18px;
+  padding: 10px 30px 10px 30px;
+  color: #666;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  border: 0px dashed #ccc;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 13px;
+}
+.content .post-list .post-summery a {
+  color: #666;
+  background-image: none;
+  background-position: bottom;
+  background-size: 0% 0px;
+  background-repeat: no-repeat;
+}
+.content .post-list .post-summery a:hover {
+  color: #2bbc8a;
 }
 .highlight {
   background: #474949;
