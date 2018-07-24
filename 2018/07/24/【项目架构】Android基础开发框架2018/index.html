@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Android 基础开发框架《FaruAndroid》目标    整合时下优秀的开源框架，实现一个高度解耦，可快速开发，易复用，易扩展的Android基础库。 涉及到常规应用开发的各方面。 第三方库   名称 功能描述（见WIKI） 同类项目 相关优化方向 相关产考     Logger 日志记录 Timer 无埋点日志、无埋点统计    RxAndroid Tutorial 指南      Rx">
+<meta name="keywords" content="android 架构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android项目架构概述">
+<meta property="og:url" content="http://yoursite.com/2018/07/24/【项目架构】Android基础开发框架2018/index.html">
+<meta property="og:site_name" content="Farubaba">
+<meta property="og:description" content="Android 基础开发框架《FaruAndroid》目标    整合时下优秀的开源框架，实现一个高度解耦，可快速开发，易复用，易扩展的Android基础库。 涉及到常规应用开发的各方面。 第三方库   名称 功能描述（见WIKI） 同类项目 相关优化方向 相关产考     Logger 日志记录 Timer 无埋点日志、无埋点统计    RxAndroid Tutorial 指南      Rx">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-24T04:43:20.025Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android项目架构概述">
+<meta name="twitter:description" content="Android 基础开发框架《FaruAndroid》目标    整合时下优秀的开源框架，实现一个高度解耦，可快速开发，易复用，易扩展的Android基础库。 涉及到常规应用开发的各方面。 第三方库   名称 功能描述（见WIKI） 同类项目 相关优化方向 相关产考     Logger 日志记录 Timer 无埋点日志、无埋点统计    RxAndroid Tutorial 指南      Rx">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Android项目架构概述</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/farubaba">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2018/07/24/Android通用基础功能模块开发/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/07/24/【项目架构】Android基础开发框架2018/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/07/24/【项目架构】Android基础开发框架2018/&text=Android项目架构概述"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/07/24/【项目架构】Android基础开发框架2018/&title=Android项目架构概述"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/07/24/【项目架构】Android基础开发框架2018/&is_video=false&description=Android项目架构概述"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Android项目架构概述&body=Check out this article: http://yoursite.com/2018/07/24/【项目架构】Android基础开发框架2018/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/07/24/【项目架构】Android基础开发框架2018/&title=Android项目架构概述"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/07/24/【项目架构】Android基础开发框架2018/&title=Android项目架构概述"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/07/24/【项目架构】Android基础开发框架2018/&title=Android项目架构概述"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/07/24/【项目架构】Android基础开发框架2018/&title=Android项目架构概述"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/07/24/【项目架构】Android基础开发框架2018/&name=Android项目架构概述&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-基础开发框架《FaruAndroid》"><span class="toc-number">1.</span> <span class="toc-text">Android 基础开发框架《FaruAndroid》</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#目标"><span class="toc-number">1.1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第三方库"><span class="toc-number">1.2.</span> <span class="toc-text">第三方库</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <header id="header">
+  <a href="/">
+  
+    
+      <div id="logo" style="background-image: url(/images/logo.png);"></div>
+    
+  
+    <div id="title">
+      <h1>Farubaba</h1>
+    </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#"><i class="fas fa-bars fa-2x"></i></a>
+      </li>
+       
+        <li><a href="/">Home</a></li>
+       
+        <li><a href="/about/">About</a></li>
+       
+        <li><a href="/archives/">Writing</a></li>
+       
+        <li><a href="http://github.com/farubaba">Projects</a></li>
+      
+    </ul>
+  </div>
+</header>
+
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Android项目架构概述
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Farubaba</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-07-24T02:55:39.000Z" itemprop="datePublished">2018-07-24</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/android-架构/">android 架构</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h3 id="Android-基础开发框架《FaruAndroid》"><a href="#Android-基础开发框架《FaruAndroid》" class="headerlink" title="Android 基础开发框架《FaruAndroid》"></a>Android 基础开发框架《FaruAndroid》</h3><h4 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h4><pre><code>    整合时下优秀的开源框架，实现一个高度解耦，可快速开发，易复用，易扩展的Android基础库。
+涉及到常规应用开发的各方面。
+</code></pre><h4 id="第三方库"><a href="#第三方库" class="headerlink" title="第三方库"></a>第三方库</h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>功能描述（见WIKI）</th>
+<th>同类项目</th>
+<th>相关优化方向</th>
+<th>相关产考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/orhanobut/logger" target="_blank" rel="noopener">Logger</a></td>
+<td>日志记录</td>
+<td><a href="https://github.com/JakeWharton/timber" target="_blank" rel="noopener">Timer</a></td>
+<td>无埋点日志、无埋点统计</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.raywenderlich.com/170233/reactive-programming-rxandroid-kotlin-introduction" target="_blank" rel="noopener">RxAndroid Tutorial</a></td>
+<td>指南</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ReactiveX/RxJava" target="_blank" rel="noopener">RxJava</a></td>
+<td>异步编程</td>
+<td></td>
+<td></td>
+<td><a href="http://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="noopener">给 Android 开发者的 RxJava 详解</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ReactiveX/RxAndroid" target="_blank" rel="noopener">RxAndroid</a></td>
+<td>异步编程</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/tbruyelle/RxPermissions" target="_blank" rel="noopener">RxPermissions</a></td>
+<td>RxJava支持6.0权限</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/JakeWharton/RxBinding" target="_blank" rel="noopener">RxBinding</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/square/retrofit" target="_blank" rel="noopener">Retrofit2</a></td>
+<td>网络访问封装</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/square/retrofit/tree/master/retrofit-adapters/rxjava2" target="_blank" rel="noopener">retrofit-adapters for rxjava2</a></td>
+<td>基础封装</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/JakeWharton/dagger" target="_blank" rel="noopener">Dagger2</a></td>
+<td>对象注入</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/square/okhttp" target="_blank" rel="noopener">OKHTTP3</a></td>
+<td>网络访问</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/facebook/fresco" target="_blank" rel="noopener">Fresco</a></td>
+<td>图片处理</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/JakeWharton/butterknife" target="_blank" rel="noopener">Butterknife</a></td>
+<td>View注入</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/lzyzsd/JsBridge" target="_blank" rel="noopener">JsBridge</a></td>
+<td>hybird</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/afollestad/material-dialogs" target="_blank" rel="noopener">material-dialogs</a></td>
+<td>Dialog</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/PhilJay/MPAndroidChart" target="_blank" rel="noopener">MPAndroidChart</a></td>
+<td>图表</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/airbnb/lottie-android" target="_blank" rel="noopener">airbnb-lottie-android</a></td>
+<td>AirBnB 动画框架，渲染高级动效</td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/lgvalle/Material-Animations" target="_blank" rel="noopener">Material-Animations</a>、<a href="https://github.com/wasabeef/recyclerview-animators" target="_blank" rel="noopener">recyclerview-animators</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/81813780/AVLoadingIndicatorView" target="_blank" rel="noopener">AVLoadingIndicatorView</a></td>
+<td>Loading动画</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/Yalantis/uCrop" target="_blank" rel="noopener">uCrop</a></td>
+<td>图片剪切</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>推送服务</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>推送后台管理页面开发-开源项目-daquan</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>社会化</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>数据统计</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>单元测试</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>接入SDK</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>数据加解密</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>业务流程动态配置化管理</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>应用模块权限配置管理</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>应用模块动态配置</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>配置文件动态下发</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>页面跳转动态配置管理</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>渠道配置</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>代码混淆</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>应用加壳</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>自动化测试</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>灰度发布</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/WVector/AppUpdate" target="_blank" rel="noopener">AppUpdate</a></td>
+<td>应用版本更新模块</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>插件化，版本更新</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>热修复，bug修复</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>相机</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>图片</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>视频</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>音频</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>即时通信IM</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>PDF文件在线查看，下载查看</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>状态栏</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>标题栏</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Back键</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>手势识别</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>主菜单</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>####开发、测试、集成、发布、灰度工具<br>|名称|功能描述（见WIKI）|相关产考|<br>|—|—|—|<br>|[接口文档管理工具 Postman、Swagger、RAP]|接口测试||</p>
+<p>####新项目建议</p>
+<ol>
+<li>新项目建议采用 minSdkVersion=”14”（覆盖目前99%设备） 或者更高版本，采用minSdkVersion=”17”（覆盖目前96%设备） 可直接越过webview js漏洞。</li>
+</ol>
+<p>####相关参考<br>[接口文档管理工具 Postman、Swagger、RAP]:<a href="http://qa.blog.163.com/blog/static/190147002201611155418810/" target="_blank" rel="noopener">http://qa.blog.163.com/blog/static/190147002201611155418810/</a></p>
+<p>####和当前项目类似项目  </p>
+<p><a href="https://github.com/Blankj/AndroidUtilCode" target="_blank" rel="noopener">AndroidUtilCode</a>   :  <a href="http://blog.csdn.net/qq_33445600/article/details/78487857" target="_blank" rel="noopener">AndroidUtilCode功能列表</a>  借鉴其通用基础模块封装</p>
+<p><a href="https://github.com/litesuits/android-common" target="_blank" rel="noopener">android-common</a> : 借鉴其通用基础模块封装</p>
+<p><a href="https://github.com/wu928320442/EasyAndroid" target="_blank" rel="noopener">EasyAndroid</a> </p>
+<p><a href="https://github.com/xiaoyaoyou1212/XSnow" target="_blank" rel="noopener">XSnow</a>   </p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/farubaba">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-基础开发框架《FaruAndroid》"><span class="toc-number">1.</span> <span class="toc-text">Android 基础开发框架《FaruAndroid》</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#目标"><span class="toc-number">1.1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第三方库"><span class="toc-number">1.2.</span> <span class="toc-text">第三方库</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/07/24/【项目架构】Android基础开发框架2018/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/07/24/【项目架构】Android基础开发框架2018/&text=Android项目架构概述"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/07/24/【项目架构】Android基础开发框架2018/&title=Android项目架构概述"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/07/24/【项目架构】Android基础开发框架2018/&is_video=false&description=Android项目架构概述"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Android项目架构概述&body=Check out this article: http://yoursite.com/2018/07/24/【项目架构】Android基础开发框架2018/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/07/24/【项目架构】Android基础开发框架2018/&title=Android项目架构概述"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/07/24/【项目架构】Android基础开发框架2018/&title=Android项目架构概述"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/07/24/【项目架构】Android基础开发框架2018/&title=Android项目架构概述"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/07/24/【项目架构】Android基础开发框架2018/&title=Android项目架构概述"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/07/24/【项目架构】Android基础开发框架2018/&name=Android项目架构概述&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Farubaba
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/farubaba">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
