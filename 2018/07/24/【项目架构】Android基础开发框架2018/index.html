@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Android 基础开发框架《FaruAndroid》目标    整合时下优秀的开源框架，实现一个高度解耦，可快速开发，易复用，易扩展的Android基础库。 涉及到常规应用开发的各方面。 第三方库   名称 功能描述（见WIKI） 同类项目 相关优化方向 相关产考     Logger 日志记录 Timer 无埋点日志、无埋点统计    RxAndroid Tutorial 指南      Rx">
-<meta name="keywords" content="android 架构">
+    <meta name="description" content="目标整合时下优秀的开源框架，实现一个高度解耦，可快速开发，易复用，易扩展的Android基础库。涉及到常规应用开发的各方面。 关注点 code规范 通用基础库(Base*、Util) 业务组件封装 架构（MVP、MVVM） 抽象中间层 解耦，易替换，易删除 快速易开发 易测试（自动化测试，单元测试等） 持续集成CI 渠道打包 灰度发布 强制更新 异步任务调度 View &amp;amp; Animatio">
+<meta name="keywords" content="android,架构,faruAndroid">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android项目架构概述">
 <meta property="og:url" content="http://yoursite.com/2018/07/24/【项目架构】Android基础开发框架2018/index.html">
 <meta property="og:site_name" content="Farubaba">
-<meta property="og:description" content="Android 基础开发框架《FaruAndroid》目标    整合时下优秀的开源框架，实现一个高度解耦，可快速开发，易复用，易扩展的Android基础库。 涉及到常规应用开发的各方面。 第三方库   名称 功能描述（见WIKI） 同类项目 相关优化方向 相关产考     Logger 日志记录 Timer 无埋点日志、无埋点统计    RxAndroid Tutorial 指南      Rx">
+<meta property="og:description" content="目标整合时下优秀的开源框架，实现一个高度解耦，可快速开发，易复用，易扩展的Android基础库。涉及到常规应用开发的各方面。 关注点 code规范 通用基础库(Base*、Util) 业务组件封装 架构（MVP、MVVM） 抽象中间层 解耦，易替换，易删除 快速易开发 易测试（自动化测试，单元测试等） 持续集成CI 渠道打包 灰度发布 强制更新 异步任务调度 View &amp;amp; Animatio">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-24T04:43:20.025Z">
+<meta property="og:updated_time" content="2018-07-25T05:18:05.900Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android项目架构概述">
-<meta name="twitter:description" content="Android 基础开发框架《FaruAndroid》目标    整合时下优秀的开源框架，实现一个高度解耦，可快速开发，易复用，易扩展的Android基础库。 涉及到常规应用开发的各方面。 第三方库   名称 功能描述（见WIKI） 同类项目 相关优化方向 相关产考     Logger 日志记录 Timer 无埋点日志、无埋点统计    RxAndroid Tutorial 指南      Rx">
+<meta name="twitter:description" content="目标整合时下优秀的开源框架，实现一个高度解耦，可快速开发，易复用，易扩展的Android基础库。涉及到常规应用开发的各方面。 关注点 code规范 通用基础库(Base*、Util) 业务组件封装 架构（MVP、MVVM） 抽象中间层 解耦，易替换，易删除 快速易开发 易测试（自动化测试，单元测试等） 持续集成CI 渠道打包 灰度发布 强制更新 异步任务调度 View &amp;amp; Animatio">
     
     
         
@@ -73,8 +73,10 @@
     <span id="actions">
       <ul>
         
+        <li><a class="icon" href="/2018/07/24/Android通用基础功能模块开发/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
-        <li><a class="icon" href="/2018/07/24/Android通用基础功能模块开发/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="/2018/07/18/碎片化知识总结-to be continued/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -101,7 +103,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-基础开发框架《FaruAndroid》"><span class="toc-number">1.</span> <span class="toc-text">Android 基础开发框架《FaruAndroid》</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#目标"><span class="toc-number">1.1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第三方库"><span class="toc-number">1.2.</span> <span class="toc-text">第三方库</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#目标"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关注点"><span class="toc-number">2.</span> <span class="toc-text">关注点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三方库"><span class="toc-number">3.</span> <span class="toc-text">第三方库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开发、测试、集成、发布、灰度工具"><span class="toc-number">4.</span> <span class="toc-text">开发、测试、集成、发布、灰度工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新项目建议"><span class="toc-number">5.</span> <span class="toc-text">新项目建议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关参考"><span class="toc-number">6.</span> <span class="toc-text">相关参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#和当前项目类似项目"><span class="toc-number">7.</span> <span class="toc-text">和当前项目类似项目</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -161,7 +163,7 @@
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/android-架构/">android 架构</a>
+        <a class="tag-link" href="/tags/android/">android</a>, <a class="tag-link" href="/tags/faruAndroid/">faruAndroid</a>, <a class="tag-link" href="/tags/架构/">架构</a>
     </div>
 
 
@@ -170,9 +172,27 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h3 id="Android-基础开发框架《FaruAndroid》"><a href="#Android-基础开发框架《FaruAndroid》" class="headerlink" title="Android 基础开发框架《FaruAndroid》"></a>Android 基础开发框架《FaruAndroid》</h3><h4 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h4><pre><code>    整合时下优秀的开源框架，实现一个高度解耦，可快速开发，易复用，易扩展的Android基础库。
-涉及到常规应用开发的各方面。
-</code></pre><h4 id="第三方库"><a href="#第三方库" class="headerlink" title="第三方库"></a>第三方库</h4><table>
+    <h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><pre><code>整合时下优秀的开源框架，实现一个高度解耦，可快速开发，易复用，易扩展的Android基础库。涉及到常规应用开发的各方面。
+</code></pre><h3 id="关注点"><a href="#关注点" class="headerlink" title="关注点"></a>关注点</h3><ol>
+<li>code规范</li>
+<li>通用基础库(Base*、Util)</li>
+<li>业务组件封装</li>
+<li>架构（MVP、MVVM）</li>
+<li>抽象中间层</li>
+<li>解耦，易替换，易删除</li>
+<li>快速易开发</li>
+<li>易测试（自动化测试，单元测试等）</li>
+<li>持续集成CI</li>
+<li>渠道打包</li>
+<li>灰度发布</li>
+<li>强制更新</li>
+<li>异步任务调度</li>
+<li>View &amp; Animation</li>
+<li>组件化</li>
+<li>插件化</li>
+<li>热更新</li>
+</ol>
+<h3 id="第三方库"><a href="#第三方库" class="headerlink" title="第三方库"></a>第三方库</h3><table>
 <thead>
 <tr>
 <th>名称</th>
@@ -184,15 +204,71 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/orhanobut/logger" target="_blank" rel="noopener">Logger</a></td>
-<td>日志记录</td>
-<td><a href="https://github.com/JakeWharton/timber" target="_blank" rel="noopener">Timer</a></td>
-<td>无埋点日志、无埋点统计</td>
+<td>[Android Jetpack]</td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="https://www.raywenderlich.com/170233/reactive-programming-rxandroid-kotlin-introduction" target="_blank" rel="noopener">RxAndroid Tutorial</a></td>
-<td>指南</td>
+<td>[阿里 sophix]</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[阿里 Atlas]</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[阿里 Small]</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[阿里 AndFix]</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[Kotlin]</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[React Native]</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[Android Testing]</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[MVP]</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[MVVM]</td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -219,13 +295,6 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="https://github.com/JakeWharton/RxBinding" target="_blank" rel="noopener">RxBinding</a></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td><a href="https://github.com/square/retrofit" target="_blank" rel="noopener">Retrofit2</a></td>
 <td>网络访问封装</td>
 <td></td>
@@ -233,15 +302,36 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="https://github.com/square/retrofit/tree/master/retrofit-adapters/rxjava2" target="_blank" rel="noopener">retrofit-adapters for rxjava2</a></td>
-<td>基础封装</td>
+<td><a href="https://github.com/JakeWharton/dagger" target="_blank" rel="noopener">Dagger2</a></td>
+<td>对象注入</td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="https://github.com/JakeWharton/dagger" target="_blank" rel="noopener">Dagger2</a></td>
-<td>对象注入</td>
+<td><a href="https://github.com/orhanobut/logger" target="_blank" rel="noopener">Logger</a></td>
+<td>日志记录</td>
+<td><a href="https://github.com/JakeWharton/timber" target="_blank" rel="noopener">Timer</a></td>
+<td>无埋点日志、无埋点统计</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.raywenderlich.com/170233/reactive-programming-rxandroid-kotlin-introduction" target="_blank" rel="noopener">RxAndroid Tutorial</a></td>
+<td>指南</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/JakeWharton/RxBinding" target="_blank" rel="noopener">RxBinding</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/square/retrofit/tree/master/retrofit-adapters/rxjava2" target="_blank" rel="noopener">retrofit-adapters for rxjava2</a></td>
+<td>基础封装</td>
 <td></td>
 <td></td>
 <td></td>
@@ -527,14 +617,26 @@
 </tr>
 </tbody>
 </table>
-<p>####开发、测试、集成、发布、灰度工具<br>|名称|功能描述（见WIKI）|相关产考|<br>|—|—|—|<br>|[接口文档管理工具 Postman、Swagger、RAP]|接口测试||</p>
-<p>####新项目建议</p>
-<ol>
+<h3 id="开发、测试、集成、发布、灰度工具"><a href="#开发、测试、集成、发布、灰度工具" class="headerlink" title="开发、测试、集成、发布、灰度工具"></a>开发、测试、集成、发布、灰度工具</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>功能描述（见WIKI）</th>
+<th>相关产考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://qa.blog.163.com/blog/static/190147002201611155418810/" target="_blank" rel="noopener">接口文档管理工具 Postman、Swagger、RAP</a></td>
+<td>接口测试</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h3 id="新项目建议"><a href="#新项目建议" class="headerlink" title="新项目建议"></a>新项目建议</h3><ol>
 <li>新项目建议采用 minSdkVersion=”14”（覆盖目前99%设备） 或者更高版本，采用minSdkVersion=”17”（覆盖目前96%设备） 可直接越过webview js漏洞。</li>
 </ol>
-<p>####相关参考<br>[接口文档管理工具 Postman、Swagger、RAP]:<a href="http://qa.blog.163.com/blog/static/190147002201611155418810/" target="_blank" rel="noopener">http://qa.blog.163.com/blog/static/190147002201611155418810/</a></p>
-<p>####和当前项目类似项目  </p>
-<p><a href="https://github.com/Blankj/AndroidUtilCode" target="_blank" rel="noopener">AndroidUtilCode</a>   :  <a href="http://blog.csdn.net/qq_33445600/article/details/78487857" target="_blank" rel="noopener">AndroidUtilCode功能列表</a>  借鉴其通用基础模块封装</p>
+<h3 id="相关参考"><a href="#相关参考" class="headerlink" title="相关参考"></a>相关参考</h3><h3 id="和当前项目类似项目"><a href="#和当前项目类似项目" class="headerlink" title="和当前项目类似项目"></a>和当前项目类似项目</h3><p><a href="https://github.com/Blankj/AndroidUtilCode" target="_blank" rel="noopener">AndroidUtilCode</a>   :  <a href="http://blog.csdn.net/qq_33445600/article/details/78487857" target="_blank" rel="noopener">AndroidUtilCode功能列表</a>  借鉴其通用基础模块封装</p>
 <p><a href="https://github.com/litesuits/android-common" target="_blank" rel="noopener">android-common</a> : 借鉴其通用基础模块封装</p>
 <p><a href="https://github.com/wu928320442/EasyAndroid" target="_blank" rel="noopener">EasyAndroid</a> </p>
 <p><a href="https://github.com/xiaoyaoyou1212/XSnow" target="_blank" rel="noopener">XSnow</a>   </p>
@@ -570,7 +672,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-基础开发框架《FaruAndroid》"><span class="toc-number">1.</span> <span class="toc-text">Android 基础开发框架《FaruAndroid》</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#目标"><span class="toc-number">1.1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第三方库"><span class="toc-number">1.2.</span> <span class="toc-text">第三方库</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#目标"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关注点"><span class="toc-number">2.</span> <span class="toc-text">关注点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三方库"><span class="toc-number">3.</span> <span class="toc-text">第三方库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开发、测试、集成、发布、灰度工具"><span class="toc-number">4.</span> <span class="toc-text">开发、测试、集成、发布、灰度工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新项目建议"><span class="toc-number">5.</span> <span class="toc-text">新项目建议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关参考"><span class="toc-number">6.</span> <span class="toc-text">相关参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#和当前项目类似项目"><span class="toc-number">7.</span> <span class="toc-text">和当前项目类似项目</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
