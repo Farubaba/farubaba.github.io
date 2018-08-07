@@ -1540,7 +1540,7 @@ code {
   background: none;
 }
 .highlight table {
-  width: auto;
+  width: 100%;
 }
 .highlight td.gutter {
   text-align: right;
