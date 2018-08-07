@@ -1016,7 +1016,10 @@ body {
   margin-left: 0;
   list-style-type: none;
 }
-.post-list .post-item .meta {
+.post-list .post-item .post_item_title {
+  margin-top: 30px;
+}
+.post-list .post-item .post_item_title .meta {
   display: block;
   margin-right: 16px;
   min-width: 100px;
@@ -1025,27 +1028,29 @@ body {
 }
 @media (min-width: 480px) {
   .post-list .post-item {
-    display: flex;
     margin-bottom: 5px;
   }
-  .post-list .post-item .meta {
+  .post-list .post-item .post_item_title {
+    display: flex;
+  }
+  .post-list .post-item .post_item_title .meta {
     text-align: left;
   }
-  .post-list .post-item a {
+  .post-list .post-item .post_item_title a {
     background-image: none;
     background-position: bottom;
     background-size: 0% 0px;
     background-repeat: no-repeat;
     color: #2bbc8a;
   }
-  .post-list .post-item a .project-list {
+  .post-list .post-item .post_item_title a .project-list {
     padding: 0;
     list-style: none;
   }
-  .post-list .post-item a .project-list .project-item {
+  .post-list .post-item .post_item_title a .project-list .project-item {
     margin-bottom: 5px;
   }
-  .post-list .post-item a .project-list .project-item p {
+  .post-list .post-item .post_item_title a .project-list .project-item p {
     display: inline;
   }
 }
@@ -1387,10 +1392,12 @@ article .content .caption {
   padding-bottom: 0.5em;
   color: #383838;
 }
-.content .post-list .post-summery {
+.content .post-list .post-item .post-summery {
+  display: block;
   margin-left: 18px;
   margin-right: 18px;
-  padding: 10px 30px 10px 30px;
+  margin-bottom: 30px;
+  padding: 10px 10px 10px 98px;
   color: #666;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -1401,7 +1408,7 @@ article .content .caption {
   text-decoration: none;
   font-size: 13px;
 }
-.content .post-list .post-summery a {
+.content .post-list .post-item .post-summery a {
   color: #383838;
   background-image: none;
   background-position: bottom;
