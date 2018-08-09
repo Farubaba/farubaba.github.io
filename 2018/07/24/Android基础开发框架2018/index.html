@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="目标整合时下优秀的开源框架，实现一个高度解耦，可快速开发，易复用，易扩展的Android基础库。涉及到常规应用开发的各方面。 关注点 code规范 通用基础库(Base*、Util) 业务组件封装 架构（MVP、MVVM） 抽象中间层 解耦，易替换，易删除 快速易开发 易测试（自动化测试，单元测试等） 持续集成CI 渠道打包 灰度发布 强制更新 异步任务调度 View &amp;amp; Animatio">
+    <meta name="description" content="目标 	整合时下优秀的开源框架，实现一个高度解耦，可快速开发，易复用，易扩展的Android基础库。涉及到常规应用开发的各方面。  关注点  code规范 通用基础库(Base*、Util) 业务组件封装 架构（MVP、MVVM） 抽象中间层 解耦，易替换，易删除 快速易开发 易测试（自动化测试，单元测试等） 持续集成CI 渠道打包 灰度发布 强制更新 异步任务调度 View &amp;amp; Anim">
 <meta name="keywords" content="android,架构,faruAndroid">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android项目架构概述">
 <meta property="og:url" content="http://yoursite.com/2018/07/24/Android基础开发框架2018/index.html">
 <meta property="og:site_name" content="Farubaba">
-<meta property="og:description" content="目标整合时下优秀的开源框架，实现一个高度解耦，可快速开发，易复用，易扩展的Android基础库。涉及到常规应用开发的各方面。 关注点 code规范 通用基础库(Base*、Util) 业务组件封装 架构（MVP、MVVM） 抽象中间层 解耦，易替换，易删除 快速易开发 易测试（自动化测试，单元测试等） 持续集成CI 渠道打包 灰度发布 强制更新 异步任务调度 View &amp;amp; Animatio">
+<meta property="og:description" content="目标 	整合时下优秀的开源框架，实现一个高度解耦，可快速开发，易复用，易扩展的Android基础库。涉及到常规应用开发的各方面。  关注点  code规范 通用基础库(Base*、Util) 业务组件封装 架构（MVP、MVVM） 抽象中间层 解耦，易替换，易删除 快速易开发 易测试（自动化测试，单元测试等） 持续集成CI 渠道打包 灰度发布 强制更新 异步任务调度 View &amp;amp; Anim">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-07-25T05:18:05.900Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android项目架构概述">
-<meta name="twitter:description" content="目标整合时下优秀的开源框架，实现一个高度解耦，可快速开发，易复用，易扩展的Android基础库。涉及到常规应用开发的各方面。 关注点 code规范 通用基础库(Base*、Util) 业务组件封装 架构（MVP、MVVM） 抽象中间层 解耦，易替换，易删除 快速易开发 易测试（自动化测试，单元测试等） 持续集成CI 渠道打包 灰度发布 强制更新 异步任务调度 View &amp;amp; Animatio">
+<meta name="twitter:description" content="目标 	整合时下优秀的开源框架，实现一个高度解耦，可快速开发，易复用，易扩展的Android基础库。涉及到常规应用开发的各方面。  关注点  code规范 通用基础库(Base*、Util) 业务组件封装 架构（MVP、MVVM） 抽象中间层 解耦，易替换，易删除 快速易开发 易测试（自动化测试，单元测试等） 持续集成CI 渠道打包 灰度发布 强制更新 异步任务调度 View &amp;amp; Anim">
     
     
         
@@ -103,7 +103,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#目标"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关注点"><span class="toc-number">2.</span> <span class="toc-text">关注点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三方库"><span class="toc-number">3.</span> <span class="toc-text">第三方库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开发、测试、集成、发布、灰度工具"><span class="toc-number">4.</span> <span class="toc-text">开发、测试、集成、发布、灰度工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新项目建议"><span class="toc-number">5.</span> <span class="toc-text">新项目建议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关参考"><span class="toc-number">6.</span> <span class="toc-text">相关参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#和当前项目类似项目"><span class="toc-number">7.</span> <span class="toc-text">和当前项目类似项目</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">关注点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">第三方库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">开发、测试、集成、发布、灰度工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">新项目建议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">6.</span> <span class="toc-text">相关参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">7.</span> <span class="toc-text">和当前项目类似项目</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -172,8 +172,11 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><pre><code>整合时下优秀的开源框架，实现一个高度解耦，可快速开发，易复用，易扩展的Android基础库。涉及到常规应用开发的各方面。
-</code></pre><h3 id="关注点"><a href="#关注点" class="headerlink" title="关注点"></a>关注点</h3><ol>
+    <h3>目标</h3>
+<pre><code>	整合时下优秀的开源框架，实现一个高度解耦，可快速开发，易复用，易扩展的Android基础库。涉及到常规应用开发的各方面。
+</code></pre>
+<h3>关注点</h3>
+<ol>
 <li>code规范</li>
 <li>通用基础库(Base*、Util)</li>
 <li>业务组件封装</li>
@@ -192,7 +195,8 @@
 <li>插件化</li>
 <li>热更新</li>
 </ol>
-<h3 id="第三方库"><a href="#第三方库" class="headerlink" title="第三方库"></a>第三方库</h3><table>
+<h3>第三方库</h3>
+<table>
 <thead>
 <tr>
 <th>名称</th>
@@ -614,10 +618,12 @@
 <td>主菜单</td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<h3 id="开发、测试、集成、发布、灰度工具"><a href="#开发、测试、集成、发布、灰度工具" class="headerlink" title="开发、测试、集成、发布、灰度工具"></a>开发、测试、集成、发布、灰度工具</h3><table>
+<h3>开发、测试、集成、发布、灰度工具</h3>
+<table>
 <thead>
 <tr>
 <th>名称</th>
@@ -633,13 +639,16 @@
 </tr>
 </tbody>
 </table>
-<h3 id="新项目建议"><a href="#新项目建议" class="headerlink" title="新项目建议"></a>新项目建议</h3><ol>
-<li>新项目建议采用 minSdkVersion=”14”（覆盖目前99%设备） 或者更高版本，采用minSdkVersion=”17”（覆盖目前96%设备） 可直接越过webview js漏洞。</li>
+<h3>新项目建议</h3>
+<ol>
+<li>新项目建议采用 minSdkVersion=&quot;14&quot;（覆盖目前99%设备） 或者更高版本，采用minSdkVersion=&quot;17&quot;（覆盖目前96%设备） 可直接越过webview js漏洞。</li>
 </ol>
-<h3 id="相关参考"><a href="#相关参考" class="headerlink" title="相关参考"></a>相关参考</h3><h3 id="和当前项目类似项目"><a href="#和当前项目类似项目" class="headerlink" title="和当前项目类似项目"></a>和当前项目类似项目</h3><p><a href="https://github.com/Blankj/AndroidUtilCode" target="_blank" rel="noopener">AndroidUtilCode</a>   :  <a href="http://blog.csdn.net/qq_33445600/article/details/78487857" target="_blank" rel="noopener">AndroidUtilCode功能列表</a>  借鉴其通用基础模块封装</p>
+<h3>相关参考</h3>
+<h3>和当前项目类似项目</h3>
+<p><a href="https://github.com/Blankj/AndroidUtilCode" target="_blank" rel="noopener">AndroidUtilCode</a>   :  <a href="http://blog.csdn.net/qq_33445600/article/details/78487857" target="_blank" rel="noopener">AndroidUtilCode功能列表</a>  借鉴其通用基础模块封装</p>
 <p><a href="https://github.com/litesuits/android-common" target="_blank" rel="noopener">android-common</a> : 借鉴其通用基础模块封装</p>
-<p><a href="https://github.com/wu928320442/EasyAndroid" target="_blank" rel="noopener">EasyAndroid</a> </p>
-<p><a href="https://github.com/xiaoyaoyou1212/XSnow" target="_blank" rel="noopener">XSnow</a>   </p>
+<p><a href="https://github.com/wu928320442/EasyAndroid" target="_blank" rel="noopener">EasyAndroid</a></p>
+<p><a href="https://github.com/xiaoyaoyou1212/XSnow" target="_blank" rel="noopener">XSnow</a></p>
 
   </div>
 </article>
@@ -672,7 +681,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#目标"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关注点"><span class="toc-number">2.</span> <span class="toc-text">关注点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三方库"><span class="toc-number">3.</span> <span class="toc-text">第三方库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开发、测试、集成、发布、灰度工具"><span class="toc-number">4.</span> <span class="toc-text">开发、测试、集成、发布、灰度工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新项目建议"><span class="toc-number">5.</span> <span class="toc-text">新项目建议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关参考"><span class="toc-number">6.</span> <span class="toc-text">相关参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#和当前项目类似项目"><span class="toc-number">7.</span> <span class="toc-text">和当前项目类似项目</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">关注点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">第三方库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">开发、测试、集成、发布、灰度工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">新项目建议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">6.</span> <span class="toc-text">相关参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">7.</span> <span class="toc-text">和当前项目类似项目</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
