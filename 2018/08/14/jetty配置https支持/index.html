@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="一、jetty配置https支持https握手链接过程详解 jetty javadoc for 配置 ERR_SSL_VERSION_OR_CIPHER_MISMATCH 错误 /start.ini  &amp;gt; /etc/jetty-http.xml &amp;gt; /demo-base/start.d/http.ini(只对当前应用有效)    配置文件 配置对象 存放位置 作用 相关文件     j">
+<meta name="keywords" content="Jetty,HTTPS,SSL,TLS,Http2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jetty配置https支持">
+<meta property="og:url" content="http://yoursite.com/2018/08/14/jetty配置https支持/index.html">
+<meta property="og:site_name" content="Farubaba">
+<meta property="og:description" content="一、jetty配置https支持https握手链接过程详解 jetty javadoc for 配置 ERR_SSL_VERSION_OR_CIPHER_MISMATCH 错误 /start.ini  &amp;gt; /etc/jetty-http.xml &amp;gt; /demo-base/start.d/http.ini(只对当前应用有效)    配置文件 配置对象 存放位置 作用 相关文件     j">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-14T14:35:21.881Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jetty配置https支持">
+<meta name="twitter:description" content="一、jetty配置https支持https握手链接过程详解 jetty javadoc for 配置 ERR_SSL_VERSION_OR_CIPHER_MISMATCH 错误 /start.ini  &amp;gt; /etc/jetty-http.xml &amp;gt; /demo-base/start.d/http.ini(只对当前应用有效)    配置文件 配置对象 存放位置 作用 相关文件     j">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Jetty配置https支持</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/farubaba">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/08/19/官方文档集合/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/08/05/OkHttp入门/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/08/14/jetty配置https支持/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/08/14/jetty配置https支持/&text=Jetty配置https支持"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/08/14/jetty配置https支持/&title=Jetty配置https支持"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/08/14/jetty配置https支持/&is_video=false&description=Jetty配置https支持"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Jetty配置https支持&body=Check out this article: http://yoursite.com/2018/08/14/jetty配置https支持/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/08/14/jetty配置https支持/&title=Jetty配置https支持"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/08/14/jetty配置https支持/&title=Jetty配置https支持"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/08/14/jetty配置https支持/&title=Jetty配置https支持"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/08/14/jetty配置https支持/&title=Jetty配置https支持"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/08/14/jetty配置https支持/&name=Jetty配置https支持&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、jetty配置https支持"><span class="toc-number">1.</span> <span class="toc-text">一、jetty配置https支持</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-TLS-and-SSL-versions"><span class="toc-number">1.1.</span> <span class="toc-text">1. TLS and SSL versions</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-使用keytool生成minimal-requirements-key-to-run-an-SSL"><span class="toc-number">1.2.</span> <span class="toc-text">2. 使用keytool生成minimal requirements key to run an SSL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-创建适合商用SSL-的key"><span class="toc-number">1.3.</span> <span class="toc-text">4. 创建适合商用SSL 的key</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-独立安装的Jetty配置https支持"><span class="toc-number">1.4.</span> <span class="toc-text">3. 独立安装的Jetty配置https支持</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、常见链接中间人：反向代理（Reverse-Proxy）和负载均衡（Load-Banlancer）"><span class="toc-number">2.</span> <span class="toc-text">二、常见链接中间人：反向代理（Reverse Proxy）和负载均衡（Load Banlancer）</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <header id="header">
+  <a href="/">
+  
+    
+      <div id="logo" style="background-image: url(/images/logo.png);"></div>
+    
+  
+    <div id="title">
+      <h1>Farubaba</h1>
+    </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#"><i class="fas fa-bars fa-2x"></i></a>
+      </li>
+       
+        <li><a href="/">Home</a></li>
+       
+        <li><a href="/archives/">Writing</a></li>
+       
+        <li><a href="http://github.com/farubaba">Projects</a></li>
+      
+    </ul>
+  </div>
+</header>
+
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Jetty配置https支持
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Farubaba</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-08-13T17:04:38.000Z" itemprop="datePublished">2018-08-14</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/HTTPS/">HTTPS</a>, <a class="tag-link" href="/tags/Http2/">Http2</a>, <a class="tag-link" href="/tags/Jetty/">Jetty</a>, <a class="tag-link" href="/tags/SSL/">SSL</a>, <a class="tag-link" href="/tags/TLS/">TLS</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h3 id="一、jetty配置https支持"><a href="#一、jetty配置https支持" class="headerlink" title="一、jetty配置https支持"></a>一、jetty配置https支持</h3><p><a href="https://www.jianshu.com/p/7158568e4867" target="_blank" rel="noopener">https握手链接过程详解</a></p>
+<p><a href="http://www.eclipse.org/jetty/javadoc/9.4.11.v20180605/overview-summary.html" target="_blank" rel="noopener">jetty javadoc for 配置</a></p>
+<p><a href="https://blog.csdn.net/u013332124/article/details/79480665" target="_blank" rel="noopener">ERR_SSL_VERSION_OR_CIPHER_MISMATCH 错误</a></p>
+<p>/start.ini  &gt; /etc/jetty-http.xml &gt; /demo-base/start.d/http.ini(只对当前应用有效)</p>
+<table>
+<thead>
+<tr>
+<th>配置文件</th>
+<th>配置对象</th>
+<th>存放位置</th>
+<th>作用</th>
+<th>相关文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jetty.xml</td>
+<td>org.eclipse.jetty.server.Server</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>jetty-web.xml</td>
+<td>org.eclipse.jetty.webapp.WebAppContext</td>
+<td>/WEB-INF/jetty-web.xml</td>
+<td>配置单一项目</td>
+<td></td>
+</tr>
+<tr>
+<td>jetty-env.xml</td>
+<td>org.eclipse.jetty.webapp.WebAppContext</td>
+<td>WEB-INF/jetty-env.xml</td>
+<td>配置单一项目的JNDI</td>
+<td><a href="http://www.eclipse.org/jetty/documentation/current/jetty-env-xml.html" target="_blank" rel="noopener">jetty-env.xml配置</a></td>
+</tr>
+<tr>
+<td>webdefault.xml</td>
+<td>org.eclipse.jetty.webapp.WebAppContext</td>
+<td>jetty.home/etc/webdefault.xml</td>
+<td>before web.xml defaultsDescriptor</td>
+<td></td>
+</tr>
+<tr>
+<td>jetty-deploy.xml</td>
+<td></td>
+<td>JETTY-HOME/etc/jetty-deploy.xml</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>override-web.xml</td>
+<td>org.eclipse.jetty.webapp.WebAppContext</td>
+<td></td>
+<td>after web.xml overrideDescriptor</td>
+</tr>
+</tbody>
+</table>
+<p><a href="http://www.eclipse.org/jetty/javadoc/9.4.11.v20180605/overview-summary.html" target="_blank" rel="noopener">jetty javadoc for 配置</a></p>
+<p><a href="https://wiki.eclipse.org/Jetty/Reference/SSL_Connectors" target="_blank" rel="noopener">see in Jetty 8 SSL_Connectors</a></p>
+<p><a href="http://zhangwei8607.iteye.com/blog/2205127" target="_blank" rel="noopener">maven jetty9 plugin 配置https</a></p>
+<p><a href="http://www.eclipse.org/jetty/documentation/current/" target="_blank" rel="noopener">jetty-documentation</a></p>
+<p><a href="http://www.eclipse.org/jetty/documentation/current/configuring-connectors.html" target="_blank" rel="noopener">jetty-config-connectors</a></p>
+<p><a href="http://www.eclipse.org/jetty/documentation/current/configuring-ssl.html" target="_blank" rel="noopener">jetty-configuring-ssl</a></p>
+<p><a href="http://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html" target="_blank" rel="noopener">configuring-jetty-maven-plugin</a></p>
+<h4 id="1-TLS-and-SSL-versions"><a href="#1-TLS-and-SSL-versions" class="headerlink" title="1. TLS and SSL versions"></a>1. TLS and SSL versions</h4><p>Which browser/OS supports which protocols can be found on Wikipedia.<a href="https://en.wikipedia.org/wiki/Transport_Layer_Security#Web_browsers" target="_blank" rel="noopener">Transport_Layer_Security in Web_browsers</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TLS v1.0 -&gt; TLS v1.1 -&gt; TLS v1.2</span><br><span class="line">SSL v1   -&gt; SSL v2   -&gt; SSL v3</span><br></pre></td></tr></table></figure>
+<p>Older Protocols</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TLS v1.0, v1.1 and SSL v3 are no longer supported by default.</span><br></pre></td></tr></table></figure>
+<p>New Protocol</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TLS v1.2</span><br><span class="line">The protocol which should be used wherever possible. All CBC based ciphers are supported since Java 7, the new GCM modes are supported since Java 8</span><br></pre></td></tr></table></figure>
+<p>名词解释：</p>
+<p>CA:</p>
+<p>CSR:</p>
+<p>key:</p>
+<p>certificate:</p>
+<p>keystore:(mac中存储在 /Users/violet/.keystore)</p>
+<p><a href="http://www.eclipse.org/jetty/documentation/current/configuring-ssl.html#generating-key-pairs-and-certificates-JDK-keytool" target="_blank" rel="noopener">http://www.eclipse.org/jetty/documentation/current/configuring-ssl.html#generating-key-pairs-and-certificates-JDK-keytool</a></p>
+<p>Certificates:</p>
+<p><a href="http://en.tldp.org/HOWTO/SSL-Certificates-HOWTO/index.html" target="_blank" rel="noopener">http://en.tldp.org/HOWTO/SSL-Certificates-HOWTO/index.html</a></p>
+<p><a href="http://mindprod.com/jgloss/certificate.html" target="_blank" rel="noopener">http://mindprod.com/jgloss/certificate.html</a></p>
+<p>Keytool:</p>
+<p><a href="https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html" target="_blank" rel="noopener">https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html</a></p>
+<p><a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/keytool.html" target="_blank" rel="noopener">https://docs.oracle.com/javase/8/docs/technotes/tools/windows/keytool.html</a></p>
+<p>Other tools:</p>
+<p><a href="https://www.ibm.com/developerworks/community/groups/service/html/communityview?communityUuid=6fb00498-f6ea-4f65-bf0c-adc5bd0c5fcc" target="_blank" rel="noopener">https://www.ibm.com/developerworks/community/groups/service/html/communityview?communityUuid=6fb00498-f6ea-4f65-bf0c-adc5bd0c5fcc</a></p>
+<p>OpenSSL:</p>
+<p><a href="https://www.openssl.org/docs/faq.html" target="_blank" rel="noopener">https://www.openssl.org/docs/faq.html</a></p>
+<h4 id="2-使用keytool生成minimal-requirements-key-to-run-an-SSL"><a href="#2-使用keytool生成minimal-requirements-key-to-run-an-SSL" class="headerlink" title="2. 使用keytool生成minimal requirements key to run an SSL"></a>2. 使用keytool生成minimal requirements key to run an SSL</h4><p>The following command generates a key pair and certificate directly into file keystore</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -keystore keystore -alias jetty -genkey -keyalg RSA</span><br></pre></td></tr></table></figure>
+<p>完整一点的key,需要提供更多的信息，正式环境还不能使用它，但在测试环境中足够了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -keystore keystore -alias jetty -genkey -keyalg RSA -sigalg SHA256withRSA</span><br></pre></td></tr></table></figure>
+<h4 id="4-创建适合商用SSL-的key"><a href="#4-创建适合商用SSL-的key" class="headerlink" title="4. 创建适合商用SSL 的key"></a>4. 创建适合商用SSL 的key</h4><p><a href="http://www.eclipse.org/jetty/documentation/current/configuring-ssl.html#generating-csr-from-keytool" target="_blank" rel="noopener">http://www.eclipse.org/jetty/documentation/current/configuring-ssl.html#generating-csr-from-keytool</a></p>
+<h4 id="3-独立安装的Jetty配置https支持"><a href="#3-独立安装的Jetty配置https支持" class="headerlink" title="3. 独立安装的Jetty配置https支持"></a>3. 独立安装的Jetty配置https支持</h4><p>1). 相关命令</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">java -jar $JETTY_HOME/start.jar --list-modules=connector</span><br><span class="line"></span><br><span class="line">java -jar $JETTY_HOME/start.jar --create-startd</span><br><span class="line"></span><br><span class="line">java -jar $JETTY_HOME/start.jar --add-to-start=http,https</span><br><span class="line"></span><br><span class="line">tree</span><br><span class="line">	.</span><br><span class="line">	├── etc</span><br><span class="line">	│   └── keystore</span><br><span class="line">	└── start.d</span><br><span class="line">	    ├── http.ini</span><br><span class="line">	    └── https.ini</span><br><span class="line"></span><br><span class="line">java -jar $JETTY_HOME/start.jar</span><br></pre></td></tr></table></figure>
+</code></pre><p>2). 修改https.ini</p>
+<h3 id="二、常见链接中间人：反向代理（Reverse-Proxy）和负载均衡（Load-Banlancer）"><a href="#二、常见链接中间人：反向代理（Reverse-Proxy）和负载均衡（Load-Banlancer）" class="headerlink" title="二、常见链接中间人：反向代理（Reverse Proxy）和负载均衡（Load Banlancer）"></a>二、常见链接中间人：反向代理（Reverse Proxy）和负载均衡（Load Banlancer）</h3><p>Often a Connector needs to be configured to accept connections from an intermediary such as a Reverse Proxy and/or Load Balancer deployed in front of the server.</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/farubaba">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、jetty配置https支持"><span class="toc-number">1.</span> <span class="toc-text">一、jetty配置https支持</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-TLS-and-SSL-versions"><span class="toc-number">1.1.</span> <span class="toc-text">1. TLS and SSL versions</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-使用keytool生成minimal-requirements-key-to-run-an-SSL"><span class="toc-number">1.2.</span> <span class="toc-text">2. 使用keytool生成minimal requirements key to run an SSL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-创建适合商用SSL-的key"><span class="toc-number">1.3.</span> <span class="toc-text">4. 创建适合商用SSL 的key</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-独立安装的Jetty配置https支持"><span class="toc-number">1.4.</span> <span class="toc-text">3. 独立安装的Jetty配置https支持</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、常见链接中间人：反向代理（Reverse-Proxy）和负载均衡（Load-Banlancer）"><span class="toc-number">2.</span> <span class="toc-text">二、常见链接中间人：反向代理（Reverse Proxy）和负载均衡（Load Banlancer）</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/08/14/jetty配置https支持/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/08/14/jetty配置https支持/&text=Jetty配置https支持"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/08/14/jetty配置https支持/&title=Jetty配置https支持"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/08/14/jetty配置https支持/&is_video=false&description=Jetty配置https支持"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Jetty配置https支持&body=Check out this article: http://yoursite.com/2018/08/14/jetty配置https支持/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/08/14/jetty配置https支持/&title=Jetty配置https支持"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/08/14/jetty配置https支持/&title=Jetty配置https支持"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/08/14/jetty配置https支持/&title=Jetty配置https支持"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/08/14/jetty配置https支持/&title=Jetty配置https支持"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/08/14/jetty配置https支持/&name=Jetty配置https支持&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Farubaba
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/farubaba">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+

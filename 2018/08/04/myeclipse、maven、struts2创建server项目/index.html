@@ -7,16 +7,16 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="一、参考文档及源码下载maven webapp目录结构 Maven权威指南笔记 源代码下载地址：mobile-server 二、maven webapp目录结构12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152├── pom.xml└── src    ├──">
-<meta name="keywords" content="myeclipse,Maven,struts2,Jetty,HTTPS,SSL,TLS,Http2">
+<meta name="keywords" content="Jetty,HTTPS,SSL,TLS,Http2,myeclipse,Maven,struts2,mobile-server,server">
 <meta property="og:type" content="article">
-<meta property="og:title" content="myeclipse、maven、struts2、Jetty创建server项目，为以后的学习提供后台服务。">
+<meta property="og:title" content="myeclipse、maven、struts2、Jetty创建mobile-server项目，为移动端开发提供后台服务。">
 <meta property="og:url" content="http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/index.html">
 <meta property="og:site_name" content="Farubaba">
 <meta property="og:description" content="一、参考文档及源码下载maven webapp目录结构 Maven权威指南笔记 源代码下载地址：mobile-server 二、maven webapp目录结构12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152├── pom.xml└── src    ├──">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-13T07:29:30.261Z">
+<meta property="og:updated_time" content="2018-08-18T06:51:52.991Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="myeclipse、maven、struts2、Jetty创建server项目，为以后的学习提供后台服务。">
+<meta name="twitter:title" content="myeclipse、maven、struts2、Jetty创建mobile-server项目，为移动端开发提供后台服务。">
 <meta name="twitter:description" content="一、参考文档及源码下载maven webapp目录结构 Maven权威指南笔记 源代码下载地址：mobile-server 二、maven webapp目录结构12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152├── pom.xml└── src    ├──">
     
     
@@ -37,7 +37,7 @@
         
     
     <!-- title -->
-    <title>myeclipse、maven、struts2、Jetty创建server项目，为以后的学习提供后台服务。</title>
+    <title>myeclipse、maven、struts2、Jetty创建mobile-server项目，为移动端开发提供后台服务。</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- persian styles -->
@@ -64,8 +64,6 @@
           <li><a href="/archives/">Writing</a></li>
          
           <li><a href="http://github.com/farubaba">Projects</a></li>
-         
-          <li><a href="/about/">About</a></li>
         
       </ul>
     </span>
@@ -90,20 +88,20 @@
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&text=myeclipse、maven、struts2、Jetty创建server项目，为以后的学习提供后台服务。"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&title=myeclipse、maven、struts2、Jetty创建server项目，为以后的学习提供后台服务。"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&is_video=false&description=myeclipse、maven、struts2、Jetty创建server项目，为以后的学习提供后台服务。"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=myeclipse、maven、struts2、Jetty创建server项目，为以后的学习提供后台服务。&body=Check out this article: http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&title=myeclipse、maven、struts2、Jetty创建server项目，为以后的学习提供后台服务。"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&title=myeclipse、maven、struts2、Jetty创建server项目，为以后的学习提供后台服务。"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&title=myeclipse、maven、struts2、Jetty创建server项目，为以后的学习提供后台服务。"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&title=myeclipse、maven、struts2、Jetty创建server项目，为以后的学习提供后台服务。"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&name=myeclipse、maven、struts2、Jetty创建server项目，为以后的学习提供后台服务。&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&text=myeclipse、maven、struts2、Jetty创建mobile-server项目，为移动端开发提供后台服务。"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&title=myeclipse、maven、struts2、Jetty创建mobile-server项目，为移动端开发提供后台服务。"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&is_video=false&description=myeclipse、maven、struts2、Jetty创建mobile-server项目，为移动端开发提供后台服务。"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=myeclipse、maven、struts2、Jetty创建mobile-server项目，为移动端开发提供后台服务。&body=Check out this article: http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&title=myeclipse、maven、struts2、Jetty创建mobile-server项目，为移动端开发提供后台服务。"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&title=myeclipse、maven、struts2、Jetty创建mobile-server项目，为移动端开发提供后台服务。"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&title=myeclipse、maven、struts2、Jetty创建mobile-server项目，为移动端开发提供后台服务。"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&title=myeclipse、maven、struts2、Jetty创建mobile-server项目，为移动端开发提供后台服务。"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&name=myeclipse、maven、struts2、Jetty创建mobile-server项目，为移动端开发提供后台服务。&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、参考文档及源码下载"><span class="toc-number">1.</span> <span class="toc-text">一、参考文档及源码下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、maven-webapp目录结构"><span class="toc-number">2.</span> <span class="toc-text">二、maven webapp目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、Eclipse中使用maven-archetype-webapp创建maven-web项目"><span class="toc-number">3.</span> <span class="toc-text">三、Eclipse中使用maven-archetype-webapp创建maven web项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、定义webapp的contextPath"><span class="toc-number">4.</span> <span class="toc-text">四、定义webapp的contextPath</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、添加Servlet支持"><span class="toc-number">5.</span> <span class="toc-text">五、添加Servlet支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、修改index-jsp"><span class="toc-number">6.</span> <span class="toc-text">六、修改index.jsp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七、添加Jetty-maven-plugin"><span class="toc-number">7.</span> <span class="toc-text">七、添加Jetty maven plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#八、添加Struts2和Log4j支持"><span class="toc-number">8.</span> <span class="toc-text">八、添加Struts2和Log4j支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#九、添加gson支持"><span class="toc-number">9.</span> <span class="toc-text">九、添加gson支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十、根据maven-webapp目录结构，补全必要的目录"><span class="toc-number">10.</span> <span class="toc-text">十、根据maven webapp目录结构，补全必要的目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十一、编写login-jsp、LoginAction、LoginService、LoginDao并配置"><span class="toc-number">11.</span> <span class="toc-text">十一、编写login.jsp、LoginAction、LoginService、LoginDao并配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十二、jetty配置https支持"><span class="toc-number">12.</span> <span class="toc-text">十二、jetty配置https支持</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、参考文档及源码下载"><span class="toc-number">1.</span> <span class="toc-text">一、参考文档及源码下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、maven-webapp目录结构"><span class="toc-number">2.</span> <span class="toc-text">二、maven webapp目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、Eclipse中使用maven-archetype-webapp创建maven-web项目"><span class="toc-number">3.</span> <span class="toc-text">三、Eclipse中使用maven-archetype-webapp创建maven web项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、定义webapp的contextPath"><span class="toc-number">4.</span> <span class="toc-text">四、定义webapp的contextPath</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、添加Servlet支持"><span class="toc-number">5.</span> <span class="toc-text">五、添加Servlet支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、修改index-jsp"><span class="toc-number">6.</span> <span class="toc-text">六、修改index.jsp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七、添加Jetty-maven-plugin"><span class="toc-number">7.</span> <span class="toc-text">七、添加Jetty maven plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#八、添加Struts2和Log4j支持"><span class="toc-number">8.</span> <span class="toc-text">八、添加Struts2和Log4j支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#九、添加gson支持"><span class="toc-number">9.</span> <span class="toc-text">九、添加gson支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十、根据maven-webapp目录结构，补全必要的目录"><span class="toc-number">10.</span> <span class="toc-text">十、根据maven webapp目录结构，补全必要的目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十一、编写login-jsp、LoginAction、LoginService、LoginDao并配置"><span class="toc-number">11.</span> <span class="toc-text">十一、编写login.jsp、LoginAction、LoginService、LoginDao并配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十二、服务器端编程细节摘要"><span class="toc-number">12.</span> <span class="toc-text">十二、服务器端编程细节摘要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十三、编写服务端Action、Service、Dao，完整的代码已上传至github-mobile-server"><span class="toc-number">13.</span> <span class="toc-text">十三、编写服务端Action、Service、Dao，完整的代码已上传至github mobile-server</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -133,8 +131,6 @@
         <li><a href="/archives/">Writing</a></li>
        
         <li><a href="http://github.com/farubaba">Projects</a></li>
-       
-        <li><a href="/about/">About</a></li>
       
     </ul>
   </div>
@@ -145,7 +141,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        myeclipse、maven、struts2、Jetty创建server项目，为以后的学习提供后台服务。
+        myeclipse、maven、struts2、Jetty创建mobile-server项目，为移动端开发提供后台服务。
     </h1>
 
 
@@ -163,7 +159,7 @@
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/HTTPS/">HTTPS</a>, <a class="tag-link" href="/tags/Http2/">Http2</a>, <a class="tag-link" href="/tags/Jetty/">Jetty</a>, <a class="tag-link" href="/tags/Maven/">Maven</a>, <a class="tag-link" href="/tags/SSL/">SSL</a>, <a class="tag-link" href="/tags/TLS/">TLS</a>, <a class="tag-link" href="/tags/myeclipse/">myeclipse</a>, <a class="tag-link" href="/tags/struts2/">struts2</a>
+        <a class="tag-link" href="/tags/HTTPS/">HTTPS</a>, <a class="tag-link" href="/tags/Http2/">Http2</a>, <a class="tag-link" href="/tags/Jetty/">Jetty</a>, <a class="tag-link" href="/tags/Maven/">Maven</a>, <a class="tag-link" href="/tags/SSL/">SSL</a>, <a class="tag-link" href="/tags/TLS/">TLS</a>, <a class="tag-link" href="/tags/mobile-server/">mobile-server</a>, <a class="tag-link" href="/tags/myeclipse/">myeclipse</a>, <a class="tag-link" href="/tags/server/">server</a>, <a class="tag-link" href="/tags/struts2/">struts2</a>
     </div>
 
 
@@ -231,12 +227,25 @@
 <li>在login.jsp中使用带参数的login.action</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot; pageEncoding=&quot;UTF-8&quot; %&gt;</span><br><span class="line">&lt;%@ page import=&quot;com.google.gson.GsonBuilder&quot;%&gt;</span><br><span class="line">&lt;%@ page import=&quot;com.google.gson.Gson&quot; %&gt;</span><br><span class="line">&lt;%@ page import=&quot;com.farubaba.mobile.server.model.User&quot; %&gt;</span><br><span class="line">&lt;%@ taglib prefix=&quot;s&quot; uri=&quot;/struts-tags&quot; %&gt;</span><br><span class="line">&lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot; %&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;%</span><br><span class="line">String path = request.getContextPath();</span><br><span class="line">String basePath = request.getScheme()+&quot;://&quot;+request.getServerName()+&quot;:&quot;+request.getServerPort()+path+&quot;/&quot;;</span><br><span class="line">String pageName = pageContext.getPage().getClass().getSimpleName();</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Hello World! Struts2&lt;/title&gt;</span><br><span class="line">    &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">    	.button&#123;</span><br><span class="line">    		width:300px;</span><br><span class="line">    		height:30px;</span><br><span class="line">    		text-size:26pt;</span><br><span class="line">    		text-align:center;</span><br><span class="line">    		background-color:#2bbc8a;</span><br><span class="line">    	&#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;  	</span><br><span class="line">  	&lt;h2&gt;</span><br><span class="line">  		&lt;%= pageName.replace(&quot;_002d&quot;, &quot;-&quot;).replace(&quot;_&quot;, &quot;.&quot;) %&gt; :		</span><br><span class="line">  	&lt;/h2&gt;</span><br><span class="line">  	&lt;h4&gt;查看地址栏Url，如果没有给userName和password参数，则并不会返回User对象，下面也不会有值显示：&lt;/h4&gt;</span><br><span class="line">  	&lt;h4&gt;JSON String User: [jsonUser] = &lt;s:property value=&quot;jsonUser&quot; /&gt;&lt;/h4&gt;</span><br><span class="line">  	&lt;h4&gt;Object User: [user] = &lt;s:property value=&quot;user&quot; /&gt;&lt;/h4&gt;</span><br><span class="line">  	&lt;p&gt;getServletName = &lt;%= getServletName() %&gt;&lt;/p&gt;</span><br><span class="line">  	&lt;p&gt;getServletInfo = &lt;%= getServletInfo() %&gt;&lt;/p&gt;</span><br><span class="line">  	&lt;p&gt;getServletContext.getAttribute() = &lt;%= getServletContext().getAttribute(&quot;jsonUser&quot;) %&gt;&lt;/p&gt; </span><br><span class="line">    &lt;!--</span><br><span class="line">    定义url action 和 param </span><br><span class="line">     --&gt;</span><br><span class="line">     &lt;s:url var=&quot;loginWithNoParam&quot; action=&quot;login&quot;&gt;&lt;/s:url&gt;</span><br><span class="line">   	</span><br><span class="line">   	&lt;s:url var=&quot;login&quot; action=&quot;login&quot;&gt;</span><br><span class="line">   		&lt;s:param name=&quot;userName&quot;&gt;farubaba&lt;/s:param&gt;</span><br><span class="line">   		&lt;s:param name=&quot;password&quot;&gt;123456&lt;/s:param&gt;</span><br><span class="line">   	&lt;/s:url&gt;</span><br><span class="line">   	 </span><br><span class="line">   	&lt;s:url var=&quot;userlogin&quot; action=&quot;userLogin&quot; &gt;</span><br><span class="line">   		&lt;s:param name=&quot;userName&quot;&gt;farubaba&lt;/s:param&gt;</span><br><span class="line">   		&lt;s:param name=&quot;password&quot;&gt;123456&lt;/s:param&gt;</span><br><span class="line">   	&lt;/s:url&gt;</span><br><span class="line">   	</span><br><span class="line">   	&lt;s:url var=&quot;userlogin&quot; action=&quot;userLogin&quot; &gt;</span><br><span class="line">   		&lt;s:param name=&quot;userName&quot;&gt;farubaba&lt;/s:param&gt;</span><br><span class="line">   		&lt;s:param name=&quot;password&quot;&gt;123456&lt;/s:param&gt;</span><br><span class="line">   	&lt;/s:url&gt;</span><br><span class="line">   	</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">    	&lt;li&gt;没有登陆参数，调用 &lt;a href=&quot;$&#123;loginWithNoParam&#125;&quot;&gt;login.action -&gt; return null String&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    	&lt;li&gt;提供正确登录参数，调用 &lt;a href=&quot;$&#123;login&#125;&quot;&gt;login.action -&gt; return JSON String User&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    	&lt;li&gt;提供正确登录参数，调用&lt;a href=&quot;$&#123;userlogin&#125;&quot;&gt;userLogin.action -&gt; return Object User &lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    	&lt;li&gt;</span><br><span class="line">    	使用form表单提交登录：(输入：&lt;font color=&quot;red&quot;&gt;farubaba&lt;/font&gt; 和 &lt;font color=&quot;red&quot;&gt;123456&lt;/font&gt; 可登录成功!登录成功后，JSON String User 和 Object User其中之一会有值)</span><br><span class="line">	    &lt;s:form action=&quot;login&quot;&gt;</span><br><span class="line">		 	&lt;s:textfield name=&quot;userName&quot; label=&quot;Your name&quot; /&gt;</span><br><span class="line">		 	&lt;s:textfield name=&quot;password&quot; label=&quot;Your password&quot; /&gt;</span><br><span class="line">		 	&lt;s:submit value=&quot;登录&quot; cssClass=&quot;button&quot; /&gt;</span><br><span class="line">		&lt;/s:form&gt;</span><br><span class="line">    	&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;p&gt;&lt;p&gt;&lt;p&gt;&lt;s:include value=&quot;../../road-map.jsp&quot;&gt;&lt;/s:include&gt;</span><br><span class="line">   </span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>编写服务端Action、Service、Dao，完整的代码已上传至github <a href="https://github.com/Farubaba/mobile-server.git" target="_blank" rel="noopener">mobile-server</a></li>
-</ol>
-<h3 id="十二、jetty配置https支持"><a href="#十二、jetty配置https支持" class="headerlink" title="十二、jetty配置https支持"></a>十二、jetty配置https支持</h3><p><a href="http://www.eclipse.org/jetty/documentation/current/configuring-connectors.html" target="_blank" rel="noopener">jetty-config-connectors</a></p>
-<p><a href="http://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html" target="_blank" rel="noopener">configuring-jetty-maven-plugin</a></p>
-
+<h3 id="十二、服务器端编程细节摘要"><a href="#十二、服务器端编程细节摘要" class="headerlink" title="十二、服务器端编程细节摘要"></a>十二、服务器端编程细节摘要</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>解决方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>读取request中postbody</td>
+<td>1.使用request.getInputStream()</td>
+</tr>
+<tr>
+<td>struts action中读写文件</td>
+<td>1.获得文件路径：String path = ServletActionContext.getServletContext().getRealPath(“/resources/files/test.md”);<br>生成绝对路径如：/environment/git-repo/mobile-server/src/main/webapp/resources/files/test.md</td>
+</tr>
+</tbody>
+</table>
+<h3 id="十三、编写服务端Action、Service、Dao，完整的代码已上传至github-mobile-server"><a href="#十三、编写服务端Action、Service、Dao，完整的代码已上传至github-mobile-server" class="headerlink" title="十三、编写服务端Action、Service、Dao，完整的代码已上传至github mobile-server"></a>十三、编写服务端Action、Service、Dao，完整的代码已上传至github <a href="https://github.com/Farubaba/mobile-server.git" target="_blank" rel="noopener">mobile-server</a></h3>
   </div>
 </article>
 
@@ -261,28 +270,26 @@
           <li><a href="/archives/">Writing</a></li>
          
           <li><a href="http://github.com/farubaba">Projects</a></li>
-         
-          <li><a href="/about/">About</a></li>
         
       </ul>
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、参考文档及源码下载"><span class="toc-number">1.</span> <span class="toc-text">一、参考文档及源码下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、maven-webapp目录结构"><span class="toc-number">2.</span> <span class="toc-text">二、maven webapp目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、Eclipse中使用maven-archetype-webapp创建maven-web项目"><span class="toc-number">3.</span> <span class="toc-text">三、Eclipse中使用maven-archetype-webapp创建maven web项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、定义webapp的contextPath"><span class="toc-number">4.</span> <span class="toc-text">四、定义webapp的contextPath</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、添加Servlet支持"><span class="toc-number">5.</span> <span class="toc-text">五、添加Servlet支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、修改index-jsp"><span class="toc-number">6.</span> <span class="toc-text">六、修改index.jsp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七、添加Jetty-maven-plugin"><span class="toc-number">7.</span> <span class="toc-text">七、添加Jetty maven plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#八、添加Struts2和Log4j支持"><span class="toc-number">8.</span> <span class="toc-text">八、添加Struts2和Log4j支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#九、添加gson支持"><span class="toc-number">9.</span> <span class="toc-text">九、添加gson支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十、根据maven-webapp目录结构，补全必要的目录"><span class="toc-number">10.</span> <span class="toc-text">十、根据maven webapp目录结构，补全必要的目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十一、编写login-jsp、LoginAction、LoginService、LoginDao并配置"><span class="toc-number">11.</span> <span class="toc-text">十一、编写login.jsp、LoginAction、LoginService、LoginDao并配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十二、jetty配置https支持"><span class="toc-number">12.</span> <span class="toc-text">十二、jetty配置https支持</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、参考文档及源码下载"><span class="toc-number">1.</span> <span class="toc-text">一、参考文档及源码下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、maven-webapp目录结构"><span class="toc-number">2.</span> <span class="toc-text">二、maven webapp目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、Eclipse中使用maven-archetype-webapp创建maven-web项目"><span class="toc-number">3.</span> <span class="toc-text">三、Eclipse中使用maven-archetype-webapp创建maven web项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、定义webapp的contextPath"><span class="toc-number">4.</span> <span class="toc-text">四、定义webapp的contextPath</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、添加Servlet支持"><span class="toc-number">5.</span> <span class="toc-text">五、添加Servlet支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、修改index-jsp"><span class="toc-number">6.</span> <span class="toc-text">六、修改index.jsp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七、添加Jetty-maven-plugin"><span class="toc-number">7.</span> <span class="toc-text">七、添加Jetty maven plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#八、添加Struts2和Log4j支持"><span class="toc-number">8.</span> <span class="toc-text">八、添加Struts2和Log4j支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#九、添加gson支持"><span class="toc-number">9.</span> <span class="toc-text">九、添加gson支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十、根据maven-webapp目录结构，补全必要的目录"><span class="toc-number">10.</span> <span class="toc-text">十、根据maven webapp目录结构，补全必要的目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十一、编写login-jsp、LoginAction、LoginService、LoginDao并配置"><span class="toc-number">11.</span> <span class="toc-text">十一、编写login.jsp、LoginAction、LoginService、LoginDao并配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十二、服务器端编程细节摘要"><span class="toc-number">12.</span> <span class="toc-text">十二、服务器端编程细节摘要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十三、编写服务端Action、Service、Dao，完整的代码已上传至github-mobile-server"><span class="toc-number">13.</span> <span class="toc-text">十三、编写服务端Action、Service、Dao，完整的代码已上传至github mobile-server</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&text=myeclipse、maven、struts2、Jetty创建server项目，为以后的学习提供后台服务。"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&title=myeclipse、maven、struts2、Jetty创建server项目，为以后的学习提供后台服务。"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&is_video=false&description=myeclipse、maven、struts2、Jetty创建server项目，为以后的学习提供后台服务。"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=myeclipse、maven、struts2、Jetty创建server项目，为以后的学习提供后台服务。&body=Check out this article: http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&title=myeclipse、maven、struts2、Jetty创建server项目，为以后的学习提供后台服务。"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&title=myeclipse、maven、struts2、Jetty创建server项目，为以后的学习提供后台服务。"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&title=myeclipse、maven、struts2、Jetty创建server项目，为以后的学习提供后台服务。"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&title=myeclipse、maven、struts2、Jetty创建server项目，为以后的学习提供后台服务。"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&name=myeclipse、maven、struts2、Jetty创建server项目，为以后的学习提供后台服务。&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&text=myeclipse、maven、struts2、Jetty创建mobile-server项目，为移动端开发提供后台服务。"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&title=myeclipse、maven、struts2、Jetty创建mobile-server项目，为移动端开发提供后台服务。"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&is_video=false&description=myeclipse、maven、struts2、Jetty创建mobile-server项目，为移动端开发提供后台服务。"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=myeclipse、maven、struts2、Jetty创建mobile-server项目，为移动端开发提供后台服务。&body=Check out this article: http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&title=myeclipse、maven、struts2、Jetty创建mobile-server项目，为移动端开发提供后台服务。"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&title=myeclipse、maven、struts2、Jetty创建mobile-server项目，为移动端开发提供后台服务。"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&title=myeclipse、maven、struts2、Jetty创建mobile-server项目，为移动端开发提供后台服务。"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&title=myeclipse、maven、struts2、Jetty创建mobile-server项目，为移动端开发提供后台服务。"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/08/04/myeclipse、maven、struts2创建server项目/&name=myeclipse、maven、struts2、Jetty创建mobile-server项目，为移动端开发提供后台服务。&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -311,8 +318,6 @@
           <li><a href="/archives/">Writing</a></li>
          
           <li><a href="http://github.com/farubaba">Projects</a></li>
-         
-          <li><a href="/about/">About</a></li>
         
       </ul>
     </nav>
