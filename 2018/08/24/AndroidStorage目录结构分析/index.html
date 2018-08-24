@@ -6,14 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="概要本文主要对比Android 4.1、4.2 和 Android 6.0三个版本中系统storage路径差异和storage API使用差异。 4.1 版本没有加入多用户系统。 4.2 版本加入了多用户系统。 6.0 版本也和4.2版本相同。 一、Android系统目录结构      二、Android4.2之前存储目录结构      三、Android4.2之后支持多用户的存储路径图">
+    <meta name="description" content="概要本文主要对比Android 4.1、4.2 和 Android 6.0三个版本中系统storage路径差异和storage API使用差异。 4.1 版本没有加入多用户系统。 4.2 版本加入了多用户系统。 6.0 版本也和4.2版本相同。       一、Android系统目录结构      二、Android4.2之前存储目录结构      三、Android4.2之后支持多用户的存储路径">
 <meta name="keywords" content="interanl storage,external storage,data,system,多用户">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android Storage目录结构及API分析">
 <meta property="og:url" content="http://yoursite.com/2018/08/24/AndroidStorage目录结构分析/index.html">
 <meta property="og:site_name" content="Farubaba">
-<meta property="og:description" content="概要本文主要对比Android 4.1、4.2 和 Android 6.0三个版本中系统storage路径差异和storage API使用差异。 4.1 版本没有加入多用户系统。 4.2 版本加入了多用户系统。 6.0 版本也和4.2版本相同。 一、Android系统目录结构      二、Android4.2之前存储目录结构      三、Android4.2之后支持多用户的存储路径图">
+<meta property="og:description" content="概要本文主要对比Android 4.1、4.2 和 Android 6.0三个版本中系统storage路径差异和storage API使用差异。 4.1 版本没有加入多用户系统。 4.2 版本加入了多用户系统。 6.0 版本也和4.2版本相同。       一、Android系统目录结构      二、Android4.2之前存储目录结构      三、Android4.2之后支持多用户的存储路径">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/0、Android6.0系统文件目录结构.png">
 <meta property="og:image" content="http://yoursite.com/images/1、android存储目录结构.jpeg">
 <meta property="og:image" content="http://yoursite.com/images/2、android4.2之前存储目录结构.png">
 <meta property="og:image" content="http://yoursite.com/images/3、android4.2支持多用户的存储路径图.png">
@@ -23,11 +24,11 @@
 <meta property="og:image" content="http://yoursite.com/images/7、android-mnt目录.png">
 <meta property="og:image" content="http://yoursite.com/images/8、android不同版本sdcard软链接.png">
 <meta property="og:image" content="http://yoursite.com/images/9、android-storage映射路径图.png">
-<meta property="og:updated_time" content="2018-08-24T08:28:12.585Z">
+<meta property="og:updated_time" content="2018-08-24T08:41:42.736Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android Storage目录结构及API分析">
-<meta name="twitter:description" content="概要本文主要对比Android 4.1、4.2 和 Android 6.0三个版本中系统storage路径差异和storage API使用差异。 4.1 版本没有加入多用户系统。 4.2 版本加入了多用户系统。 6.0 版本也和4.2版本相同。 一、Android系统目录结构      二、Android4.2之前存储目录结构      三、Android4.2之后支持多用户的存储路径图">
-<meta name="twitter:image" content="http://yoursite.com/images/1、android存储目录结构.jpeg">
+<meta name="twitter:description" content="概要本文主要对比Android 4.1、4.2 和 Android 6.0三个版本中系统storage路径差异和storage API使用差异。 4.1 版本没有加入多用户系统。 4.2 版本加入了多用户系统。 6.0 版本也和4.2版本相同。       一、Android系统目录结构      二、Android4.2之前存储目录结构      三、Android4.2之后支持多用户的存储路径">
+<meta name="twitter:image" content="http://yoursite.com/images/0、Android6.0系统文件目录结构.png">
     
     
         
@@ -180,7 +181,9 @@
 <pre><code>4.1 版本没有加入多用户系统。
 4.2 版本加入了多用户系统。
 6.0 版本也和4.2版本相同。
-</code></pre><h3 id="一、Android系统目录结构"><a href="#一、Android系统目录结构" class="headerlink" title="一、Android系统目录结构"></a>一、Android系统目录结构</h3><div align="center"><br>    <img src="/images/1、android存储目录结构.jpeg" width="90%"><br></div>
+</code></pre><div align="center"><br>    <img src="/images/0、Android6.0系统文件目录结构.png" width="90%"><br></div>
+
+<h3 id="一、Android系统目录结构"><a href="#一、Android系统目录结构" class="headerlink" title="一、Android系统目录结构"></a>一、Android系统目录结构</h3><div align="center"><br>    <img src="/images/1、android存储目录结构.jpeg" width="90%"><br></div>
 
 <h3 id="二、Android4-2之前存储目录结构"><a href="#二、Android4-2之前存储目录结构" class="headerlink" title="二、Android4.2之前存储目录结构"></a>二、Android4.2之前存储目录结构</h3><div align="center"><br>    <img src="/images/2、android4.2之前存储目录结构.png" width="90%"><br></div>
 
