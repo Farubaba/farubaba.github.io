@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="参考信息 快速理解Http及Https相关基础信息在Java中的相关术语：Apache Http Client Tutorial 为什么Android中证书不能使用JKS，而只能使用BKS 和 android-trusting-ssl-certificates Android使用BKS证书详细说明 Android下Https使用自定义证书 Android Developer: android-se">
+<meta name="keywords" content="SSL&#x2F;TLS,Cipher Suites,对称加密,非对称加密,随机数,证书,Certificate,pre Master Secret,Master Secret,会话秘钥,CA,Public key,Private key">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTPS及SSL&#x2F;TLS概述">
+<meta property="og:url" content="http://yoursite.com/2018/09/03/HTTPS及SSL:TSL概述/index.html">
+<meta property="og:site_name" content="Farubaba">
+<meta property="og:description" content="参考信息 快速理解Http及Https相关基础信息在Java中的相关术语：Apache Http Client Tutorial 为什么Android中证书不能使用JKS，而只能使用BKS 和 android-trusting-ssl-certificates Android使用BKS证书详细说明 Android下Https使用自定义证书 Android Developer: android-se">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/10、SSL_TSL通信模型概要.png">
+<meta property="og:image" content="http://yoursite.com/images/11、SSL_TSL通信模型时序图.png">
+<meta property="og:image" content="http://yoursite.com/images/12、javax.net.ssl.HttpsUrlConnection方法分析.png">
+<meta property="og:image" content="http://yoursite.com/images/13、javax.net.ssl.SSLSocket分析.png">
+<meta property="og:updated_time" content="2018-09-03T16:20:08.721Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTTPS及SSL&#x2F;TLS概述">
+<meta name="twitter:description" content="参考信息 快速理解Http及Https相关基础信息在Java中的相关术语：Apache Http Client Tutorial 为什么Android中证书不能使用JKS，而只能使用BKS 和 android-trusting-ssl-certificates Android使用BKS证书详细说明 Android下Https使用自定义证书 Android Developer: android-se">
+<meta name="twitter:image" content="http://yoursite.com/images/10、SSL_TSL通信模型概要.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>HTTPS及SSL/TLS概述</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/farubaba">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2018/08/24/AndroidStorage目录结构分析/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/09/03/HTTPS及SSL:TSL概述/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/09/03/HTTPS及SSL:TSL概述/&text=HTTPS及SSL/TLS概述"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/09/03/HTTPS及SSL:TSL概述/&title=HTTPS及SSL/TLS概述"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/09/03/HTTPS及SSL:TSL概述/&is_video=false&description=HTTPS及SSL/TLS概述"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=HTTPS及SSL/TLS概述&body=Check out this article: http://yoursite.com/2018/09/03/HTTPS及SSL:TSL概述/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/09/03/HTTPS及SSL:TSL概述/&title=HTTPS及SSL/TLS概述"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/09/03/HTTPS及SSL:TSL概述/&title=HTTPS及SSL/TLS概述"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/09/03/HTTPS及SSL:TSL概述/&title=HTTPS及SSL/TLS概述"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/09/03/HTTPS及SSL:TSL概述/&title=HTTPS及SSL/TLS概述"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/09/03/HTTPS及SSL:TSL概述/&name=HTTPS及SSL/TLS概述&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#参考信息"><span class="toc-number">1.</span> <span class="toc-text">参考信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一、SSL-TLS通信模型概要"><span class="toc-number">2.</span> <span class="toc-text">一、SSL/TLS通信模型概要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、SSL-TLS通信模型时序图简要说明"><span class="toc-number">3.</span> <span class="toc-text">二、SSL/TLS通信模型时序图简要说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、javax-net-ssl-HttpsURLConnection分析"><span class="toc-number">4.</span> <span class="toc-text">三、javax.net.ssl.HttpsURLConnection分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、javax-net-ssl-SSLSocket分析"><span class="toc-number">5.</span> <span class="toc-text">四、javax.net.ssl.SSLSocket分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、相关知识"><span class="toc-number">6.</span> <span class="toc-text">五、相关知识</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <header id="header">
+  <a href="/">
+  
+    
+      <div id="logo" style="background-image: url(/images/logo.png);"></div>
+    
+  
+    <div id="title">
+      <h1>Farubaba</h1>
+    </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#"><i class="fas fa-bars fa-2x"></i></a>
+      </li>
+       
+        <li><a href="/">Home</a></li>
+       
+        <li><a href="/archives/">Writing</a></li>
+       
+        <li><a href="http://github.com/farubaba">Projects</a></li>
+      
+    </ul>
+  </div>
+</header>
+
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        HTTPS及SSL/TLS概述
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Farubaba</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-09-03T09:30:28.000Z" itemprop="datePublished">2018-09-03</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/CA/">CA</a>, <a class="tag-link" href="/tags/Certificate/">Certificate</a>, <a class="tag-link" href="/tags/Cipher-Suites/">Cipher Suites</a>, <a class="tag-link" href="/tags/Master-Secret/">Master Secret</a>, <a class="tag-link" href="/tags/Private-key/">Private key</a>, <a class="tag-link" href="/tags/Public-key/">Public key</a>, <a class="tag-link" href="/tags/SSL-TLS/">SSL/TLS</a>, <a class="tag-link" href="/tags/pre-Master-Secret/">pre Master Secret</a>, <a class="tag-link" href="/tags/会话秘钥/">会话秘钥</a>, <a class="tag-link" href="/tags/对称加密/">对称加密</a>, <a class="tag-link" href="/tags/证书/">证书</a>, <a class="tag-link" href="/tags/随机数/">随机数</a>, <a class="tag-link" href="/tags/非对称加密/">非对称加密</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h3 id="参考信息"><a href="#参考信息" class="headerlink" title="参考信息"></a>参考信息</h3><ol>
+<li>快速理解Http及Https相关基础信息在Java中的相关术语：<a href="http://hc.apache.org/httpcomponents-client-4.5.x/tutorial/html/index.html" target="_blank" rel="noopener">Apache Http Client Tutorial</a></li>
+<li><a href="https://stackoverflow.com/questions/11117486/wrong-version-of-keystore-on-android-call" target="_blank" rel="noopener">为什么Android中证书不能使用JKS，而只能使用BKS</a> 和 <a href="http://blog.crazybob.org/2010/02/android-trusting-ssl-certificates.html" target="_blank" rel="noopener">android-trusting-ssl-certificates</a></li>
+<li><a href="http://nelenkov.blogspot.com/2011/12/using-custom-certificate-trust-store-on.html" target="_blank" rel="noopener">Android使用BKS证书详细说明</a></li>
+<li><a href="https://blog.csdn.net/raptor/article/details/18898937" target="_blank" rel="noopener">Android下Https使用自定义证书</a></li>
+<li><b><a href="https://developer.android.com/training/articles/security-ssl" target="_blank" rel="noopener">Android Developer: android-security-ssl Best Practice</a></b></li>
+<li><p>JDK中相关的package</p>
+<blockquote>
+<p>java.net<br> javax.net<br> javax.net.ssl<br> javax.security<br> javax.security.cert</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="一、SSL-TLS通信模型概要"><a href="#一、SSL-TLS通信模型概要" class="headerlink" title="一、SSL/TLS通信模型概要"></a>一、SSL/TLS通信模型概要</h3><div align="center"><br>    <img src="/images/10、SSL_TSL通信模型概要.png" width="90%"><br></div>
+
+<h3 id="二、SSL-TLS通信模型时序图简要说明"><a href="#二、SSL-TLS通信模型时序图简要说明" class="headerlink" title="二、SSL/TLS通信模型时序图简要说明"></a>二、SSL/TLS通信模型时序图简要说明</h3><div align="center"><br>    <img src="/images/11、SSL_TSL通信模型时序图.png" width="90%"><br></div>
+
+<h3 id="三、javax-net-ssl-HttpsURLConnection分析"><a href="#三、javax-net-ssl-HttpsURLConnection分析" class="headerlink" title="三、javax.net.ssl.HttpsURLConnection分析"></a>三、javax.net.ssl.HttpsURLConnection分析</h3><div align="center"><br>    <img src="/images/12、javax.net.ssl.HttpsUrlConnection方法分析.png" width="90%"><br></div>
+
+<p>构成HttpsURLConnection的关键对象有：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSLSocketFactory</td>
+<td>创建SSLSocket对象，用于建立SSLSocket连接</td>
+<td></td>
+</tr>
+<tr>
+<td>CipherSuite</td>
+<td>密码套件，用于https协议握手，传输过程中的加解密套件。“密码套件”是给定的 SSL 连接所使用的加密算法组合，在协商过程中，两个端点必须对可用于双方环境的密码套件达成一致。如果不存在这种公共的套件，就不能建立 SSL 连接，也不能交换数据。</td>
+<td></td>
+</tr>
+<tr>
+<td>HostnameVerifier</td>
+<td>javax.net.ssl.HostnameVerifier <br>此类是用于主机名验证的基接口。在握手期间，如果 URL 的主机名和服务器的标识主机名不匹配，则验证机制可以回调此接口的实现程序来确定是否应该允许此连接。<br><b>策略可以是基于证书的或依赖于其他验证方案。</b><br>当验证 URL 主机名使用的默认规则失败时使用这些回调</td>
+<td></td>
+</tr>
+<tr>
+<td>Certificate</td>
+<td>类java.security.cert.Certificate<br>管理各种身份证书的抽象类，身份证书是一个主体与由另一个主体所担保的公钥之间的绑定关系。（一个主体表示一种实体，如个体用户、一个用户组或一家公司）。此类是具有不同格式但是很常用的证书的抽象。例如，不同的证书类型（如 X.509 和 PGP）共享通用的证书功能（如编码和验证）和某些信息类型（如公钥）。<br>虽然 X.509、PGP 和 SDSI 证书包含不同的信息集，并且它们以不同的方式存储和获取信息，但都可以通过继承 Certificate 类来实现它们</td>
+<td></td>
+</tr>
+<tr>
+<td>Certificate[]</td>
+<td>证书链，包括服务器证书链和客户端证书链</td>
+<td></td>
+</tr>
+<tr>
+<td>Principal</td>
+<td>证书实体，及证书拥有者和签发者。能代表多个实体:<br>1）证书拥有者 getSubjectX500Principal()<br>2）证书签发者 getIssuerX500Principal()<br>参考：java.security.cert.X509Certificate中上述方法描述</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h3 id="四、javax-net-ssl-SSLSocket分析"><a href="#四、javax-net-ssl-SSLSocket分析" class="headerlink" title="四、javax.net.ssl.SSLSocket分析"></a>四、javax.net.ssl.SSLSocket分析</h3><div align="center"><br>    <img src="/images/13、javax.net.ssl.SSLSocket分析.png" width="90%"><br></div>
+
+<p>构建SSLSocket类的关键对象如下：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSLContext</td>
+<td>此类的实例表示安全套接字协议的实现，它充当用于安全套接字工厂(SSLSocketFactory)或 SSLEngine 的工厂。用可选的一组密钥和信任管理器及安全随机字节源初始化此类。</td>
+<td></td>
+</tr>
+<tr>
+<td>SSLSocket</td>
+<td></td>
+<td>无</td>
+</tr>
+<tr>
+<td>SSLSession</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SSLParameters</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="五、相关知识"><a href="#五、相关知识" class="headerlink" title="五、相关知识"></a>五、相关知识</h3><table>
+<thead>
+<tr>
+<th>术语</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSL/TLS</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Cipher Suite</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>对称加密</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>非对称加密</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>BouncyCastle</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Certificate</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CA</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>crt</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>cer</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>bks证书</td>
+<td>android 平台支持bks格式证书文件</td>
+<td>生成bks文件命令：<br> keytool -importcert -v -trustcacerts -alias certfarubaba -file server.crt -keystore farubaba.bks -storetype BKS -providerclass org.bouncycastle.jce.provider.BouncyCastleProvider -providerpath ./bcprov-jdk15on-146.jar -storepass 123456 其中server.crt是原格式证书 farubaba.bks是目标生成证书 123456是bks格式文件证书密码</td>
+</tr>
+<tr>
+<td>Keystore</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>TrustStore</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>keytool</td>
+<td><a href="https://www.ibm.com/developerworks/cn/java/j-lo-socketkeytool/index.html?ca=drs" target="_blank" rel="noopener">Java 安全套接字编程以及 keytool 使用最佳实践</a></td>
+<td></td>
+</tr>
+<tr>
+<td>openssl</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>主密钥</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>会话秘钥</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>HostnameVerify</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SSLSocketFactory</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>X.509</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>TrustManger</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/farubaba">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#参考信息"><span class="toc-number">1.</span> <span class="toc-text">参考信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一、SSL-TLS通信模型概要"><span class="toc-number">2.</span> <span class="toc-text">一、SSL/TLS通信模型概要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、SSL-TLS通信模型时序图简要说明"><span class="toc-number">3.</span> <span class="toc-text">二、SSL/TLS通信模型时序图简要说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、javax-net-ssl-HttpsURLConnection分析"><span class="toc-number">4.</span> <span class="toc-text">三、javax.net.ssl.HttpsURLConnection分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、javax-net-ssl-SSLSocket分析"><span class="toc-number">5.</span> <span class="toc-text">四、javax.net.ssl.SSLSocket分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、相关知识"><span class="toc-number">6.</span> <span class="toc-text">五、相关知识</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/09/03/HTTPS及SSL:TSL概述/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/09/03/HTTPS及SSL:TSL概述/&text=HTTPS及SSL/TLS概述"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/09/03/HTTPS及SSL:TSL概述/&title=HTTPS及SSL/TLS概述"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/09/03/HTTPS及SSL:TSL概述/&is_video=false&description=HTTPS及SSL/TLS概述"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=HTTPS及SSL/TLS概述&body=Check out this article: http://yoursite.com/2018/09/03/HTTPS及SSL:TSL概述/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/09/03/HTTPS及SSL:TSL概述/&title=HTTPS及SSL/TLS概述"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/09/03/HTTPS及SSL:TSL概述/&title=HTTPS及SSL/TLS概述"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/09/03/HTTPS及SSL:TSL概述/&title=HTTPS及SSL/TLS概述"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/09/03/HTTPS及SSL:TSL概述/&title=HTTPS及SSL/TLS概述"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/09/03/HTTPS及SSL:TSL概述/&name=HTTPS及SSL/TLS概述&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Farubaba
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/farubaba">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
