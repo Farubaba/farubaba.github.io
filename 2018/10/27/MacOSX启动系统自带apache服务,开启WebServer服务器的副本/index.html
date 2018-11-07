@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="一、进制语法所有进制中，前缀中的0都是数字“0”，而不是字母“O”。    名称 前缀 示例 加法示例 描述     二进制 0b 0b10 = 2 0b10 + 010 = 10  0b10 + 10 = 12  0b10 + 0xa5 = 167    八进制 0 010 = 8 010 + 10 = 18    十进制 无 10 = 10 10 +  10 = 20    十六进制 0x 0">
+    <meta name="description" content="一、进制语法 所有进制中，前缀中的0都是数字“0”，而不是字母“O”。    名称 前缀 示例 加法示例 描述     二进制 0b 0b10 = 2 0b10 + 010 = 10 &amp;lt;br&amp;gt; 0b10 + 10 = 12 &amp;lt;br&amp;gt; 0b10 + 0xa5 = 167    八进制 0 010 = 8 010 + 10 = 18    十进制 无 10 = 10 10 +">
 <meta name="keywords" content="逻辑运算,进制转换">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java中的进制表示、进制转换、逻辑运算以及位运算符">
 <meta property="og:url" content="http://yoursite.com/2018/10/27/MacOSX启动系统自带apache服务,开启WebServer服务器的副本/index.html">
 <meta property="og:site_name" content="Farubaba">
-<meta property="og:description" content="一、进制语法所有进制中，前缀中的0都是数字“0”，而不是字母“O”。    名称 前缀 示例 加法示例 描述     二进制 0b 0b10 = 2 0b10 + 010 = 10  0b10 + 10 = 12  0b10 + 0xa5 = 167    八进制 0 010 = 8 010 + 10 = 18    十进制 无 10 = 10 10 +  10 = 20    十六进制 0x 0">
+<meta property="og:description" content="一、进制语法 所有进制中，前缀中的0都是数字“0”，而不是字母“O”。    名称 前缀 示例 加法示例 描述     二进制 0b 0b10 = 2 0b10 + 010 = 10 &amp;lt;br&amp;gt; 0b10 + 10 = 12 &amp;lt;br&amp;gt; 0b10 + 0xa5 = 167    八进制 0 010 = 8 010 + 10 = 18    十进制 无 10 = 10 10 +">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-10-27T15:15:37.625Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java中的进制表示、进制转换、逻辑运算以及位运算符">
-<meta name="twitter:description" content="一、进制语法所有进制中，前缀中的0都是数字“0”，而不是字母“O”。    名称 前缀 示例 加法示例 描述     二进制 0b 0b10 = 2 0b10 + 010 = 10  0b10 + 10 = 12  0b10 + 0xa5 = 167    八进制 0 010 = 8 010 + 10 = 18    十进制 无 10 = 10 10 +  10 = 20    十六进制 0x 0">
+<meta name="twitter:description" content="一、进制语法 所有进制中，前缀中的0都是数字“0”，而不是字母“O”。    名称 前缀 示例 加法示例 描述     二进制 0b 0b10 = 2 0b10 + 010 = 10 &amp;lt;br&amp;gt; 0b10 + 10 = 12 &amp;lt;br&amp;gt; 0b10 + 0xa5 = 167    八进制 0 010 = 8 010 + 10 = 18    十进制 无 10 = 10 10 +">
     
     
         
@@ -101,7 +101,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、进制语法"><span class="toc-number">1.</span> <span class="toc-text">一、进制语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、位运算"><span class="toc-number">2.</span> <span class="toc-text">二、位运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、移位运算符"><span class="toc-number">3.</span> <span class="toc-text">三、移位运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、逻辑运算符"><span class="toc-number">4.</span> <span class="toc-text">四、逻辑运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">5.</span> <span class="toc-text">参考</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、进制语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、位运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">三、移位运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">四、逻辑运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">参考</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -168,7 +168,8 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h3 id="一、进制语法"><a href="#一、进制语法" class="headerlink" title="一、进制语法"></a>一、进制语法</h3><p>所有进制中，前缀中的0都是数字“0”，而不是字母“O”。</p>
+    <h3>一、进制语法</h3>
+<p>所有进制中，前缀中的0都是数字“0”，而不是字母“O”。</p>
 <table>
 <thead>
 <tr>
@@ -184,7 +185,7 @@
 <td>二进制</td>
 <td>0b</td>
 <td>0b10 = 2</td>
-<td>0b10 + 010 = 10 <br> 0b10 + 10 = 12 <br> 0b10 + 0xa5 = 167</td>
+<td>0b10 + 010 = 10 &lt;br&gt; 0b10 + 10 = 12 &lt;br&gt; 0b10 + 0xa5 = 167</td>
 <td></td>
 </tr>
 <tr>
@@ -206,10 +207,12 @@
 <td>0x</td>
 <td>0xa5 = 165</td>
 <td>0xa5 + 10 = 175</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<h3 id="二、位运算"><a href="#二、位运算" class="headerlink" title="二、位运算"></a>二、位运算</h3><table>
+<h3>二、位运算</h3>
+<table>
 <thead>
 <tr>
 <th>名称</th>
@@ -224,34 +227,28 @@
 <td>短路与</td>
 <td>&amp;&amp;</td>
 <td>有0出0，全1出1</td>
-<td>1010 <b>&amp;&amp;</b> 1001 = 1000</td>
+<td>1010 &lt;b&gt;&amp;&amp;&lt;/b&gt; 1001 = 1000</td>
 <td></td>
 </tr>
 <tr>
 <td>非短路与</td>
 <td>&amp;</td>
 <td>有0出0，全1出1</td>
-<td>1010 <b>&amp;</b> 1001 = 1000</td>
+<td>1010 &lt;b&gt;&amp;&lt;/b&gt; 1001 = 1000</td>
 <td></td>
 </tr>
 <tr>
 <td>短路或</td>
-<td>\</td>
-<td>\</td>
-<td></td>
+<td>||</td>
 <td>有1出1，全0出0</td>
-<td>1010 <b>\</b></td>
-<td>\</td>
-<td> 1001 = 1011</td>
+<td>1010 &lt;b&gt;||&lt;/b&gt; 1001 = 1011</td>
 <td></td>
 </tr>
 <tr>
 <td>非短路或</td>
-<td>\</td>
-<td></td>
+<td>|</td>
 <td>有1出1，全0出0</td>
-<td>1010 <b>\</b></td>
-<td> 1001 = 1011</td>
+<td>1010 &lt;b&gt;|&lt;/b&gt; 1001 = 1011</td>
 <td></td>
 </tr>
 <tr>
@@ -266,10 +263,12 @@
 <td>^</td>
 <td>相同得0，相异得1</td>
 <td>1010 ^ 0110 = 1100</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<h3 id="三、移位运算符"><a href="#三、移位运算符" class="headerlink" title="三、移位运算符"></a>三、移位运算符</h3><table>
+<h3>三、移位运算符</h3>
+<table>
 <thead>
 <tr>
 <th>名称</th>
@@ -283,26 +282,28 @@
 <tr>
 <td>左移</td>
 <td>&lt;&lt;</td>
-<td>左移运算是将一个二进制位的操作数按指定移动的位数向左移位，移出位被丢弃，右边的空位一律补0<br><br>num &lt;&lt; 1,相当于num乘以2</td>
-<td>正数：0000000100010001 &lt;&lt; 3 = 0000100010001000<br> 负数（-4）： 1111111111111100 &lt;&lt; 3 = 1111111111100000</td>
+<td>左移运算是将一个二进制位的操作数按指定移动的位数向左移位，移出位被丢弃，右边的空位一律补0&lt;br&gt;&lt;br&gt;num &lt;&lt; 1,相当于num乘以2</td>
+<td>正数：0000000100010001 &lt;&lt; 3 = 0000100010001000&lt;br&gt; 负数（-4）： 1111111111111100 &lt;&lt; 3 = 1111111111100000</td>
 <td></td>
 </tr>
 <tr>
 <td>右移</td>
 <td>&gt;&gt;</td>
-<td>右移运算是将一个二进制位的操作数按指定移动的位数向右移动，移出位被丢弃，左边移出的空位或者一律补0，或者补符号位，这由不同的机器而定.<br><br><b>通常：右移对于无符号类型强制补0，对于有符号类型续补符号位</b><br><br>num &gt;&gt; 1,相当于num除以2</td>
-<td>正数：0000000100010001 &gt;&gt; 4 = 0000000000010001<br>负数：1111111111111100 &gt;&gt; 4 = 1111111111111111</td>
+<td>右移运算是将一个二进制位的操作数按指定移动的位数向右移动，移出位被丢弃，左边移出的空位或者一律补0，或者补符号位，这由不同的机器而定.&lt;br&gt;&lt;br&gt;&lt;b&gt;通常：右移对于无符号类型强制补0，对于有符号类型续补符号位&lt;/b&gt;&lt;br&gt;&lt;br&gt;num &gt;&gt; 1,相当于num除以2</td>
+<td>正数：0000000100010001 &gt;&gt; 4 = 0000000000010001&lt;br&gt;负数：1111111111111100 &gt;&gt; 4 = 1111111111111111</td>
 <td></td>
 </tr>
 <tr>
 <td>无符号右移</td>
 <td>&gt;&gt;&gt;</td>
 <td>忽略符号位，空位都以0补齐</td>
-<td>正数：0000000100010001 &gt;&gt;&gt; 4 = 0000000000010001<br>负数：1111111111111100 &gt;&gt;&gt; 4 = 0000111111111111</td>
+<td>正数：0000000100010001 &gt;&gt;&gt; 4 = 0000000000010001&lt;br&gt;负数：1111111111111100 &gt;&gt;&gt; 4 = 0000111111111111</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<h3 id="四、逻辑运算符"><a href="#四、逻辑运算符" class="headerlink" title="四、逻辑运算符"></a>四、逻辑运算符</h3><table>
+<h3>四、逻辑运算符</h3>
+<table>
 <thead>
 <tr>
 <th>名称</th>
@@ -317,40 +318,34 @@
 <td>逻辑与</td>
 <td>&amp;&amp;</td>
 <td>有false得false，全true得true</td>
-<td>true &amp;&amp; true = true<br> true &amp;&amp; false = false <br> false &amp;&amp; false = false</td>
+<td>true &amp;&amp; true = true&lt;br&gt; true &amp;&amp; false = false &lt;br&gt; false &amp;&amp; false = false</td>
 <td></td>
 </tr>
 <tr>
 <td>逻辑或</td>
-<td>\</td>
-<td>\</td>
-<td></td>
+<td>||</td>
 <td>有true得true，全false得false</td>
-<td>true \</td>
-<td>\</td>
-<td>true =  true <br> false \</td>
-<td>\</td>
-<td>true = true<br> false \</td>
-<td>\</td>
-<td>false = false</td>
+<td>true || true =  true &lt;br&gt; false || true = true&lt;br&gt; false || false = false</td>
 <td></td>
 </tr>
 <tr>
 <td>逻辑非</td>
 <td>!</td>
 <td>true得false，false得true</td>
-<td>!true = false<br> !false = true</td>
+<td>!true = false&lt;br&gt; !false = true</td>
 <td></td>
 </tr>
 <tr>
 <td>逻辑异或</td>
 <td>^</td>
 <td>相同得false，不同得true</td>
-<td>true ^ true = false<br>true ^ false = true</td>
+<td>true ^ true = false&lt;br&gt;true ^ false = true</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://blog.csdn.net/langzi7758521/article/details/51853298" target="_blank" rel="noopener">java中无符号类型的解决方案</a></p>
+<h3>参考</h3>
+<p><a href="https://blog.csdn.net/langzi7758521/article/details/51853298" target="_blank" rel="noopener">java中无符号类型的解决方案</a></p>
 
   </div>
 </article>
@@ -381,7 +376,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、进制语法"><span class="toc-number">1.</span> <span class="toc-text">一、进制语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、位运算"><span class="toc-number">2.</span> <span class="toc-text">二、位运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、移位运算符"><span class="toc-number">3.</span> <span class="toc-text">三、移位运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、逻辑运算符"><span class="toc-number">4.</span> <span class="toc-text">四、逻辑运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">5.</span> <span class="toc-text">参考</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、进制语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、位运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">三、移位运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">四、逻辑运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">参考</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

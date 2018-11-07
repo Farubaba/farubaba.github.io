@@ -6,24 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="推荐：minSDKVersion=17  推荐：提供一套 xxhdpi （UI设计按：1080x1920设计）图片来做大部分图片缩放适配。   如果想要减小apk大小：推荐：提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。          一、理解minSDKVersion参考自: Android dashboards   An integer desig">
+    <meta name="description" content="推荐：minSDKVersion=17 推荐：提供一套 xxhdpi （UI设计按：1080x1920设计）图片来做大部分图片缩放适配。 如果想要减小apk大小：推荐：提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。  一、理解minSDKVersion 参考自: Android dashboards   An integer designating the">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android版本特性及minSDKVersion设置">
 <meta property="og:url" content="http://yoursite.com/2018/07/15/Android版本特性及minSDKVersion设置/index.html">
 <meta property="og:site_name" content="Farubaba">
-<meta property="og:description" content="推荐：minSDKVersion=17  推荐：提供一套 xxhdpi （UI设计按：1080x1920设计）图片来做大部分图片缩放适配。   如果想要减小apk大小：推荐：提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。          一、理解minSDKVersion参考自: Android dashboards   An integer desig">
+<meta property="og:description" content="推荐：minSDKVersion=17 推荐：提供一套 xxhdpi （UI设计按：1080x1920设计）图片来做大部分图片缩放适配。 如果想要减小apk大小：推荐：提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。  一、理解minSDKVersion 参考自: Android dashboards   An integer designating the">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6322932-b814708f69f28120.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6322932-6a2811470cd8a4ea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6322932-3c5ac8a7f5a19fc0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6322932-fb082a2bb4321371.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6322932-89d993c158f0125b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:updated_time" content="2018-07-23T14:53:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android版本特性及minSDKVersion设置">
-<meta name="twitter:description" content="推荐：minSDKVersion=17  推荐：提供一套 xxhdpi （UI设计按：1080x1920设计）图片来做大部分图片缩放适配。   如果想要减小apk大小：推荐：提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。          一、理解minSDKVersion参考自: Android dashboards   An integer desig">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/6322932-b814708f69f28120.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:description" content="推荐：minSDKVersion=17 推荐：提供一套 xxhdpi （UI设计按：1080x1920设计）图片来做大部分图片缩放适配。 如果想要减小apk大小：推荐：提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。  一、理解minSDKVersion 参考自: Android dashboards   An integer designating the">
     
     
         
@@ -107,7 +101,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、理解minSDKVersion"><span class="toc-number">1.</span> <span class="toc-text">一、理解minSDKVersion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、Android系统版本特性"><span class="toc-number">2.</span> <span class="toc-text">二、Android系统版本特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、Android各系统版本占有率分布"><span class="toc-number">3.</span> <span class="toc-text">三、Android各系统版本占有率分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、Android现有设备屏幕密度分布"><span class="toc-number">4.</span> <span class="toc-text">四、Android现有设备屏幕密度分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、Android屏幕密度及代表分辨率"><span class="toc-number">5.</span> <span class="toc-text">五、Android屏幕密度及代表分辨率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、OpenGL-版本支持"><span class="toc-number">6.</span> <span class="toc-text">六、OpenGL 版本支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七、主流App支持minSdkVersion"><span class="toc-number">7.</span> <span class="toc-text">七、主流App支持minSdkVersion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#八、结论"><span class="toc-number">8.</span> <span class="toc-text">八、结论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#九、参考资料"><span class="toc-number">9.</span> <span class="toc-text">九、参考资料</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、理解minSDKVersion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、Android系统版本特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">三、Android各系统版本占有率分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">四、Android现有设备屏幕密度分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">五、Android屏幕密度及代表分辨率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">6.</span> <span class="toc-text">六、OpenGL 版本支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">7.</span> <span class="toc-text">七、主流App支持minSdkVersion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">8.</span> <span class="toc-text">八、结论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">9.</span> <span class="toc-text">九、参考资料</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -170,18 +164,24 @@
 
   <div class="content" itemprop="articleBody">
     <ul>
-<li>推荐：minSDKVersion=17 </li>
-<li>推荐：提供一套 xxhdpi （UI设计按：1080x1920设计）图片来做大部分图片缩放适配。  </li>
-<li>如果想要减小apk大小：推荐：提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。        </li>
+<li>推荐：minSDKVersion=17</li>
+<li>推荐：提供一套 xxhdpi （UI设计按：1080x1920设计）图片来做大部分图片缩放适配。</li>
+<li>如果想要减小apk大小：推荐：提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。</li>
 </ul>
-<h3 id="一、理解minSDKVersion"><a href="#一、理解minSDKVersion" class="headerlink" title="一、理解minSDKVersion"></a>一、理解minSDKVersion</h3><p>参考自: <a href="https://developer.android.com/about/dashboards/index.html" target="_blank" rel="noopener">Android dashboards</a></p>
+<h3>一、理解minSDKVersion</h3>
+<p>参考自: <a href="https://developer.android.com/about/dashboards/index.html" target="_blank" rel="noopener">Android dashboards</a></p>
 <blockquote>
 <ul>
-<li>An integer designating the minimum API Level required for the application to run.<br>The Android system will prevent the user from installing the application if the<br>system’s API Level is lower than the value specified in this attribute. You<br>should always declare this attribute.</li>
-<li>应用程序运行所需要的最小api版本，如果手机的系统版本低于app设置的minSDKVersion，<br>那么android系统会阻止app安装。始终应该设置minSDKVersion。</li>
+<li>An integer designating the minimum API Level required for the application to run.
+The Android system will prevent the user from installing the application if the
+system's API Level is lower than the value specified in this attribute. You
+should always declare this attribute.</li>
+<li>应用程序运行所需要的最小api版本，如果手机的系统版本低于app设置的minSDKVersion，
+那么android系统会阻止app安装。始终应该设置minSDKVersion。</li>
 </ul>
 </blockquote>
-<h3 id="二、Android系统版本特性"><a href="#二、Android系统版本特性" class="headerlink" title="二、Android系统版本特性"></a>二、Android系统版本特性</h3><table>
+<h3>二、Android系统版本特性</h3>
+<table>
 <thead>
 <tr>
 <th>系统版本号</th>
@@ -239,7 +239,7 @@
 <td>21 Lollipop</td>
 <td>2</td>
 <td><a href="https://developer.android.com/about/versions/android-5.0-changes.html" target="_blank" rel="noopener">android-5.0-changes</a></td>
-<td>1.ART、自动Multidex <br> 2.Instant Run <br>3.支持 vector drawables</td>
+<td>1.ART、自动Multidex &lt;br&gt; 2.Instant Run &lt;br&gt;3.支持 vector drawables</td>
 </tr>
 <tr>
 <td>4.4W</td>
@@ -253,7 +253,7 @@
 <td>19 KitKat</td>
 <td>4</td>
 <td><a href="https://developer.android.com/about/versions/android-4.4.html" target="_blank" rel="noopener">android-4.4</a></td>
-<td>Android 4.4 (API level 20) and lower doesn’t support vector drawables,but can use Support Library.If you want to use vector drawables only,you can use <font color="red">Android Support Library 23.2 or higher,Android Plugin for Gradle 2.0 or higher</font> The <code>VectorDrawableCompat</code> class in the Support Library allows you to support VectorDrawable in <font color="red">Android 2.1 (API level 7) and higher.</font> <a href="https://android-developers.googleblog.com/2016/02/android-support-library-232.html" target="_blank" rel="noopener">android-support-library-232</a></td>
+<td>Android 4.4 (API level 20) and lower doesn't support vector drawables,but can use Support Library.If you want to use vector drawables only,you can use &lt;font color=&quot;red&quot;&gt;Android Support Library 23.2 or higher,Android Plugin for Gradle 2.0 or higher&lt;/font&gt; The &lt;code&gt;VectorDrawableCompat&lt;/code&gt; class in the Support Library allows you to support VectorDrawable in &lt;font color=&quot;red&quot;&gt;Android 2.1 (API level 7) and higher.&lt;/font&gt; <a href="https://android-developers.googleblog.com/2016/02/android-support-library-232.html" target="_blank" rel="noopener">android-support-library-232</a></td>
 </tr>
 <tr>
 <td>4.3</td>
@@ -295,7 +295,7 @@
 <td>13 HoneyComb</td>
 <td>1</td>
 <td><a href="https://developer.android.com/about/versions/android-3.2.html" target="_blank" rel="noopener">android-3.2</a></td>
-<td>WebP file format for your images,  <br> when targeting Android 3.2 (API level 13) and higher</td>
+<td>WebP file format for your images,  &lt;br&gt; when targeting Android 3.2 (API level 13) and higher</td>
 </tr>
 <tr>
 <td>3.1</td>
@@ -337,23 +337,26 @@
 <td>7 Eclair</td>
 <td>3</td>
 <td><a href="https://developer.android.com/about/versions/android-2.1.html" target="_blank" rel="noopener">android-2.1</a></td>
-<td>…</td>
+<td>...</td>
 </tr>
 </tbody>
 </table>
-<h3 id="三、Android各系统版本占有率分布"><a href="#三、Android各系统版本占有率分布" class="headerlink" title="三、Android各系统版本占有率分布"></a>三、Android各系统版本占有率分布</h3><p>1、实时数据参考：<a href="https://developer.android.com/about/dashboards/index.html" target="_blank" rel="noopener">Android dashboards</a>    </p>
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/6322932-b814708f69f28120.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width="90%"><br></div>
-
-
-<p>2、Android Studio中创建项目时提供参考数据    </p>
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/6322932-6a2811470cd8a4ea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width="90%"><br></div>
-
-
-<h3 id="四、Android现有设备屏幕密度分布"><a href="#四、Android现有设备屏幕密度分布" class="headerlink" title="四、Android现有设备屏幕密度分布"></a>四、Android现有设备屏幕密度分布</h3><p>1、实时数据参考：<a href="https://developer.android.com/about/dashboards/index.html" target="_blank" rel="noopener">Android dashboards</a>  </p>
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/6322932-3c5ac8a7f5a19fc0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width="90%"><br></div>
-
-
-<h3 id="五、Android屏幕密度及代表分辨率"><a href="#五、Android屏幕密度及代表分辨率" class="headerlink" title="五、Android屏幕密度及代表分辨率"></a>五、Android屏幕密度及代表分辨率</h3><table>
+<h3>三、Android各系统版本占有率分布</h3>
+<p>1、实时数据参考：<a href="https://developer.android.com/about/dashboards/index.html" target="_blank" rel="noopener">Android dashboards</a></p>
+<p>&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/6322932-b814708f69f28120.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; width=&quot;90%&quot; /&gt;
+&lt;/div&gt;</p>
+<p>2、Android Studio中创建项目时提供参考数据</p>
+<p>&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/6322932-6a2811470cd8a4ea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; width=&quot;90%&quot; /&gt;
+&lt;/div&gt;</p>
+<h3>四、Android现有设备屏幕密度分布</h3>
+<p>1、实时数据参考：<a href="https://developer.android.com/about/dashboards/index.html" target="_blank" rel="noopener">Android dashboards</a></p>
+<p>&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/6322932-3c5ac8a7f5a19fc0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; width=&quot;90%&quot; /&gt;
+&lt;/div&gt;</p>
+<h3>五、Android屏幕密度及代表分辨率</h3>
+<table>
 <thead>
 <tr>
 <th>密度类型</th>
@@ -386,8 +389,8 @@
 <td>6</td>
 </tr>
 <tr>
-<td>超高密度<font color="red">（xhdpi） </font></td>
-<td><font color="red">720x1280</font></td>
+<td>超高密度&lt;font color=&quot;red&quot;&gt;（xhdpi） &lt;/font&gt;</td>
+<td>&lt;font color=&quot;red&quot;&gt;720x1280&lt;/font&gt;</td>
 <td>320</td>
 <td>1dp=2px</td>
 <td>8</td>
@@ -401,9 +404,12 @@
 </tr>
 </tbody>
 </table>
-<h3 id="六、OpenGL-版本支持"><a href="#六、OpenGL-版本支持" class="headerlink" title="六、OpenGL 版本支持"></a>六、OpenGL 版本支持</h3><div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/6322932-fb082a2bb4321371.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width="90%"><br></div>
-
-<h3 id="七、主流App支持minSdkVersion"><a href="#七、主流App支持minSdkVersion" class="headerlink" title="七、主流App支持minSdkVersion"></a>七、主流App支持minSdkVersion</h3><table>
+<h3>六、OpenGL 版本支持</h3>
+<p>&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/6322932-fb082a2bb4321371.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; width=&quot;90%&quot; /&gt;
+&lt;/div&gt;</p>
+<h3>七、主流App支持minSdkVersion</h3>
+<table>
 <thead>
 <tr>
 <th>应用</th>
@@ -416,19 +422,19 @@
 <tr>
 <td>携程</td>
 <td>4.4.4</td>
-<td><font color="red">19</font></td>
+<td>&lt;font color=&quot;red&quot;&gt;19&lt;/font&gt;</td>
 <td>2018-02-11</td>
 </tr>
 <tr>
 <td>支付宝</td>
 <td>4.3</td>
-<td><font color="red">18</font></td>
+<td>&lt;font color=&quot;red&quot;&gt;18&lt;/font&gt;</td>
 <td>2018-02-11</td>
 </tr>
 <tr>
 <td>微信</td>
 <td>4.2.x</td>
-<td><font color="red">17</font></td>
+<td>&lt;font color=&quot;red&quot;&gt;17&lt;/font&gt;</td>
 <td>2018-02-11</td>
 </tr>
 <tr>
@@ -517,52 +523,60 @@
 </tr>
 </tbody>
 </table>
-<h3 id="八、结论"><a href="#八、结论" class="headerlink" title="八、结论"></a>八、结论</h3><p>1、设置minSDKVersion=17</p>
+<h3>八、结论</h3>
+<p>1、设置minSDKVersion=17</p>
 <blockquote>
 <ol>
 <li>Android 4.2及以上版本已经覆盖96%的机型。</li>
-<li>微信采用minSDKVersion=17，最小支持到android 4.2版本，我们有理由设想，使用我们应用的用户，一定会使用微信，所以和微信采用相同minSDKVersion即可。</li>
-<li>支付宝minSDKVersion=18，携程minSDKVersion=19，我们采用17不会有问题。   </li>
 </ol>
 </blockquote>
+<ol start="2">
+<li>微信采用minSDKVersion=17，最小支持到android 4.2版本，我们有理由设想，使用我们应用的用户，一定会使用微信，所以和微信采用相同minSDKVersion即可。</li>
+<li>支付宝minSDKVersion=18，携程minSDKVersion=19，我们采用17不会有问题。</li>
+</ol>
 <p>2、图片适配屏幕密度xhdpi或者xxhdpi</p>
 <blockquote>
 <ol>
 <li>大部分的设备属于xhdpi屏幕密度范围,xxhdpi设备也有相当保有量。</li>
+</ol>
+</blockquote>
+<ol start="2">
 <li>分辨率太低的图片，在高密度设备下会被放大儿变模糊，hdpi中的图片会在xhdpi和xxhdpi设备中变得模糊，所以不采用hdpi来适配。</li>
 <li>分辨率太高的图片，android系统缩放时消耗过多内存，例如xxhdpi中的图片再xhdpi和hdpi设备上，会被缩小，分辨率越高，占用内存越多，所以也不适合使用xxhdpi来适配。</li>
 <li>大部分的设备属于xhdpi屏幕密度范围，我们只提供xhdpi一套图片即可完成图片适配。这样在面对hdpi和xxhdpi的设备时候，性能和显示清晰度都可以做到不错。</li>
 </ol>
-</blockquote>
-<font color="#f97352">推荐：minSDKVersion = 17</font><br><br><font color="#f97352">推荐：想要缩小apk 体积，则提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。</font><br><font color="#f97352">官方推荐：提供一套 xxhdpi （UI设计按：1080x1920设计）图片来做大部分图片缩放适配。如下图<br></font>
-
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/6322932-89d993c158f0125b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width="90%"><br></div>
-
-<h3 id="九、参考资料"><a href="#九、参考资料" class="headerlink" title="九、参考资料"></a>九、参考资料</h3><p><a href="https://developer.android.com/about/dashboards/index.html" target="_blank" rel="noopener">Android dashboards</a></p>
+<p>&lt;font color=&quot;#f97352&quot;&gt;推荐：minSDKVersion = 17&lt;/font&gt;&lt;/br&gt;
+&lt;font color=&quot;#f97352&quot;&gt;推荐：想要缩小apk 体积，则提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。&lt;/font&gt;
+&lt;font color=&quot;#f97352&quot;&gt;官方推荐：提供一套 xxhdpi （UI设计按：1080x1920设计）图片来做大部分图片缩放适配。如下图
+&lt;/font&gt;</p>
+<p>&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/6322932-89d993c158f0125b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; width=&quot;90%&quot; /&gt;
+&lt;/div&gt;</p>
+<h3>九、参考资料</h3>
+<p><a href="https://developer.android.com/about/dashboards/index.html" target="_blank" rel="noopener">Android dashboards</a></p>
 <p><a href="http://www.jb51.net/article/84613.htm" target="_blank" rel="noopener">Vector Drawable 中文</a></p>
 <p><a href="https://developer.android.com/about/versions/oreo/android-8.0-changes.html" target="_blank" rel="noopener">android-8.0-changes</a></p>
 <p><a href="https://developer.android.com/studio/write/convert-webp.html#convert_images_to_webp" target="_blank" rel="noopener">convert images to webp</a></p>
 <p><a href="https://android-developers.googleblog.com/2016/02/android-support-library-232.html" target="_blank" rel="noopener">android-support-library-232</a></p>
-<script>
+<p>&lt;script&gt;</p>
+<p>var ths = document.getElementsByTagName(&quot;th&quot;);
+for(var i=0;i&lt;ths.length;i++){
+var myth = ths[i];
+if(i==0){//文档中的第一个th的宽度
+myth.style.width = &quot;90px&quot;;
+}
+if(i==1){
+myth.style.width = &quot;150px&quot;;
+}
+if(i==2){
+myth.style.width = &quot;80px&quot;;
+}
+if(i==3){
+myth.style.width = &quot;160px&quot;;
+}<br>
+}</p>
+<p>&lt;/script&gt;</p>
 
-   var ths = document.getElementsByTagName("th");
-   for(var i=0;i<ths.length;i++){
-       var myth = ths[i];
-       if(i==0){//文档中的第一个th的宽度
-           myth.style.width = "90px";
-       }
-       if(i==1){
-           myth.style.width = "150px";
-       }
-       if(i==2){
-           myth.style.width = "80px";
-       }
-       if(i==3){
-           myth.style.width = "160px";
-       }       
-   }
-
-</script>
   </div>
 </article>
 
@@ -592,7 +606,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、理解minSDKVersion"><span class="toc-number">1.</span> <span class="toc-text">一、理解minSDKVersion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、Android系统版本特性"><span class="toc-number">2.</span> <span class="toc-text">二、Android系统版本特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、Android各系统版本占有率分布"><span class="toc-number">3.</span> <span class="toc-text">三、Android各系统版本占有率分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、Android现有设备屏幕密度分布"><span class="toc-number">4.</span> <span class="toc-text">四、Android现有设备屏幕密度分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、Android屏幕密度及代表分辨率"><span class="toc-number">5.</span> <span class="toc-text">五、Android屏幕密度及代表分辨率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、OpenGL-版本支持"><span class="toc-number">6.</span> <span class="toc-text">六、OpenGL 版本支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七、主流App支持minSdkVersion"><span class="toc-number">7.</span> <span class="toc-text">七、主流App支持minSdkVersion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#八、结论"><span class="toc-number">8.</span> <span class="toc-text">八、结论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#九、参考资料"><span class="toc-number">9.</span> <span class="toc-text">九、参考资料</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、理解minSDKVersion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、Android系统版本特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">三、Android各系统版本占有率分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">四、Android现有设备屏幕密度分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">五、Android屏幕密度及代表分辨率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">6.</span> <span class="toc-text">六、OpenGL 版本支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">7.</span> <span class="toc-text">七、主流App支持minSdkVersion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">8.</span> <span class="toc-text">八、结论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">9.</span> <span class="toc-text">九、参考资料</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
