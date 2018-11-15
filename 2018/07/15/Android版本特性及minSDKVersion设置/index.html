@@ -6,23 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="推荐：minSDKVersion=17  推荐：提供一套 xxhdpi （UI设计按：1080x1920设计）图片来做大部分图片缩放适配。   如果想要减小apk大小：推荐：提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。          一、理解minSDKVersion参考自: Android dashboards   An integer desig">
+    <meta name="description" content="推荐：minSDKVersion=17  推荐：提供一套 xxhdpi （UI设计按：1080x1920设计）图片来做大部分图片缩放适配。   如果想要减小apk大小：推荐：提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。           命令行查看APK minSdkVersion aapt list -a xxx.apk | grep “Versio">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android版本特性及minSDKVersion设置">
 <meta property="og:url" content="http://yoursite.com/2018/07/15/Android版本特性及minSDKVersion设置/index.html">
 <meta property="og:site_name" content="Farubaba">
-<meta property="og:description" content="推荐：minSDKVersion=17  推荐：提供一套 xxhdpi （UI设计按：1080x1920设计）图片来做大部分图片缩放适配。   如果想要减小apk大小：推荐：提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。          一、理解minSDKVersion参考自: Android dashboards   An integer desig">
+<meta property="og:description" content="推荐：minSDKVersion=17  推荐：提供一套 xxhdpi （UI设计按：1080x1920设计）图片来做大部分图片缩放适配。   如果想要减小apk大小：推荐：提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。           命令行查看APK minSdkVersion aapt list -a xxx.apk | grep “Versio">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6322932-b814708f69f28120.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6322932-6a2811470cd8a4ea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6322932-3c5ac8a7f5a19fc0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6322932-fb082a2bb4321371.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6322932-89d993c158f0125b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-07-23T14:53:20.000Z">
+<meta property="og:updated_time" content="2018-11-15T14:47:30.828Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android版本特性及minSDKVersion设置">
-<meta name="twitter:description" content="推荐：minSDKVersion=17  推荐：提供一套 xxhdpi （UI设计按：1080x1920设计）图片来做大部分图片缩放适配。   如果想要减小apk大小：推荐：提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。          一、理解minSDKVersion参考自: Android dashboards   An integer desig">
+<meta name="twitter:description" content="推荐：minSDKVersion=17  推荐：提供一套 xxhdpi （UI设计按：1080x1920设计）图片来做大部分图片缩放适配。   如果想要减小apk大小：推荐：提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。           命令行查看APK minSdkVersion aapt list -a xxx.apk | grep “Versio">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/6322932-b814708f69f28120.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
     
     
@@ -174,6 +174,10 @@
 <li>推荐：提供一套 xxhdpi （UI设计按：1080x1920设计）图片来做大部分图片缩放适配。  </li>
 <li>如果想要减小apk大小：推荐：提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。        </li>
 </ul>
+<blockquote>
+<p>命令行查看APK minSdkVersion <br><br>aapt list -a xxx.apk | grep “Version”<br><br>输出结果类似：<br><br>A: platformBuildVersionName=”8.0.0” (Raw: “8.0.0”)<br><br>A: platformBuildVersionCode=(type 0x10)0x1a<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A: android:minSdkVersion(0x0101020c)=(type 0x10)0x12<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A: android:targetSdkVersion(0x01010270)=(type 0x10)0x1a<br></p>
+<p>输出都是16进制数<br><br>0x1a = 1 <em> 16 + 10 = 26  [buildSdkVersionCode = 26 ,即 8.0.0] <br><br>0x12 = 1 </em> 16 + 2 = 18   &nbsp;&nbsp;[minSdkVersion = 18 ]<br><br>0x1a = 1 * 16 + 10 = 26  [targetSdkVersion = 26]<br></p>
+</blockquote>
 <h3 id="一、理解minSDKVersion"><a href="#一、理解minSDKVersion" class="headerlink" title="一、理解minSDKVersion"></a>一、理解minSDKVersion</h3><p>参考自: <a href="https://developer.android.com/about/dashboards/index.html" target="_blank" rel="noopener">Android dashboards</a></p>
 <blockquote>
 <ul>
@@ -218,7 +222,7 @@
 <td>24 Nougat</td>
 <td>2</td>
 <td><a href="https://developer.android.com/about/versions/nougat/android-7.0-changes.html" target="_blank" rel="noopener">android-7.0-changes</a></td>
-<td></td>
+<td>multi-window mode</td>
 </tr>
 <tr>
 <td>6.0</td>
@@ -253,7 +257,7 @@
 <td>19 KitKat</td>
 <td>4</td>
 <td><a href="https://developer.android.com/about/versions/android-4.4.html" target="_blank" rel="noopener">android-4.4</a></td>
-<td>Android 4.4 (API level 20) and lower doesn’t support vector drawables,but can use Support Library.If you want to use vector drawables only,you can use <font color="red">Android Support Library 23.2 or higher,Android Plugin for Gradle 2.0 or higher</font> The <code>VectorDrawableCompat</code> class in the Support Library allows you to support VectorDrawable in <font color="red">Android 2.1 (API level 7) and higher.</font> <a href="https://android-developers.googleblog.com/2016/02/android-support-library-232.html" target="_blank" rel="noopener">android-support-library-232</a></td>
+<td>1.Android 4.4 (API level 20) and lower doesn’t support vector drawables,but can use Support Library.If you want to use vector drawables only,you can use <font color="red">Android Support Library 23.2 or higher,Android Plugin for Gradle 2.0 or higher</font> The <code>VectorDrawableCompat</code> class in the Support Library allows you to support VectorDrawable in <font color="red">Android 2.1 (API level 7) and higher.</font> <a href="https://android-developers.googleblog.com/2016/02/android-support-library-232.html" target="_blank" rel="noopener">android-support-library-232</a><br><br>2. you can enable Force RTL layout direction in the on-device developer options. <br><br>3. On Android 4.4 (API level 19) and higher, you can use android:autoMirrored=”true”</td>
 </tr>
 <tr>
 <td>4.3</td>
@@ -267,7 +271,7 @@
 <td>17 Jelly Bean</td>
 <td>3</td>
 <td><a href="https://developer.android.com/about/versions/android-4.2.html" target="_blank" rel="noopener">android-4.2</a></td>
-<td>强制@JavascriptInterface</td>
+<td>1.强制@JavascriptInterface，webview自然安全。<br>2.可以使用you can use the <font color="red">-ldrtl</font> (layout-direction-right-to-left) and <font color="red">-ldltr</font> (layout-direction-left-to-right) resource qualifiers<br></td>
 </tr>
 <tr>
 <td>4.1</td>
@@ -295,7 +299,7 @@
 <td>13 HoneyComb</td>
 <td>1</td>
 <td><a href="https://developer.android.com/about/versions/android-3.2.html" target="_blank" rel="noopener">android-3.2</a></td>
-<td>WebP file format for your images,  <br> when targeting Android 3.2 (API level 13) and higher</td>
+<td>1.WebP file format for your images, when targeting Android 3.2 (API level 13) and higher<br><br>2.加入了sw,w,h布局适配方案。可以使用sw600dp</td>
 </tr>
 <tr>
 <td>3.1</td>
@@ -403,117 +407,192 @@
 </table>
 <h3 id="六、OpenGL-版本支持"><a href="#六、OpenGL-版本支持" class="headerlink" title="六、OpenGL 版本支持"></a>六、OpenGL 版本支持</h3><div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/6322932-fb082a2bb4321371.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width="90%"><br></div>
 
-<h3 id="七、主流App支持minSdkVersion"><a href="#七、主流App支持minSdkVersion" class="headerlink" title="七、主流App支持minSdkVersion"></a>七、主流App支持minSdkVersion</h3><table>
+<h3 id="七、主流App支持minSdkVersion"><a href="#七、主流App支持minSdkVersion" class="headerlink" title="七、主流App支持minSdkVersion"></a>七、主流App支持minSdkVersion</h3><p>统计日期： 2018-11-14</p>
+<table>
 <thead>
 <tr>
 <th>应用</th>
 <th>Andriod最低版本</th>
 <th>minSdkVersion</th>
-<th>统计日期</th>
+<th>targetSdkVersion</th>
+<th>buildToolsVersion</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>应用宝</td>
+<td>4.0.3</td>
+<td>15</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td>携程</td>
-<td>4.4.4</td>
-<td><font color="red">19</font></td>
-<td>2018-02-11</td>
+<td>5.0.0</td>
+<td><font color="red">20</font></td>
+<td>25</td>
+<td>25</td>
 </tr>
 <tr>
 <td>支付宝</td>
 <td>4.3</td>
 <td><font color="red">18</font></td>
-<td>2018-02-11</td>
+<td>26</td>
+<td>26</td>
 </tr>
 <tr>
 <td>微信</td>
-<td>4.2.x</td>
-<td><font color="red">17</font></td>
-<td>2018-02-11</td>
+<td>4.4</td>
+<td><font color="red">19</font></td>
+<td>23</td>
+<td>26</td>
+</tr>
+<tr>
+<td>QQ音乐</td>
+<td>4.0.3</td>
+<td>15</td>
+<td>23</td>
+<td>26</td>
+</tr>
+<tr>
+<td>腾讯视频</td>
+<td>4.0.3</td>
+<td>15</td>
+<td>23</td>
+<td>26</td>
 </tr>
 <tr>
 <td>ofo</td>
 <td>4.1.x</td>
 <td>16</td>
-<td>2018-02-11</td>
+<td>26</td>
+<td>26</td>
 </tr>
 <tr>
 <td>QQ</td>
-<td>4.0.3</td>
-<td>15</td>
-<td>2018-02-11</td>
+<td>4.1.x</td>
+<td>16</td>
+<td>25</td>
+<td></td>
 </tr>
 <tr>
 <td>爱奇艺</td>
-<td>4.0.3</td>
-<td>15</td>
-<td>2018-02-11</td>
+<td>4.0.0</td>
+<td>14</td>
+<td>25</td>
+<td>28</td>
 </tr>
 <tr>
 <td>美团外卖</td>
-<td>4.1.x</td>
-<td>16</td>
-<td>2018-02-11</td>
+<td>4.4.4</td>
+<td>19</td>
+<td>26</td>
+<td>26</td>
 </tr>
 <tr>
 <td>滴滴出行</td>
-<td>4.0.3</td>
-<td>15</td>
-<td>2018-02-11</td>
-</tr>
-<tr>
-<td>优酷</td>
 <td>4.1.x</td>
 <td>16</td>
-<td>2018-02-11</td>
-</tr>
-<tr>
-<td>美图秀秀</td>
-<td>4.0.3</td>
-<td>15</td>
-<td>2018-02-11</td>
-</tr>
-<tr>
-<td>快手</td>
-<td>4.0.3</td>
-<td>15</td>
-<td>2018-02-11</td>
-</tr>
-<tr>
-<td>抖音</td>
-<td>4.1.x</td>
-<td>16</td>
-<td>2018-02-11</td>
-</tr>
-<tr>
-<td>今日头条</td>
-<td>4.0.3</td>
-<td>15</td>
-<td>2018-02-11</td>
-</tr>
-<tr>
-<td>作业帮</td>
-<td>4.0.3</td>
-<td>15</td>
-<td>2018-02-11</td>
-</tr>
-<tr>
-<td>火山小视频</td>
-<td>4.0.3</td>
-<td>15</td>
-<td>2018-02-11</td>
-</tr>
-<tr>
-<td>天猫</td>
-<td>4.0.3</td>
-<td>15</td>
-<td>2018-02-11</td>
+<td>26</td>
+<td>26</td>
 </tr>
 <tr>
 <td>淘宝</td>
 <td>4.0.3</td>
 <td>15</td>
-<td>2018-02-11</td>
+<td>26</td>
+<td>26</td>
+</tr>
+<tr>
+<td>抖音</td>
+<td>4.1.x</td>
+<td>16</td>
+<td>23</td>
+<td>27</td>
+</tr>
+<tr>
+<td>快手</td>
+<td>4.0.3</td>
+<td>15</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>拼多多</td>
+<td>4.0.3</td>
+<td>16</td>
+<td>22</td>
+<td>27</td>
+</tr>
+<tr>
+<td>优酷</td>
+<td>4.1.x</td>
+<td>16</td>
+<td>24</td>
+<td>27</td>
+</tr>
+<tr>
+<td>美图秀秀</td>
+<td>4.4</td>
+<td>19</td>
+<td>26</td>
+<td></td>
+</tr>
+<tr>
+<td>美拍</td>
+<td>4.1.x</td>
+<td>16</td>
+<td>26</td>
+<td></td>
+</tr>
+<tr>
+<td>今日头条</td>
+<td>4.0.3</td>
+<td>15</td>
+<td>23</td>
+<td>27</td>
+</tr>
+<tr>
+<td>作业帮</td>
+<td>4.0.3</td>
+<td>15</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>天猫</td>
+<td>4.0.3</td>
+<td>15</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>虎牙直播</td>
+<td>4.4</td>
+<td>19</td>
+<td>19</td>
+<td>27</td>
+</tr>
+<tr>
+<td>凤凰金融</td>
+<td>4.1.x</td>
+<td>16</td>
+<td>27</td>
+<td>28</td>
+</tr>
+<tr>
+<td>老虎证券</td>
+<td>4.1.x</td>
+<td>16</td>
+<td>23</td>
+<td>28</td>
+</tr>
+<tr>
+<td>招商银行</td>
+<td>4.2.0</td>
+<td>17</td>
+<td>17</td>
+<td>17</td>
 </tr>
 </tbody>
 </table>

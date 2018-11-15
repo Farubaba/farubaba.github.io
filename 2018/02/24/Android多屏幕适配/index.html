@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="一、相关参考方案越来越先进。   screens_support Android知识梳理之屏幕适配全攻略 使用系统自带Percent库: compile ‘com.android.support:percent:23.3.0’, 但是deprecated in API level 26.0.0-beta1。推荐使用ConstraintLayout。 鸿洋AndroidAutoLayout 一行代码">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android屏幕适配">
+<meta property="og:url" content="http://yoursite.com/2018/02/24/Android多屏幕适配/index.html">
+<meta property="og:site_name" content="Farubaba">
+<meta property="og:description" content="一、相关参考方案越来越先进。   screens_support Android知识梳理之屏幕适配全攻略 使用系统自带Percent库: compile ‘com.android.support:percent:23.3.0’, 但是deprecated in API level 26.0.0-beta1。推荐使用ConstraintLayout。 鸿洋AndroidAutoLayout 一行代码">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/944365-a1b32092b08e27cd.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/944365-ced9745859537daf.png?imageMogr2/auto-orient/">
+<meta property="og:image" content="https://www.2cto.com/uploadfile/Collfiles/20160505/20160505090552152.png">
+<meta property="og:image" content="https://www.2cto.com/uploadfile/Collfiles/20160505/20160505090552153.png">
+<meta property="og:image" content="https://www.2cto.com/uploadfile/Collfiles/20160505/20160505090552159.png">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6322932-89d993c158f0125b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://yoursite.com/images/syntax-property-annimation.png">
+<meta property="og:image" content="http://yoursite.com/images/example-property-animation.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-view-annimation.png">
+<meta property="og:image" content="http://yoursite.com/images/example-view-animation.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-interplator.png">
+<meta property="og:image" content="http://yoursite.com/images/example-interpolator.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-frame-annimation.png">
+<meta property="og:image" content="http://yoursite.com/images/example-frame-animation.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-color-state-list.png">
+<meta property="og:image" content="http://yoursite.com/images/example-color-state-list.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/example-bitmap.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-xml-bitmap.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/syntax-xml-nine-patch.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/syntax-layer-list.png">
+<meta property="og:image" content="http://yoursite.com/images/sample-layer-list.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-state-list.png">
+<meta property="og:image" content="http://yoursite.com/images/sample-state-list.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-level-list.png">
+<meta property="og:image" content="http://yoursite.com/images/sample-level-list.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-transition-drawable.png">
+<meta property="og:image" content="http://yoursite.com/images/sample-transition-drawable.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-inset-drawable.png">
+<meta property="og:image" content="http://yoursite.com/images/example-inset-drawable.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-clip-drawable.png">
+<meta property="og:image" content="http://yoursite.com/images/sample-clip-drawable.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-scale-drawable.png">
+<meta property="og:image" content="http://yoursite.com/images/sample-scale-drawable.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-shape-drawable.png">
+<meta property="og:image" content="http://yoursite.com/images/sample-shape-drawable.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/syntax-menu.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/syntax-string-array.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/syntax-quantity-string.png">
+<meta property="og:image" content="http://yoursite.com/images/sample-quantity-string.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-formating-string.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/syntax-html-markup.png">
+<meta property="og:image" content="http://yoursite.com/images/sample-html-markup-string.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/syntax-style.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/sample-font-resources.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/sample-downloadable-font.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/sample-bool.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/sample-color.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/sample-dimensions.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/sample-typedarray.png">
+<meta property="og:updated_time" content="2018-11-15T16:33:19.172Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android屏幕适配">
+<meta name="twitter:description" content="一、相关参考方案越来越先进。   screens_support Android知识梳理之屏幕适配全攻略 使用系统自带Percent库: compile ‘com.android.support:percent:23.3.0’, 但是deprecated in API level 26.0.0-beta1。推荐使用ConstraintLayout。 鸿洋AndroidAutoLayout 一行代码">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/944365-a1b32092b08e27cd.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Android屏幕适配</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/farubaba">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/07/11/How-To-Create-Github-Pages-with-Hexo/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2017/06/30/编程学习资源整理/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/02/24/Android多屏幕适配/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/02/24/Android多屏幕适配/&text=Android屏幕适配"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/02/24/Android多屏幕适配/&title=Android屏幕适配"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/02/24/Android多屏幕适配/&is_video=false&description=Android屏幕适配"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Android屏幕适配&body=Check out this article: http://yoursite.com/2018/02/24/Android多屏幕适配/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/02/24/Android多屏幕适配/&title=Android屏幕适配"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/02/24/Android多屏幕适配/&title=Android屏幕适配"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/02/24/Android多屏幕适配/&title=Android屏幕适配"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/02/24/Android多屏幕适配/&title=Android屏幕适配"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/02/24/Android多屏幕适配/&name=Android屏幕适配&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、相关参考"><span class="toc-number">1.</span> <span class="toc-text">一、相关参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、Android屏幕密度及代表分辨率"><span class="toc-number">2.</span> <span class="toc-text">二、Android屏幕密度及代表分辨率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、基础知识"><span class="toc-number">3.</span> <span class="toc-text">三、基础知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、图片适配屏幕密度xhdpi"><span class="toc-number">4.</span> <span class="toc-text">四、图片适配屏幕密度xhdpi</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、Android资源类型、存放位置及示例代码"><span class="toc-number">5.</span> <span class="toc-text">五、Android资源类型、存放位置及示例代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文档"><span class="toc-number">6.</span> <span class="toc-text">参考文档</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <header id="header">
+  <a href="/">
+  
+    
+      <div id="logo" style="background-image: url(/images/logo.png);"></div>
+    
+  
+    <div id="title">
+      <h1>Farubaba</h1>
+    </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#"><i class="fas fa-bars fa-2x"></i></a>
+      </li>
+       
+        <li><a href="/">Home</a></li>
+       
+        <li><a href="/archives/">Writing</a></li>
+       
+        <li><a href="http://github.com/farubaba">Projects</a></li>
+      
+    </ul>
+  </div>
+</header>
+
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Android屏幕适配
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Farubaba</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-02-24T09:16:26.000Z" itemprop="datePublished">2018-02-24</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h3 id="一、相关参考"><a href="#一、相关参考" class="headerlink" title="一、相关参考"></a>一、相关参考</h3><pre><code>方案越来越先进。
+</code></pre><blockquote>
+<ol>
+<li><a href="http://developer.android.com/guide/practices/screens_support.html" target="_blank" rel="noopener">screens_support</a></li>
+<li><a href="https://www.2cto.com/kf/201605/505770.html" target="_blank" rel="noopener">Android知识梳理之屏幕适配全攻略</a></li>
+<li>使用系统自带Percent库: compile ‘com.android.support:percent:23.3.0’, 但是deprecated in API level 26.0.0-beta1。推荐使用ConstraintLayout。</li>
+<li><a href="https://github.com/hongyangAndroid/AndroidAutoLayout" target="_blank" rel="noopener">鸿洋AndroidAutoLayout</a></li>
+<li><a href="https://feisher.github.io/ScreenAdapter/" target="_blank" rel="noopener">一行代码搞定安卓全屏幕适配</a></li>
+<li><a href="http://blog.csdn.net/zhaokaiqiang1992/article/details/45419023" target="_blank" rel="noopener">凯子–Android屏幕适配全攻略(最权威的官方适配指导)</a></li>
+<li><a href="https://www.jianshu.com/p/ec5a1a30694b" target="_blank" rel="noopener">Android 屏幕适配：最全面的解决方案</a></li>
+<li><a href="http://blog.csdn.net/zouzhigang96/article/details/79004355" target="_blank" rel="noopener">Android 适配18：9全面屏</a></li>
+<li><a href="http://blog.csdn.net/wqbs369/article/details/78641952" target="_blank" rel="noopener">Android手机 全面屏（18：9屏幕）适配指南</a></li>
+<li><a href="https://developer.android.com/about/dashboards/index.html#Screens" target="_blank" rel="noopener">现有设备系统版本、屏幕密度、OpenGL版本实时信息</a></li>
+</ol>
+</blockquote>
+<h3 id="二、Android屏幕密度及代表分辨率"><a href="#二、Android屏幕密度及代表分辨率" class="headerlink" title="二、Android屏幕密度及代表分辨率"></a>二、Android屏幕密度及代表分辨率</h3><table>
+<thead>
+<tr>
+<th>密度类型</th>
+<th>代表分辨率（px）</th>
+<th>屏幕密度（dpi）</th>
+<th>换算(px/dp)</th>
+<th>比例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>低密度（ldpi）</td>
+<td>240x320</td>
+<td>120</td>
+<td>1dp=0.75px</td>
+<td>3</td>
+</tr>
+<tr>
+<td>中密度（mdpi）</td>
+<td>320x480</td>
+<td>160</td>
+<td>1dp=1px</td>
+<td>4</td>
+</tr>
+<tr>
+<td>高密度（hdpi）</td>
+<td>480x800</td>
+<td>240</td>
+<td>1dp=1.5px</td>
+<td>6</td>
+</tr>
+<tr>
+<td>超高密度<font color="red">（xhdpi） </font></td>
+<td><font color="red">720x1280</font></td>
+<td>320</td>
+<td>1dp=2px</td>
+<td>8</td>
+</tr>
+<tr>
+<td>超超高密度（xxhdpi）</td>
+<td>1080x1920</td>
+<td>480</td>
+<td>1dp=3px</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+<h3 id="三、基础知识"><a href="#三、基础知识" class="headerlink" title="三、基础知识"></a>三、基础知识</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>参考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>屏幕适配方案</td>
+<td><img src="https://upload-images.jianshu.io/upload_images/944365-a1b32092b08e27cd.png" alt="Android 屏幕适配解决方案"></td>
+<td><a href="https://www.jianshu.com/p/ec5a1a30694b" target="_blank" rel="noopener">Android 屏幕适配：最全面的解决方案</a></td>
+</tr>
+<tr>
+<td>屏幕尺寸适配解决方案</td>
+<td><img src="https://upload-images.jianshu.io/upload_images/944365-ced9745859537daf.png?imageMogr2/auto-orient/" alt="屏幕尺寸适配解决方案"></td>
+<td><a href="https://www.jianshu.com/p/ec5a1a30694b" target="_blank" rel="noopener">Android 屏幕适配：最全面的解决方案</a></td>
+</tr>
+<tr>
+<td>解决两种类型屏幕适配问题</td>
+<td>1.解决在不同屏幕的分辨率上面的适配。<br>2.解决在不同尺寸设备上面的适配。<br><a href="http://developer.android.com/guide/practices/screens_support.html" target="_blank" rel="noopener">http://developer.android.com/guide/practices/screens_support.html</a></td>
+<td><a href="https://www.2cto.com/kf/201605/505770.html" target="_blank" rel="noopener">Android知识梳理之屏幕适配全攻略</a></td>
+</tr>
+<tr>
+<td>dpi = PPI</td>
+<td><img src="https://www.2cto.com/uploadfile/Collfiles/20160505/20160505090552152.png" alt="dpi=ppi"></td>
+<td><a href="https://www.2cto.com/kf/201605/505770.html" target="_blank" rel="noopener">Android知识梳理之屏幕适配全攻略</a></td>
+</tr>
+<tr>
+<td>屏幕密度关系表</td>
+<td><img src="https://www.2cto.com/uploadfile/Collfiles/20160505/20160505090552153.png" alt="屏幕密度关系表"></td>
+<td><a href="https://www.2cto.com/kf/201605/505770.html" target="_blank" rel="noopener">Android知识梳理之屏幕适配全攻略</a></td>
+</tr>
+<tr>
+<td><font color="red">1、解决在不同屏幕的分辨率上面的适配</font></td>
+<td>方案：<font color="red">使用dp</font><br>dp解决了同一数值在不同分辨率中展示相同尺寸大小的问题（即屏幕像素密度匹配问题），但却没有解决设备尺寸大小匹配的问题（即屏幕尺寸匹配问题）。屏幕的物理尺寸相差很大的话使用dp就无能为力了.也就是所通过dp我们可以解决Android分辨率碎片化的问题,但是却不能够解决Android物理尺寸碎片化的问题.</td>
+<td><a href="https://www.2cto.com/kf/201605/505770.html" target="_blank" rel="noopener">Android知识梳理之屏幕适配全攻略</a></td>
+</tr>
+<tr>
+<td>资源查找循序</td>
+<td><img src="https://www.2cto.com/uploadfile/Collfiles/20160505/20160505090552159.png" alt="资源查找循序"> <font color="red">结论:</font>根据实际的测量结果也是这样如果在设备对用的dpi的drawable文件夹下面没有对应的图片,那么首先是要去dpi最高的文件夹里面找看是否有对应的图片.如果有则按照相应的缩放比例进行缩放显示,如果没有则到低一级的dpi文件夹里面取查找是否有对应的图片.以此类推.如果在所有的比自己dpi都高的文件夹里面都找不到对应的文件,则去比自己低一级dpi的文件夹里面找相关的资源.如果还是找不到资源就去默认的drawable文件夹里面找,如果drawable文件夹里面还是没有相关的资源那么程序就会报错.</td>
+<td><a href="https://www.2cto.com/kf/201605/505770.html" target="_blank" rel="noopener">Android知识梳理之屏幕适配全攻略</a></td>
+</tr>
+<tr>
+<td><font color="red">2、解决在不同尺寸设备上面的适配</font></td>
+<td>方案一：使用权重android:layout_weight,match_parent(填充父窗体)来初步的适配.<br>方案二：使用限定符，例如：layout-sw600dp、layout-sw600dp-land<br>方案三：根据DisplayMetrics代码动态适配<br>方案四：使用百分比库(官方自带的),compile ‘com.android.support:percent:23.3.0’<br>方案五：使用第三方框架(鸿洋大神版)<br>github地址:<a href="https://github.com/hongyangAndroid/AndroidAutoLayout" target="_blank" rel="noopener">https://github.com/hongyangAndroid/AndroidAutoLayout</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="四、图片适配屏幕密度xhdpi"><a href="#四、图片适配屏幕密度xhdpi" class="headerlink" title="四、图片适配屏幕密度xhdpi"></a>四、图片适配屏幕密度xhdpi</h3><blockquote>
+<ol>
+<li>大部分的设备属于xhdpi屏幕密度范围,xxhdpi设备也有相当保有量。</li>
+<li>分辨率太低的图片，在高密度设备下会被放大儿变模糊，hdpi中的图片会在xhdpi和xxhdpi设备中变得模糊，所以不采用hdpi来适配。</li>
+<li>分辨率太高的图片，android系统缩放时消耗过多内存，例如xxhdpi中的图片再xhdpi和hdpi设备上，会被缩小，分辨率越高，占用内存越多，所以也不适合使用xxhdpi来适配。</li>
+<li>大部分的设备属于xhdpi屏幕密度范围，我们只提供xhdpi一套图片即可完成图片适配。这样在面对hdpi和xxhdpi的设备时候，性能和显示清晰度都可以做到不错。</li>
+</ol>
+</blockquote>
+<p><font color="red">推荐：提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。</font></p>
+<p>当然也可以只提供一套xxhdpi的图片，见官方文档推荐如下：<br><img src="http://upload-images.jianshu.io/upload_images/6322932-89d993c158f0125b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片适配xxhdpi"></p>
+<h3 id="五、Android资源类型、存放位置及示例代码"><a href="#五、Android资源类型、存放位置及示例代码" class="headerlink" title="五、Android资源类型、存放位置及示例代码"></a>五、Android资源类型、存放位置及示例代码</h3><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>资源类型</th>
+<th>存放、引用、对应类</th>
+<th>语法</th>
+<th>示例代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Property animation</td>
+<td>存放:res/animator/filename.xml<br>引用:R.animator.filename<br>对应类:ValueAnimator, ObjectAnimator, or AnimatorSet</td>
+<td><div align="center"><img src="/images/syntax-property-annimation.png"></div></td>
+<td><div align="center"><img src="/images/example-property-animation.png"></div></td>
+</tr>
+<tr>
+<td>2</td>
+<td>View animation</td>
+<td>存放:res/anim/filename.xml<br>引用:R.anim.filename<br>对应类:Animation</td>
+<td><div align="center"><img src="/images/syntax-view-annimation.png"></div></td>
+<td><div align="center"><img src="/images/example-view-animation.png"></div></td>
+</tr>
+<tr>
+<td>3</td>
+<td>interpolator</td>
+<td>存放:res/anim/filename.xml<br>引用:@anim/my_overshoot_interpolator<br>对应类:</td>
+<td><div align="center"><img src="/images/syntax-interplator.png"></div></td>
+<td><div align="center"><img src="/images/example-interpolator.png"></div></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Frame animation</td>
+<td>存放:res/drawable/filename.xml<br>引用:R.drawable.filename<br>对应类:</td>
+<td><div align="center"><img src="/images/syntax-frame-annimation.png"></div></td>
+<td><div align="center"><img src="/images/example-frame-animation.png"></div></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Color state list</td>
+<td>存放:res/color/filename.xml<br>引用:R.color.filename<br>对应类:ColorStateList</td>
+<td><div align="center"><img src="/images/syntax-color-state-list.png"></div></td>
+<td><div align="center"><img src="/images/example-color-state-list.png"></div></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Bitmap</td>
+<td>存放:res/drawable/filename.png (.png, .jpg, or .gif)<br>引用:R.drawable.filename<br>对应类:BitmapDrawable</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/example-bitmap.png"></div></td>
+</tr>
+<tr>
+<td>7</td>
+<td>XML bitmap</td>
+<td>存放:res/drawable/filename.xml<br>引用:R.drawable.filename<br>对应类:BitmapDrawable</td>
+<td><div align="center"><img src="/images/syntax-xml-bitmap.png"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Nine-Patch</td>
+<td>存放:res/drawable/filename.9.png<br>引用:R.drawable.filename<br>对应类:NinePatchDrawable</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
+</tr>
+<tr>
+<td>9</td>
+<td>XML Nine-Patch</td>
+<td>存放:res/drawable/filename.xml<br>引用:R.drawable.filename<br>对应类:NinePatchDrawable</td>
+<td><div align="center"><img src="/images/syntax-xml-nine-patch.png"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Layer list</td>
+<td>存放:res/drawable/filename.xml<br>引用:R.drawable.filename<br>对应类:LayerDrawable</td>
+<td><div align="center"><img src="/images/syntax-layer-list.png"></div></td>
+<td><div align="center"><img src="/images/sample-layer-list.png"></div></td>
+</tr>
+<tr>
+<td>11</td>
+<td>State list</td>
+<td>存放:res/drawable/filename.xml<br>引用:R.drawable.filename<br>对应类:StateListDrawable</td>
+<td><div align="center"><img src="/images/syntax-state-list.png"></div></td>
+<td><div align="center"><img src="/images/sample-state-list.png"></div></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Level list</td>
+<td>存放:res/drawable/filename.xml<br>引用:R.drawable.filename<br>对应类:LevelListDrawable</td>
+<td><div align="center"><img src="/images/syntax-level-list.png"></div></td>
+<td><div align="center"><img src="/images/sample-level-list.png"></div></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Transition drawable</td>
+<td>存放:<br>引用:<br>对应类:TransitionDrawable</td>
+<td><div align="center"><img src="/images/syntax-transition-drawable.png"></div></td>
+<td><div align="center"><img src="/images/sample-transition-drawable.png"></div></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Inset drawable</td>
+<td>存放:<br>引用:<br>对应类:InsetDrawable</td>
+<td><div align="center"><img src="/images/syntax-inset-drawable.png"></div></td>
+<td><div align="center"><img src="/images/example-inset-drawable.png"></div></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Clip drawable</td>
+<td>存放:<br>引用:<br>对应类:ClipDrawable</td>
+<td><div align="center"><img src="/images/syntax-clip-drawable.png"></div></td>
+<td><div align="center"><img src="/images/sample-clip-drawable.png"></div></td>
+</tr>
+<tr>
+<td>16</td>
+<td>Scale drawable</td>
+<td>存放:<br>引用:<br>对应类:ScaleDrawable</td>
+<td><div align="center"><img src="/images/syntax-scale-drawable.png"></div></td>
+<td><div align="center"><img src="/images/sample-scale-drawable.png"></div></td>
+</tr>
+<tr>
+<td>17</td>
+<td>Shape drawable</td>
+<td>存放:<br>引用:<br>对应类:GradientDrawable</td>
+<td><div align="center"><img src="/images/syntax-shape-drawable.png"></div></td>
+<td><div align="center"><img src="/images/sample-shape-drawable.png"></div></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>18</td>
+<td>layout</td>
+<td>存放:<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
+</tr>
+<tr>
+<td>19</td>
+<td>menu</td>
+<td>存放:res/menu/filename.xml<br>引用:<br>对应类:Menu</td>
+<td><div align="center"><img src="/images/syntax-menu.png"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
+</tr>
+<tr>
+<td>20</td>
+<td>String</td>
+<td>存放:res/values/filename.xml<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
+</tr>
+<tr>
+<td>21</td>
+<td>String array</td>
+<td>存放:res/values/filename.xml<br>引用:R.array.string_array_name<br>对应类:</td>
+<td><div align="center"><img src="/images/syntax-string-array.png"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
+</tr>
+<tr>
+<td>22</td>
+<td>Quantity strings</td>
+<td>存放:<br>引用:R.plurals.plural_name<br>对应类:</td>
+<td><div align="center"><img src="/images/syntax-quantity-string.png"></div></td>
+<td><div align="center"><img src="/images/sample-quantity-string.png"></div></td>
+</tr>
+<tr>
+<td>23</td>
+<td>Formatting strings</td>
+<td>存放:<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/syntax-formating-string.png"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
+</tr>
+<tr>
+<td>24</td>
+<td>Styling with HTML markup</td>
+<td>存放:<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/syntax-html-markup.png"></div></td>
+<td><div align="center"><img src="/images/sample-html-markup-string.png"></div></td>
+</tr>
+<tr>
+<td>25</td>
+<td>Styling with spannables</td>
+<td>存放:<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
+</tr>
+<tr>
+<td>26</td>
+<td>Styling with annotations</td>
+<td>存放:<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
+</tr>
+<tr>
+<td>27</td>
+<td>Annotation spans and text parceling</td>
+<td>存放:<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>28</td>
+<td>Style resource</td>
+<td>存放:<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/syntax-style.png"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
+</tr>
+<tr>
+<td>29</td>
+<td>Font resources</td>
+<td>存放:res/font/filename.ttf (.ttf, .ttc, .otf, or .xml)<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/sample-font-resources.png"></div></td>
+</tr>
+<tr>
+<td>30</td>
+<td>Downloadable font</td>
+<td>存放:<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/sample-downloadable-font.png"></div></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>31</td>
+<td>Bool</td>
+<td>存放:<br>引用:R.bool.bool_name<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/sample-bool.png"></div></td>
+</tr>
+<tr>
+<td>32</td>
+<td>Color</td>
+<td>存放:<br>引用:R.color.color_name<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/sample-color.png"></div></td>
+</tr>
+<tr>
+<td>33</td>
+<td>Dimension</td>
+<td>存放:<br>引用:R.dimen.dimension_name<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/sample-dimensions.png"></div></td>
+</tr>
+<tr>
+<td>34</td>
+<td>ID</td>
+<td>存放:<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
+</tr>
+<tr>
+<td>35</td>
+<td>Integer</td>
+<td>存放:<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
+</tr>
+<tr>
+<td>36</td>
+<td>Integer Array</td>
+<td>存放:<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
+</tr>
+<tr>
+<td>37</td>
+<td>Typed array</td>
+<td>存放:<br>引用:<br>对应类:TypedArray</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/sample-typedarray.png"></div></td>
+</tr>
+</tbody>
+</table>
+<h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a href="https://www.jianshu.com/p/4583755b4f69" target="_blank" rel="noopener">web前段适配移动端</a></p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/farubaba">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、相关参考"><span class="toc-number">1.</span> <span class="toc-text">一、相关参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、Android屏幕密度及代表分辨率"><span class="toc-number">2.</span> <span class="toc-text">二、Android屏幕密度及代表分辨率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、基础知识"><span class="toc-number">3.</span> <span class="toc-text">三、基础知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、图片适配屏幕密度xhdpi"><span class="toc-number">4.</span> <span class="toc-text">四、图片适配屏幕密度xhdpi</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、Android资源类型、存放位置及示例代码"><span class="toc-number">5.</span> <span class="toc-text">五、Android资源类型、存放位置及示例代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文档"><span class="toc-number">6.</span> <span class="toc-text">参考文档</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/02/24/Android多屏幕适配/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/02/24/Android多屏幕适配/&text=Android屏幕适配"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/02/24/Android多屏幕适配/&title=Android屏幕适配"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/02/24/Android多屏幕适配/&is_video=false&description=Android屏幕适配"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Android屏幕适配&body=Check out this article: http://yoursite.com/2018/02/24/Android多屏幕适配/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/02/24/Android多屏幕适配/&title=Android屏幕适配"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/02/24/Android多屏幕适配/&title=Android屏幕适配"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/02/24/Android多屏幕适配/&title=Android屏幕适配"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/02/24/Android多屏幕适配/&title=Android屏幕适配"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/02/24/Android多屏幕适配/&name=Android屏幕适配&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Farubaba
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/farubaba">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
