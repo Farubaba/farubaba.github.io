@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="&amp;lt;!-- 	ASCII ANIMATOR : http://www.qqpr.com &amp;lt;div align=&amp;quot;center&amp;quot;&amp;gt; &amp;lt;img src=&amp;quot;&amp;quot; width=&amp;quot;90%&amp;quot; /&amp;gt; &amp;lt;/div&amp;gt;  折叠内容 &amp;lt;details&amp;gt; &amp;lt;summary&amp;gt;Title&amp;lt;/summ">
+    <meta name="description" content="计算机内存数据基本单元   中文名 英文名 描述     二进制位 bit 代表一个二进制位，0或者1   字节 byte 代表8个二进制位，如 10101010    一、计算机中字符编码发展简述第一阶段：单字节字符集阶段–ASCII编码&amp;nbsp;&amp;nbsp;计算机最早是美国人发明的，所以最初的字符编码主要用于显示现代英语和其他西欧语言。这就是最早的ASCII码表，ASCII是America">
 <meta name="keywords" content="Unicode,UTF-8,UTF-16,UTF-32,char,Character">
 <meta property="og:type" content="article">
 <meta property="og:title" content="细说字符编码ASCII、Unicode、UTF-8和Java中的字符char">
 <meta property="og:url" content="http://yoursite.com/2019/04/09/细说字符编码ASCII、Unicode、UTF-8和Java中的字符char/index.html">
 <meta property="og:site_name" content="Farubaba">
-<meta property="og:description" content="&amp;lt;!-- 	ASCII ANIMATOR : http://www.qqpr.com &amp;lt;div align=&amp;quot;center&amp;quot;&amp;gt; &amp;lt;img src=&amp;quot;&amp;quot; width=&amp;quot;90%&amp;quot; /&amp;gt; &amp;lt;/div&amp;gt;  折叠内容 &amp;lt;details&amp;gt; &amp;lt;summary&amp;gt;Title&amp;lt;/summ">
+<meta property="og:description" content="计算机内存数据基本单元   中文名 英文名 描述     二进制位 bit 代表一个二进制位，0或者1   字节 byte 代表8个二进制位，如 10101010    一、计算机中字符编码发展简述第一阶段：单字节字符集阶段–ASCII编码&amp;nbsp;&amp;nbsp;计算机最早是美国人发明的，所以最初的字符编码主要用于显示现代英语和其他西欧语言。这就是最早的ASCII码表，ASCII是America">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-09T13:06:03.650Z">
+<meta property="og:updated_time" content="2019-04-09T13:08:46.314Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="细说字符编码ASCII、Unicode、UTF-8和Java中的字符char">
-<meta name="twitter:description" content="&amp;lt;!-- 	ASCII ANIMATOR : http://www.qqpr.com &amp;lt;div align=&amp;quot;center&amp;quot;&amp;gt; &amp;lt;img src=&amp;quot;&amp;quot; width=&amp;quot;90%&amp;quot; /&amp;gt; &amp;lt;/div&amp;gt;  折叠内容 &amp;lt;details&amp;gt; &amp;lt;summary&amp;gt;Title&amp;lt;/summ">
+<meta name="twitter:description" content="计算机内存数据基本单元   中文名 英文名 描述     二进制位 bit 代表一个二进制位，0或者1   字节 byte 代表8个二进制位，如 10101010    一、计算机中字符编码发展简述第一阶段：单字节字符集阶段–ASCII编码&amp;nbsp;&amp;nbsp;计算机最早是美国人发明的，所以最初的字符编码主要用于显示现代英语和其他西欧语言。这就是最早的ASCII码表，ASCII是America">
     
     
         
@@ -99,7 +99,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">计算机内存数据基本单元</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">一、计算机中字符编码发展简述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">第一阶段：单字节字符集阶段--ASCII编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">第二阶段：多字节字符集阶段--ANSI编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">第三个阶段：统一字符集阶段--Unicode编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">6.</span> <span class="toc-text">二、Unicode字符集效率优化之UTF-8</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">7.</span> <span class="toc-text">三、Java支持的Unicode字符集和UTF-8存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">8.</span> <span class="toc-text">3.1 Java默认采用Unicode字符集，默认采用UTF-8优化Unicode字符存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">9.</span> <span class="toc-text">3.2 Java基本数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">10.</span> <span class="toc-text">3.3 简述Java中字符存储和读取逻辑</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#计算机内存数据基本单元"><span class="toc-number">1.</span> <span class="toc-text">计算机内存数据基本单元</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一、计算机中字符编码发展简述"><span class="toc-number">2.</span> <span class="toc-text">一、计算机中字符编码发展简述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第一阶段：单字节字符集阶段–ASCII编码"><span class="toc-number">3.</span> <span class="toc-text">第一阶段：单字节字符集阶段–ASCII编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二阶段：多字节字符集阶段–ANSI编码"><span class="toc-number">4.</span> <span class="toc-text">第二阶段：多字节字符集阶段–ANSI编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三个阶段：统一字符集阶段–Unicode编码"><span class="toc-number">5.</span> <span class="toc-text">第三个阶段：统一字符集阶段–Unicode编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、Unicode字符集效率优化之UTF-8"><span class="toc-number">6.</span> <span class="toc-text">二、Unicode字符集效率优化之UTF-8</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、Java支持的Unicode字符集和UTF-8存储"><span class="toc-number">7.</span> <span class="toc-text">三、Java支持的Unicode字符集和UTF-8存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Java默认采用Unicode字符集，默认采用UTF-8优化Unicode字符存储"><span class="toc-number">8.</span> <span class="toc-text">3.1 Java默认采用Unicode字符集，默认采用UTF-8优化Unicode字符存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Java基本数据类型"><span class="toc-number">9.</span> <span class="toc-text">3.2 Java基本数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-简述Java中字符存储和读取逻辑"><span class="toc-number">10.</span> <span class="toc-text">3.3 简述Java中字符存储和读取逻辑</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -166,22 +166,21 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>&lt;!--
-	ASCII ANIMATOR : http://www.qqpr.com</p>
-<pre><code>&lt;div align=&quot;center&quot;&gt;
-&lt;img src=&quot;&quot; width=&quot;90%&quot; /&gt;
-&lt;/div&gt;
+    <!-- 
+      ASCII ANIMATOR : http://www.qqpr.com
 
-折叠内容
-&lt;details&gt;
-&lt;summary&gt;Title&lt;/summary&gt;
+    <div align="center">
+    <img src="" width="90%" />
+    </div>
 
-content!!!
-&lt;/details&gt;
-</code></pre>
-<p>--&gt;</p>
-<h3>计算机内存数据基本单元</h3>
-<table>
+    折叠内容
+    <details>
+    <summary>Title</summary>
+
+    content!!!
+    </details>
+-->
+<h3 id="计算机内存数据基本单元"><a href="#计算机内存数据基本单元" class="headerlink" title="计算机内存数据基本单元"></a>计算机内存数据基本单元</h3><table>
 <thead>
 <tr>
 <th>中文名</th>
@@ -202,22 +201,14 @@ content!!!
 </tr>
 </tbody>
 </table>
-<h3>一、<a href="https://baike.baidu.com/item/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/8446880?fr=aladdin" target="_blank" rel="noopener">计算机中字符编码发展简述</a></h3>
-<h3>第一阶段：单字节字符集阶段--ASCII编码</h3>
-<p>  计算机最早是美国人发明的，所以最初的字符编码主要用于显示现代英语和其他西欧语言。这就是最早的ASCII码表，ASCII是American Standard Code for Information Interchange缩写。基本的 ASCII 字符集共有 128 个字符，其中有 96 个可打印字符，包括常用的字母、数字、标点符号等，另外还有 32 个控制字符。但表示的字符集相当有限，这一缺陷明显。</p>
-<h3>第二阶段：多字节字符集阶段--ANSI编码</h3>
-<p>  为了扩充ASCII编码，以用于显示本国的语言，不同的国家和地区制定了不同的标准，由此产生了 GB2312, BIG5, JIS 等各自的编码标准。这些使用 2 个字节来代表一个字符的各种汉字延伸编码方式，称为 ANSI 编码，又称为&quot;MBCS（Muilti-Bytes Charecter Set，多字节字符集）&quot;。&lt;br&gt;&lt;br&gt;  在简体中文系统下，ANSI 编码代表 GB2312 编码，在日文操作系统下，ANSI 编码代表 JIS 编码，所以在中文 windows下要转码成gb2312,gbk只需要把文本保存为ANSI 编码即可。 不同 ANSI 编码之间互不兼容，当信息在国际间交流时，无法将属于两种语言的文字，存储在同一段 ANSI 编码的文本中。一个很大的缺点是，同一个编码值，在不同的编码体系里代表着不同的字。这样就容易造成混乱。导致了unicode码的诞生。比如: 支持法语的字符集，支持西班牙的字符集，支持中文的字符集，每个字符集中都定义了自己能够表示的所有字符。&lt;br&gt;&lt;br&gt;  乱码问题：比如同一个字符，比如太极☯️，可能在中文字符集中有，但在法语字符集中没有。这样一来当一个使用中文字符编码来存储的文件，在使用法语字符集来打开时，找不到对应的☯️符号，或者找到另外一个完全不同的符号，于是，原本该显示☯️的地方，就显示出一个乱码。 多字符集之间的转换会出现乱码。</p>
-<p>&lt;font color=&quot;red&quot;&gt;
-简体中文字符集：GBK &gt; GB2312<br>
-繁体中文字符集：Big5
-&lt;/font&gt;</p>
-<h3>第三个阶段：统一字符集阶段--Unicode编码</h3>
-<p>  由于ANSI编码阶段，导致乱码问题出现，这一问题也促使了unicode码的诞生。Unicode编码将世界上所有的符号都纳入其中，无论是英文、日文、还是中文等，大家都使用这个编码表，就不会出现编码不匹配现象。每个符号对应一个唯一的编码，乱码问题就不存在了。Unicode固然统一了编码方式，但它固定使用4个字节来表示，效率不高。比如UCS-4(Unicode的标准之一)规定用4个字节存储一个符号，那么每个英文字母前都必然有三个字节是0，这对存储和传输来说都很耗资源。&lt;br&gt;</p>
-<p>  查看最新<a href="https://www.unicode.org/Public/UCD/latest/charts/CodeCharts.pdf" target="_blank" rel="noopener">Unicode码表</a>得知，目前Unicode字符集编码支持从00000000~0010FFFF 即从（0 ~ 1114111）一百多万个字符。所以Unicode字符二进制编码本身长度可以为 1 - 4 个字节，但Unicode只规定了符号的二进制代码，却没有规定这个二进制代码应该如何存储。</p>
-<h3>二、Unicode字符集效率优化之UTF-8</h3>
-<p>  为了提高Unicode的编码效率，于是就出现了UTF-8编码。UTF-8编码优化了Unicode编码的存储方式，可以根据不同的符号自动选择编码的长短，并不固定使用4个字节来存储。比如英文字母可以只用1个字节就够了。UTF-8的编码是这样得出来的，以”汉”这个字为例：&lt;br&gt;
-  “汉”字的Unicode编码是U+00006C49，然后把U+00006C49通过UTF-8编码器进行编码，最后输出的UTF-8编码是E6B189。Unicode字符为4字节，优化后为3字节。</p>
-<p>&lt;pre&gt;
+<h3 id="一、计算机中字符编码发展简述"><a href="#一、计算机中字符编码发展简述" class="headerlink" title="一、计算机中字符编码发展简述"></a>一、<a href="https://baike.baidu.com/item/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/8446880?fr=aladdin" target="_blank" rel="noopener">计算机中字符编码发展简述</a></h3><h3 id="第一阶段：单字节字符集阶段–ASCII编码"><a href="#第一阶段：单字节字符集阶段–ASCII编码" class="headerlink" title="第一阶段：单字节字符集阶段–ASCII编码"></a>第一阶段：单字节字符集阶段–ASCII编码</h3><p>&nbsp;&nbsp;计算机最早是美国人发明的，所以最初的字符编码主要用于显示现代英语和其他西欧语言。这就是最早的ASCII码表，ASCII是American Standard Code for Information Interchange缩写。基本的 ASCII 字符集共有 128 个字符，其中有 96 个可打印字符，包括常用的字母、数字、标点符号等，另外还有 32 个控制字符。但表示的字符集相当有限，这一缺陷明显。</p>
+<h3 id="第二阶段：多字节字符集阶段–ANSI编码"><a href="#第二阶段：多字节字符集阶段–ANSI编码" class="headerlink" title="第二阶段：多字节字符集阶段–ANSI编码"></a>第二阶段：多字节字符集阶段–ANSI编码</h3><p>&nbsp;&nbsp;为了扩充ASCII编码，以用于显示本国的语言，不同的国家和地区制定了不同的标准，由此产生了 GB2312, BIG5, JIS 等各自的编码标准。这些使用 2 个字节来代表一个字符的各种汉字延伸编码方式，称为 ANSI 编码，又称为”MBCS（Muilti-Bytes Charecter Set，多字节字符集）”。<br><br>&nbsp;&nbsp;在简体中文系统下，ANSI 编码代表 GB2312 编码，在日文操作系统下，ANSI 编码代表 JIS 编码，所以在中文 windows下要转码成gb2312,gbk只需要把文本保存为ANSI 编码即可。 不同 ANSI 编码之间互不兼容，当信息在国际间交流时，无法将属于两种语言的文字，存储在同一段 ANSI 编码的文本中。一个很大的缺点是，同一个编码值，在不同的编码体系里代表着不同的字。这样就容易造成混乱。导致了unicode码的诞生。比如: 支持法语的字符集，支持西班牙的字符集，支持中文的字符集，每个字符集中都定义了自己能够表示的所有字符。<br><br>&nbsp;&nbsp;乱码问题：比如同一个字符，比如太极☯️，可能在中文字符集中有，但在法语字符集中没有。这样一来当一个使用中文字符编码来存储的文件，在使用法语字符集来打开时，找不到对应的☯️符号，或者找到另外一个完全不同的符号，于是，原本该显示☯️的地方，就显示出一个乱码。 多字符集之间的转换会出现乱码。</p>
+<font color="red"><br>简体中文字符集：GBK &gt; GB2312<br>繁体中文字符集：Big5<br></font>
+
+<h3 id="第三个阶段：统一字符集阶段–Unicode编码"><a href="#第三个阶段：统一字符集阶段–Unicode编码" class="headerlink" title="第三个阶段：统一字符集阶段–Unicode编码"></a>第三个阶段：统一字符集阶段–Unicode编码</h3><p>&nbsp;&nbsp;由于ANSI编码阶段，导致乱码问题出现，这一问题也促使了unicode码的诞生。Unicode编码将世界上所有的符号都纳入其中，无论是英文、日文、还是中文等，大家都使用这个编码表，就不会出现编码不匹配现象。每个符号对应一个唯一的编码，乱码问题就不存在了。Unicode固然统一了编码方式，但它固定使用4个字节来表示，效率不高。比如UCS-4(Unicode的标准之一)规定用4个字节存储一个符号，那么每个英文字母前都必然有三个字节是0，这对存储和传输来说都很耗资源。<br></p>
+<p>&nbsp;&nbsp;查看最新<a href="https://www.unicode.org/Public/UCD/latest/charts/CodeCharts.pdf" target="_blank" rel="noopener">Unicode码表</a>得知，目前Unicode字符集编码支持从00000000~0010FFFF 即从（0 ~ 1114111）一百多万个字符。所以Unicode字符二进制编码本身长度可以为 1 - 4 个字节，但Unicode只规定了符号的二进制代码，却没有规定这个二进制代码应该如何存储。</p>
+<h3 id="二、Unicode字符集效率优化之UTF-8"><a href="#二、Unicode字符集效率优化之UTF-8" class="headerlink" title="二、Unicode字符集效率优化之UTF-8"></a>二、Unicode字符集效率优化之UTF-8</h3><p>&nbsp;&nbsp;为了提高Unicode的编码效率，于是就出现了UTF-8编码。UTF-8编码优化了Unicode编码的存储方式，可以根据不同的符号自动选择编码的长短，并不固定使用4个字节来存储。比如英文字母可以只用1个字节就够了。UTF-8的编码是这样得出来的，以”汉”这个字为例：<br><br>&nbsp;&nbsp;“汉”字的Unicode编码是U+00006C49，然后把U+00006C49通过UTF-8编码器进行编码，最后输出的UTF-8编码是E6B189。Unicode字符为4字节，优化后为3字节。</p>
+<pre>
 UTF-8就是对Unicode编码的一种优化存储方案实现。具体实现方式见下表：
 --------------------+---------------------------------------+--------------------------
 Unicode符号范围      |        UTF-8编码方式                    | UTF-8如何存储对应字符
@@ -227,27 +218,11 @@ Unicode符号范围      |        UTF-8编码方式                    | UTF-8�
 0000 0080-0000 07FF | 110xxxxx 10xxxxxx                     |  使用 2 字节存储对应字符
 0000 0800-0000 FFFF | 1110xxxx 10xxxxxx 10xxxxxx            |  使用 3 字节存储对应字符
 0001 0000-0010 FFFF | 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx   |  使用 4 字节存储对应字符
-&lt;/pre&gt;</p>
-<h3>三、Java支持的Unicode字符集和UTF-8存储</h3>
-<h3>3.1 Java默认采用Unicode字符集，默认采用UTF-8优化Unicode字符存储</h3>
-<p>  Java中所说的字符编码，简单理解就是字符char的二进制编码，Java字符（char）默认采用<a href="http://www.unicode.org/" target="_blank" rel="noopener">Unicode编码</a>字符集，并默认使用<a href="http://www.utf-8.com/" target="_blank" rel="noopener">UTF-8编码</a>来存储这些Unicode字符（char）。不同版本Java，都只支持Unicode字符集的一个特定版本。Java 11将支持最新版的Unicode。Java 9实现了Unicode 8.0。JDK1.8中Character类型的BYTES = 2 ，并不支持2字节以上的Unicode字符。<a href="https://blog.csdn.net/guxiaonuan/article/details/78678043" target="_blank" rel="noopener">UTF-8、UTF-16、UTF-32</a></p>
-<p>&lt;details&gt;
-&lt;summary&gt;
-代码演示Java中的Unicode和UTF-8,&lt;font color=&quot;red&quot;&gt;点击展开代码详情&lt;/font&gt;</p>
-<pre><code>@Test
-public void testJavaUnicodeSupport() {
-    //Unicode = 262F表示太极符号：☯
-    System.out.println(&quot;\u262F&quot;);
-    //Unicode = 262FF表示上面一个横“目”，下面一个“曹”字.实际输出 ☯F
-    System.out.println(&quot;\u262FF&quot;);
-    String value = &quot;汉&quot;;
-    //输出 \6c49
-    System.out.println(unicodeToString(value));
-    //输出 e6b189
-    System.out.println(stringToUtf8HexCode(value));
-}
-</code></pre>
-<p>&lt;/summary&gt;</p>
+</pre>
+
+
+<h3 id="三、Java支持的Unicode字符集和UTF-8存储"><a href="#三、Java支持的Unicode字符集和UTF-8存储" class="headerlink" title="三、Java支持的Unicode字符集和UTF-8存储"></a>三、Java支持的Unicode字符集和UTF-8存储</h3><h3 id="3-1-Java默认采用Unicode字符集，默认采用UTF-8优化Unicode字符存储"><a href="#3-1-Java默认采用Unicode字符集，默认采用UTF-8优化Unicode字符存储" class="headerlink" title="3.1 Java默认采用Unicode字符集，默认采用UTF-8优化Unicode字符存储"></a>3.1 Java默认采用Unicode字符集，默认采用UTF-8优化Unicode字符存储</h3><p>&nbsp;&nbsp;Java中所说的字符编码，简单理解就是字符char的二进制编码，Java字符（char）默认采用<a href="http://www.unicode.org/" target="_blank" rel="noopener">Unicode编码</a>字符集，并默认使用<a href="http://www.utf-8.com/" target="_blank" rel="noopener">UTF-8编码</a>来存储这些Unicode字符（char）。不同版本Java，都只支持Unicode字符集的一个特定版本。Java 11将支持最新版的Unicode。Java 9实现了Unicode 8.0。JDK1.8中Character类型的BYTES = 2 ，并不支持2字节以上的Unicode字符。<a href="https://blog.csdn.net/guxiaonuan/article/details/78678043" target="_blank" rel="noopener">UTF-8、UTF-16、UTF-32</a></p>
+<p>代码演示Java中的Unicode和UTF-8</p>
 <pre><code>public static final String EMPTY = &quot;&quot;; 
 public static final String HEX_PREFIX = &quot;0x&quot;;
 public static final String HEX_STRING =  &quot;0123456789abcdef&quot;;
@@ -259,7 +234,7 @@ public static final String[] BINARY_ARRAY =
         &quot;0100&quot;,&quot;0101&quot;,&quot;0110&quot;,&quot;0111&quot;,  
         &quot;1000&quot;,&quot;1001&quot;,&quot;1010&quot;,&quot;1011&quot;,  
         &quot;1100&quot;,&quot;1101&quot;,&quot;1110&quot;,&quot;1111&quot;}; 
-        
+
 /**
  * 不同版本Java，都只支持Unicode字符集的一个特定版本。
  * 以下测试代码运行在JDK=1.8的环境中。
@@ -279,15 +254,15 @@ public static final String[] BINARY_ARRAY =
  */
 @Test
 public void testJavaUnicodeSupport() {
-	//Unicode = 262F表示太极符号：☯
-	System.out.println(&quot;\u262F&quot;);
-	//Unicode = 262FF表示上面一个横“目”，下面一个“曹”字.实际输出 ☯F
-	System.out.println(&quot;\u262FF&quot;);
-	String value = &quot;汉&quot;;
-	//输出 \6c49
-	System.out.println(unicodeToString(value));
-	//输出 e6b189
-	System.out.println(stringToUtf8HexCode(value));
+    //Unicode = 262F表示太极符号：☯
+    System.out.println(&quot;\u262F&quot;);
+    //Unicode = 262FF表示上面一个横“目”，下面一个“曹”字.实际输出 ☯F
+    System.out.println(&quot;\u262FF&quot;);
+    String value = &quot;汉&quot;;
+    //输出 \6c49
+    System.out.println(unicodeToString(value));
+    //输出 e6b189
+    System.out.println(stringToUtf8HexCode(value));
 }
 
 /**
@@ -311,15 +286,15 @@ public static String unicodeToString(String unicode) {
  * @return
  */
 public static String stringToUtf8HexCode(String value){
-	try {
-		if(value != null) {
-    		byte[] utf8Bytes = value.getBytes(&quot;UTF-8&quot;);
-    		return toHexString(utf8Bytes);
-    	}
-	}catch(Exception e) {
-		e.printStackTrace();
-	}
-	return null;
+    try {
+        if(value != null) {
+            byte[] utf8Bytes = value.getBytes(&quot;UTF-8&quot;);
+            return toHexString(utf8Bytes);
+        }
+    }catch(Exception e) {
+        e.printStackTrace();
+    }
+    return null;
 }
 
 /**
@@ -329,13 +304,13 @@ public static String stringToUtf8HexCode(String value){
  * @return
  */
 public static String toHexString(byte[] array) {
-	StringBuilder sb = null;
-	if(array != null) {
-		for(byte b : array) {
-			sb = toHexString(sb, b);
-		}
-	}
-	return sb == null ? EMPTY : sb.toString();
+    StringBuilder sb = null;
+    if(array != null) {
+        for(byte b : array) {
+            sb = toHexString(sb, b);
+        }
+    }
+    return sb == null ? EMPTY : sb.toString();
 }
 
 /**
@@ -346,25 +321,22 @@ public static String toHexString(byte[] array) {
  * @return
  */
 public static StringBuilder toHexString(StringBuilder sb, byte b) {
-	if(sb == null) {
-		sb = new StringBuilder();
-	}
-	//处理正负数的逻辑不一样，负数的值需要先将补码还原成原码
-	//负数补码还原，其换算规则为： 补码--&gt;减1--&gt;取反 = 原码数值
-	
-	//处理高四位，高四位10进制值如下，可以用做 binaryArray的下标
-	byte index = (byte) ((b &amp; 0xF0) &gt;&gt; 4);
-	sb.append(HEX_STRING.charAt(index));
-	//处理低四位，低四位10进制值如下，可以用做 binaryArray的下标
-	index = (byte) (b &amp; 0x0F);
-	sb.append(HEX_STRING.charAt(index));
-	
-	return sb;
+    if(sb == null) {
+        sb = new StringBuilder();
+    }
+    //处理正负数的逻辑不一样，负数的值需要先将补码还原成原码
+    //负数补码还原，其换算规则为： 补码--&gt;减1--&gt;取反 = 原码数值
+
+    //处理高四位，高四位10进制值如下，可以用做 binaryArray的下标
+    byte index = (byte) ((b &amp; 0xF0) &gt;&gt; 4);
+    sb.append(HEX_STRING.charAt(index));
+    //处理低四位，低四位10进制值如下，可以用做 binaryArray的下标
+    index = (byte) (b &amp; 0x0F);
+    sb.append(HEX_STRING.charAt(index));
+
+    return sb;
 }
-</code></pre>
-<p>&lt;/details&gt;</p>
-<h3>3.2 <a href="https://www.cnblogs.com/123hll/p/5805040.html" target="_blank" rel="noopener">Java基本数据类型</a></h3>
-<table>
+</code></pre><h3 id="3-2-Java基本数据类型"><a href="#3-2-Java基本数据类型" class="headerlink" title="3.2 Java基本数据类型"></a>3.2 <a href="https://www.cnblogs.com/123hll/p/5805040.html" target="_blank" rel="noopener">Java基本数据类型</a></h3><table>
 <thead>
 <tr>
 <th>中文名称</th>
@@ -404,13 +376,13 @@ public static StringBuilder toHexString(StringBuilder sb, byte b) {
 <tr>
 <td>存储长度</td>
 <td></td>
-<td>Character.SIZE=16bit&lt;br&gt;Character.BYTES=2</td>
-<td>Byte.SIZE=8bit&lt;br&gt;Byte.BYTES=1</td>
-<td>Short.SIZE=16bit&lt;br&gt;Short.BYTES=2</td>
-<td>Integer.SIZE=32bit&lt;br&gt;Integer.BYTES=4</td>
-<td>Long.SIZE=64bit&lt;br&gt;Long.BYTES=8</td>
-<td>Float.SIZE=32bit&lt;br&gt;Float.BYTES=4</td>
-<td>Double.SIZE=64bit&lt;br&gt;Double.BYTES=8</td>
+<td>Character.SIZE=16bit<br>Character.BYTES=2</td>
+<td>Byte.SIZE=8bit<br>Byte.BYTES=1</td>
+<td>Short.SIZE=16bit<br>Short.BYTES=2</td>
+<td>Integer.SIZE=32bit<br>Integer.BYTES=4</td>
+<td>Long.SIZE=64bit<br>Long.BYTES=8</td>
+<td>Float.SIZE=32bit<br>Float.BYTES=4</td>
+<td>Double.SIZE=64bit<br>Double.BYTES=8</td>
 </tr>
 <tr>
 <td>取值范围</td>
@@ -427,7 +399,7 @@ public static StringBuilder toHexString(StringBuilder sb, byte b) {
 </table>
 <p>byte(1字节) &lt; char(2字节) = short(2字节) &lt; int(4字节) = float(4字节) &lt; long(8字节) &lt; double(8字节)</p>
 <blockquote>
-<p>&lt;pre&gt;
+<pre>
 Byte =(-128 ~ 127)
 Character =(0 ~ 65535)
 Short =(-32768 ~ 32767)
@@ -435,13 +407,13 @@ Integer =(-2147483648 ~ 2147483647)
 Float =(1.4E-45 ~ 3.4028235E38)
 Long =(-9223372036854775808 ~ 9223372036854775807)
 Double =(4.9E-324 ~ 1.7976931348623157E308)
-&lt;/pre&gt;</p>
+</pre> 
 </blockquote>
-<p>&lt;font color=&quot;red&quot;&gt;所以： 大于0的byte 和无符号 unsigned byte 和大于0的short 和无符号 unsigned short 都可以无失真地转化成对应的char，但int、long在大于char的最大值65535时，转化成char将失真。 &lt;/font&gt;</p>
-<h3>3.3 简述Java中字符存储和读取逻辑</h3>
-<p>以中文汉字的“汉”为例：</p>
-<p>字符存储逻辑：&quot;汉&quot;--&gt;查询Unicode码表得：U+00006C49（4字节)--&gt;输入UTF-8编码器优化编码为：E6B189(3字节)--&gt;存入文件</p>
-<p>字符读取逻辑：读入UTF-8编码：E6B189--&gt;输入UTF-8解码器解码为：U+00006C49--&gt;查询Unicode码表得到对应的值为：”汉“</p>
+<font color="red">所以： 大于0的byte 和无符号 unsigned byte 和大于0的short 和无符号 unsigned short 都可以无失真地转化成对应的char，但int、long在大于char的最大值65535时，转化成char将失真。 </font>
+
+<h3 id="3-3-简述Java中字符存储和读取逻辑"><a href="#3-3-简述Java中字符存储和读取逻辑" class="headerlink" title="3.3 简述Java中字符存储和读取逻辑"></a>3.3 简述Java中字符存储和读取逻辑</h3><p>以中文汉字的“汉”为例：</p>
+<p>字符存储逻辑：”汉”–&gt;查询Unicode码表得：U+00006C49（4字节)–&gt;输入UTF-8编码器优化编码为：E6B189(3字节)–&gt;存入文件</p>
+<p>字符读取逻辑：读入UTF-8编码：E6B189–&gt;输入UTF-8解码器解码为：U+00006C49–&gt;查询Unicode码表得到对应的值为：”汉“</p>
 
   </div>
 </article>
@@ -472,7 +444,7 @@ Double =(4.9E-324 ~ 1.7976931348623157E308)
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">计算机内存数据基本单元</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">一、计算机中字符编码发展简述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">第一阶段：单字节字符集阶段--ASCII编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">第二阶段：多字节字符集阶段--ANSI编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">第三个阶段：统一字符集阶段--Unicode编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">6.</span> <span class="toc-text">二、Unicode字符集效率优化之UTF-8</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">7.</span> <span class="toc-text">三、Java支持的Unicode字符集和UTF-8存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">8.</span> <span class="toc-text">3.1 Java默认采用Unicode字符集，默认采用UTF-8优化Unicode字符存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">9.</span> <span class="toc-text">3.2 Java基本数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">10.</span> <span class="toc-text">3.3 简述Java中字符存储和读取逻辑</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#计算机内存数据基本单元"><span class="toc-number">1.</span> <span class="toc-text">计算机内存数据基本单元</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一、计算机中字符编码发展简述"><span class="toc-number">2.</span> <span class="toc-text">一、计算机中字符编码发展简述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第一阶段：单字节字符集阶段–ASCII编码"><span class="toc-number">3.</span> <span class="toc-text">第一阶段：单字节字符集阶段–ASCII编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二阶段：多字节字符集阶段–ANSI编码"><span class="toc-number">4.</span> <span class="toc-text">第二阶段：多字节字符集阶段–ANSI编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三个阶段：统一字符集阶段–Unicode编码"><span class="toc-number">5.</span> <span class="toc-text">第三个阶段：统一字符集阶段–Unicode编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、Unicode字符集效率优化之UTF-8"><span class="toc-number">6.</span> <span class="toc-text">二、Unicode字符集效率优化之UTF-8</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、Java支持的Unicode字符集和UTF-8存储"><span class="toc-number">7.</span> <span class="toc-text">三、Java支持的Unicode字符集和UTF-8存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Java默认采用Unicode字符集，默认采用UTF-8优化Unicode字符存储"><span class="toc-number">8.</span> <span class="toc-text">3.1 Java默认采用Unicode字符集，默认采用UTF-8优化Unicode字符存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Java基本数据类型"><span class="toc-number">9.</span> <span class="toc-text">3.2 Java基本数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-简述Java中字符存储和读取逻辑"><span class="toc-number">10.</span> <span class="toc-text">3.3 简述Java中字符存储和读取逻辑</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
