@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="一、迭代器模式 (Iterator)1、一句话描述:将for循环中遍历过程抽象化、通用化之后形成 Iterator设计模式，用于按照顺序遍历集合，同时，遍历过程只依赖于Iterator接口，而并不直接依赖于数据集合本身。 2、传统For循环遍历：(循环体依赖了集合类：BookShelf) 123456789/** * BookShelf是一个Book集合类，bookShelf.getItems()">
+    <meta name="description" content="一、迭代器模式 (Iterator) &amp;lt;b&amp;gt;1、一句话描述:&amp;lt;/b&amp;gt; &amp;lt;br&amp;gt; &amp;lt;br&amp;gt; 将for循环中遍历过程抽象化、通用化之后形成 &amp;lt;b&amp;gt;Iterator设计模式&amp;lt;/b&amp;gt;，用于按照顺序遍历集合，同时，&amp;lt;b&amp;gt;遍历过程&amp;lt;/b&amp;gt;只依赖于Iterator接口，而并&amp;lt;b&amp;gt;不直接依赖&amp;lt;/b&amp;g">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一句话设计模式">
 <meta property="og:url" content="http://yoursite.com/2018/08/03/Coding一句话设计模式/index.html">
 <meta property="og:site_name" content="Farubaba">
-<meta property="og:description" content="一、迭代器模式 (Iterator)1、一句话描述:将for循环中遍历过程抽象化、通用化之后形成 Iterator设计模式，用于按照顺序遍历集合，同时，遍历过程只依赖于Iterator接口，而并不直接依赖于数据集合本身。 2、传统For循环遍历：(循环体依赖了集合类：BookShelf) 123456789/** * BookShelf是一个Book集合类，bookShelf.getItems()">
+<meta property="og:description" content="一、迭代器模式 (Iterator) &amp;lt;b&amp;gt;1、一句话描述:&amp;lt;/b&amp;gt; &amp;lt;br&amp;gt; &amp;lt;br&amp;gt; 将for循环中遍历过程抽象化、通用化之后形成 &amp;lt;b&amp;gt;Iterator设计模式&amp;lt;/b&amp;gt;，用于按照顺序遍历集合，同时，&amp;lt;b&amp;gt;遍历过程&amp;lt;/b&amp;gt;只依赖于Iterator接口，而并&amp;lt;b&amp;gt;不直接依赖&amp;lt;/b&amp;g">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-11-02T09:55:34.462Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一句话设计模式">
-<meta name="twitter:description" content="一、迭代器模式 (Iterator)1、一句话描述:将for循环中遍历过程抽象化、通用化之后形成 Iterator设计模式，用于按照顺序遍历集合，同时，遍历过程只依赖于Iterator接口，而并不直接依赖于数据集合本身。 2、传统For循环遍历：(循环体依赖了集合类：BookShelf) 123456789/** * BookShelf是一个Book集合类，bookShelf.getItems()">
+<meta name="twitter:description" content="一、迭代器模式 (Iterator) &amp;lt;b&amp;gt;1、一句话描述:&amp;lt;/b&amp;gt; &amp;lt;br&amp;gt; &amp;lt;br&amp;gt; 将for循环中遍历过程抽象化、通用化之后形成 &amp;lt;b&amp;gt;Iterator设计模式&amp;lt;/b&amp;gt;，用于按照顺序遍历集合，同时，&amp;lt;b&amp;gt;遍历过程&amp;lt;/b&amp;gt;只依赖于Iterator接口，而并&amp;lt;b&amp;gt;不直接依赖&amp;lt;/b&amp;g">
     
     
         
@@ -71,10 +71,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2018/08/03/Maven权威指南笔记/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/2018/08/04/myeclipse、maven、struts2创建server项目/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2018/08/01/Android熟练学习路线/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/2018/08/03/Coding一句话概念/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -101,7 +101,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、迭代器模式-Iterator"><span class="toc-number">1.</span> <span class="toc-text">一、迭代器模式 (Iterator)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、"><span class="toc-number">2.</span> <span class="toc-text">二、</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、迭代器模式 (Iterator)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -163,13 +163,18 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h3 id="一、迭代器模式-Iterator"><a href="#一、迭代器模式-Iterator" class="headerlink" title="一、迭代器模式 (Iterator)"></a>一、迭代器模式 (Iterator)</h3><p><b>1、一句话描述:</b><br><br><br><br><br>将for循环中遍历过程抽象化、通用化之后形成 <b>Iterator设计模式</b>，用于按照顺序遍历集合，同时，<b>遍历过程</b>只依赖于Iterator接口，而并<b>不直接依赖</b>于数据集合本身。</p>
-<p><b>2、传统For循环遍历：(循环体依赖了集合类：BookShelf)</b></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * BookShelf是一个Book集合类，bookShelf.getItems()是Book[]</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">noPatternTraverse</span><span class="params">(BookShelf bookShelf)</span> </span>&#123;</span><br><span class="line">	System.out.print(<span class="string">"for循环遍历所有集合元素: "</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt; bookShelf.length(); i++) &#123;</span><br><span class="line">		System.out.print(bookShelf.getItems()[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><b>3、Iterator遍历：(整个循环只依赖于Iterator接口，并不依赖于任何集合类)</b></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">jdkIteratorTraverse</span><span class="params">(java.util.Iterator&lt;Book&gt; iterator)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(iterator.hasNext()) &#123;</span><br><span class="line">		System.out.print((iterator.next()).getName());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><b>4、</b></p>
-<h3 id="二、"><a href="#二、" class="headerlink" title="二、"></a>二、</h3>
+    <h3>一、迭代器模式 (Iterator)</h3>
+<p>&lt;b&gt;1、一句话描述:&lt;/b&gt;
+&lt;br&gt;
+&lt;br&gt;
+将for循环中遍历过程抽象化、通用化之后形成 &lt;b&gt;Iterator设计模式&lt;/b&gt;，用于按照顺序遍历集合，同时，&lt;b&gt;遍历过程&lt;/b&gt;只依赖于Iterator接口，而并&lt;b&gt;不直接依赖&lt;/b&gt;于数据集合本身。</p>
+<p>&lt;b&gt;2、传统For循环遍历：(循环体依赖了集合类：BookShelf)&lt;/b&gt;</p>
+<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * BookShelf是一个Book集合类，bookShelf.getItems()是Book[]</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">noPatternTraverse</span><span class="params">(BookShelf bookShelf)</span> </span>&#123;</span><br><span class="line">	System.out.print(<span class="string">"for循环遍历所有集合元素: "</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt; bookShelf.length(); i++) &#123;</span><br><span class="line">		System.out.print(bookShelf.getItems()[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&lt;b&gt;3、Iterator遍历：(整个循环只依赖于Iterator接口，并不依赖于任何集合类)&lt;/b&gt;</p>
+<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">jdkIteratorTraverse</span><span class="params">(java.util.Iterator&lt;Book&gt; iterator)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(iterator.hasNext()) &#123;</span><br><span class="line">		System.out.print((iterator.next()).getName());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&lt;b&gt;4、&lt;/b&gt;</p>
+<h3>二、</h3>
+
   </div>
 </article>
 
@@ -199,7 +204,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、迭代器模式-Iterator"><span class="toc-number">1.</span> <span class="toc-text">一、迭代器模式 (Iterator)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、"><span class="toc-number">2.</span> <span class="toc-text">二、</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、迭代器模式 (Iterator)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
