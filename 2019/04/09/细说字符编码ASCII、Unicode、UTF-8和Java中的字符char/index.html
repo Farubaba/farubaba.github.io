@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Farubaba">
 <meta property="og:description" content="计算机内存数据基本单元   中文名 英文名 描述     二进制位 bit 代表一个二进制位，0或者1   字节 byte 代表8个二进制位，如 10101010    一、计算机中字符编码发展简述第一阶段：单字节字符集阶段–ASCII编码&amp;nbsp;&amp;nbsp;计算机最早是美国人发明的，所以最初的字符编码主要用于显示现代英语和其他西欧语言。这就是最早的ASCII码表，ASCII是America">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-09T13:33:11.320Z">
+<meta property="og:updated_time" content="2019-04-09T13:36:00.872Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="细说字符编码ASCII、Unicode、UTF-8和Java中的字符char">
 <meta name="twitter:description" content="计算机内存数据基本单元   中文名 英文名 描述     二进制位 bit 代表一个二进制位，0或者1   字节 byte 代表8个二进制位，如 10101010    一、计算机中字符编码发展简述第一阶段：单字节字符集阶段–ASCII编码&amp;nbsp;&amp;nbsp;计算机最早是美国人发明的，所以最初的字符编码主要用于显示现代英语和其他西欧语言。这就是最早的ASCII码表，ASCII是America">
@@ -342,6 +342,39 @@ public static StringBuilder toHexString(StringBuilder sb, byte b) {
     sb.append(HEX_STRING.charAt(index));
 
     return sb;
+}
+
+/**
+ * 返回给定字符串的Unicode编码
+ * 中文Unicode编码参考：http://www.chi2ko.com/tool/CJK.htm
+ * @param value
+ * @return
+ */
+public static String stringToUnicode(String value) {
+    return stringToUnicode(value,true);
+}
+
+/**
+ * 返回给定字符串的Unicode编码，是否添加前缀 &quot;\\u&quot; 由于addPrefix决定
+ * @param value
+ * @param addPrefix
+ * @return
+ */
+public static String stringToUnicode(String value,boolean addPrefix) {
+    StringBuffer sb = new StringBuffer();
+    char[] charArray = value.toCharArray();
+    String unicode = null;
+    for (int i=0;i&lt;charArray.length;i++) {
+        unicode = Integer.toHexString(charArray[i]);
+        if (unicode.length() &lt;= 2) {
+            unicode = &quot;00&quot; + unicode;
+        }
+        if(addPrefix) {
+            sb.append(&quot;\\u&quot;);
+        }
+        sb.append(unicode);
+    }
+    return sb.toString();
 }
 </code></pre><h3 id="3-2-Java基本数据类型"><a href="#3-2-Java基本数据类型" class="headerlink" title="3.2 Java基本数据类型"></a>3.2 <a href="https://www.cnblogs.com/123hll/p/5805040.html" target="_blank" rel="noopener">Java基本数据类型</a></h3><blockquote>
 <pre>
