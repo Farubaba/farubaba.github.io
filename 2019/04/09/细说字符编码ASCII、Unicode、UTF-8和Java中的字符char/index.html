@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Farubaba">
 <meta property="og:description" content="计算机内存数据基本单元   中文名 英文名 描述     二进制位 bit 代表一个二进制位，0或者1   字节 byte 代表8个二进制位，如 10101010    一、计算机中字符编码发展简述第一阶段：单字节字符集阶段–ASCII编码&amp;nbsp;&amp;nbsp;计算机最早是美国人发明的，所以最初的字符编码主要用于显示现代英语和其他西欧语言。这就是最早的ASCII码表，ASCII是America">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-09T13:08:46.314Z">
+<meta property="og:updated_time" content="2019-04-09T13:19:08.210Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="细说字符编码ASCII、Unicode、UTF-8和Java中的字符char">
 <meta name="twitter:description" content="计算机内存数据基本单元   中文名 英文名 描述     二进制位 bit 代表一个二进制位，0或者1   字节 byte 代表8个二进制位，如 10101010    一、计算机中字符编码发展简述第一阶段：单字节字符集阶段–ASCII编码&amp;nbsp;&amp;nbsp;计算机最早是美国人发明的，所以最初的字符编码主要用于显示现代英语和其他西欧语言。这就是最早的ASCII码表，ASCII是America">
@@ -336,79 +336,18 @@ public static StringBuilder toHexString(StringBuilder sb, byte b) {
 
     return sb;
 }
-</code></pre><h3 id="3-2-Java基本数据类型"><a href="#3-2-Java基本数据类型" class="headerlink" title="3.2 Java基本数据类型"></a>3.2 <a href="https://www.cnblogs.com/123hll/p/5805040.html" target="_blank" rel="noopener">Java基本数据类型</a></h3><table>
-<thead>
-<tr>
-<th>中文名称</th>
-<th>布尔型</th>
-<th>字符型</th>
-<th>字节型</th>
-<th>短整型</th>
-<th>整型</th>
-<th>长整型</th>
-<th>浮点型</th>
-<th>双精度浮点型</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>英文名称</td>
-<td>boolean</td>
-<td>char</td>
-<td>byte</td>
-<td>short</td>
-<td>int</td>
-<td>long</td>
-<td>float</td>
-<td>double</td>
-</tr>
-<tr>
-<td>包装类型</td>
-<td>Boolean</td>
-<td>Character</td>
-<td>Byte</td>
-<td>Short</td>
-<td>Integer</td>
-<td>Long</td>
-<td>Float</td>
-<td>Double</td>
-</tr>
-<tr>
-<td>存储长度</td>
-<td></td>
-<td>Character.SIZE=16bit<br>Character.BYTES=2</td>
-<td>Byte.SIZE=8bit<br>Byte.BYTES=1</td>
-<td>Short.SIZE=16bit<br>Short.BYTES=2</td>
-<td>Integer.SIZE=32bit<br>Integer.BYTES=4</td>
-<td>Long.SIZE=64bit<br>Long.BYTES=8</td>
-<td>Float.SIZE=32bit<br>Float.BYTES=4</td>
-<td>Double.SIZE=64bit<br>Double.BYTES=8</td>
-</tr>
-<tr>
-<td>取值范围</td>
-<td></td>
-<td>0 ~ 65535</td>
-<td>-128 ~ 127</td>
-<td>-32768 ~ 32767</td>
-<td>-2147483648 ~ 2147483647</td>
-<td>-9223372036854775808 ~ 9223372036854775807</td>
-<td>1.4E-45 ~ 3.4028235E38</td>
-<td>4.9E-324 ~ 1.7976931348623157E308</td>
-</tr>
-</tbody>
-</table>
-<p>byte(1字节) &lt; char(2字节) = short(2字节) &lt; int(4字节) = float(4字节) &lt; long(8字节) &lt; double(8字节)</p>
-<blockquote>
+</code></pre><h3 id="3-2-Java基本数据类型"><a href="#3-2-Java基本数据类型" class="headerlink" title="3.2 Java基本数据类型"></a>3.2 <a href="https://www.cnblogs.com/123hll/p/5805040.html" target="_blank" rel="noopener">Java基本数据类型</a></h3><blockquote>
 <pre>
-Byte =(-128 ~ 127)
-Character =(0 ~ 65535)
-Short =(-32768 ~ 32767)
-Integer =(-2147483648 ~ 2147483647)
-Float =(1.4E-45 ~ 3.4028235E38)
-Long =(-9223372036854775808 ~ 9223372036854775807)
-Double =(4.9E-324 ~ 1.7976931348623157E308)
+byte----> Byte-------> Byte.BYTES ======= 1 (-128 ~ 127)
+char----> Character--> Character.BYTES == 2 (0 ~ 65535)
+short---> Short------> Short.BYTES ====== 2 (-32768 ~ 32767)
+int-----> Integer----> Integer.BYTES ==== 4 (-2147483648 ~ 2147483647)
+float---> Float------> Float.BYTES ====== 4 (1.4E-45 ~ 3.4028235E38)
+long----> Long-------> Long.BYTES ======= 8 (-9223372036854775808 ~ 9223372036854775807)
+double--> Double-----> Double.BYTES ===== 8 (4.9E-324 ~ 1.7976931348623157E308)
 </pre> 
 </blockquote>
+<p>byte(1字节) &lt; char(2字节) = short(2字节) &lt; int(4字节) = float(4字节) &lt; long(8字节) &lt; double(8字节)</p>
 <font color="red">所以： 大于0的byte 和无符号 unsigned byte 和大于0的short 和无符号 unsigned short 都可以无失真地转化成对应的char，但int、long在大于char的最大值65535时，转化成char将失真。 </font>
 
 <h3 id="3-3-简述Java中字符存储和读取逻辑"><a href="#3-3-简述Java中字符存储和读取逻辑" class="headerlink" title="3.3 简述Java中字符存储和读取逻辑"></a>3.3 简述Java中字符存储和读取逻辑</h3><p>以中文汉字的“汉”为例：</p>
