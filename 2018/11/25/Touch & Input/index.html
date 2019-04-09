@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Touch &amp;amp; Inputhttps://developer.android.com/guide/topics/ui/ui-events Focus和Touch Mode以及requestFocusInTouchMode传统不支持Touch Mode（触控操作）的设备上，用户操作基本都基于导航键(navigation-keys)或者轨迹球（trackball）来完成。因为用户界面上有很多U">
+    <meta name="description" content="Touch &amp;amp; Input https://developer.android.com/guide/topics/ui/ui-events Focus和Touch Mode以及requestFocusInTouchMode 传统不支持Touch Mode（触控操作）的设备上，用户操作基本都基于导航键(navigation-keys)或者轨迹球（trackball）来完成。因为用户界面上有很">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Touch &amp; Input">
 <meta property="og:url" content="http://yoursite.com/2018/11/25/Touch & Input/index.html">
 <meta property="og:site_name" content="Farubaba">
-<meta property="og:description" content="Touch &amp;amp; Inputhttps://developer.android.com/guide/topics/ui/ui-events Focus和Touch Mode以及requestFocusInTouchMode传统不支持Touch Mode（触控操作）的设备上，用户操作基本都基于导航键(navigation-keys)或者轨迹球（trackball）来完成。因为用户界面上有很多U">
+<meta property="og:description" content="Touch &amp;amp; Input https://developer.android.com/guide/topics/ui/ui-events Focus和Touch Mode以及requestFocusInTouchMode 传统不支持Touch Mode（触控操作）的设备上，用户操作基本都基于导航键(navigation-keys)或者轨迹球（trackball）来完成。因为用户界面上有很">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-12-12T05:24:45.303Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Touch &amp; Input">
-<meta name="twitter:description" content="Touch &amp;amp; Inputhttps://developer.android.com/guide/topics/ui/ui-events Focus和Touch Mode以及requestFocusInTouchMode传统不支持Touch Mode（触控操作）的设备上，用户操作基本都基于导航键(navigation-keys)或者轨迹球（trackball）来完成。因为用户界面上有很多U">
+<meta name="twitter:description" content="Touch &amp;amp; Input https://developer.android.com/guide/topics/ui/ui-events Focus和Touch Mode以及requestFocusInTouchMode 传统不支持Touch Mode（触控操作）的设备上，用户操作基本都基于导航键(navigation-keys)或者轨迹球（trackball）来完成。因为用户界面上有很">
     
     
         
@@ -101,7 +101,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Touch-amp-Input"><span class="toc-number">1.</span> <span class="toc-text">Touch &amp; Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Focus和Touch-Mode以及requestFocusInTouchMode"><span class="toc-number">2.</span> <span class="toc-text">Focus和Touch Mode以及requestFocusInTouchMode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作方式"><span class="toc-number">3.</span> <span class="toc-text">操作方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EventListeners"><span class="toc-number">4.</span> <span class="toc-text">EventListeners</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EventHandlers"><span class="toc-number">5.</span> <span class="toc-text">EventHandlers</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">Touch &amp; Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">Focus和Touch Mode以及requestFocusInTouchMode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">操作方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">EventListeners</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">EventHandlers</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -163,14 +163,16 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h3 id="Touch-amp-Input"><a href="#Touch-amp-Input" class="headerlink" title="Touch &amp; Input"></a>Touch &amp; Input</h3><p><a href="https://developer.android.com/guide/topics/ui/ui-events" target="_blank" rel="noopener">https://developer.android.com/guide/topics/ui/ui-events</a></p>
-<h3 id="Focus和Touch-Mode以及requestFocusInTouchMode"><a href="#Focus和Touch-Mode以及requestFocusInTouchMode" class="headerlink" title="Focus和Touch Mode以及requestFocusInTouchMode"></a>Focus和Touch Mode以及requestFocusInTouchMode</h3><p>传统不支持Touch Mode（触控操作）的设备上，用户操作基本都基于导航键(navigation-keys)或者轨迹球（trackball）来完成。因为用户界面上有很多UI,需要将命令发送到正确的UI控件上，就需要有Focus来确定当前应该由哪一个控件来接收用户输入。</p>
+    <h3>Touch &amp; Input</h3>
+<p><a href="https://developer.android.com/guide/topics/ui/ui-events" target="_blank" rel="noopener">https://developer.android.com/guide/topics/ui/ui-events</a></p>
+<h3>Focus和Touch Mode以及requestFocusInTouchMode</h3>
+<p>传统不支持Touch Mode（触控操作）的设备上，用户操作基本都基于导航键(navigation-keys)或者轨迹球（trackball）来完成。因为用户界面上有很多UI,需要将命令发送到正确的UI控件上，就需要有Focus来确定当前应该由哪一个控件来接收用户输入。</p>
 <p>在支持Touch Mode的设备上，可以根据用户事件发生位置，来确定哪个UI控件应该作为用户输入的接收者，所以基本上可以不需要Focus来辅助。当然，你也可以在Touch Mode模式下同时使用Focus，这样就需要在View中设置 isFocusableInTouchMode = true。</p>
 <p>如果想要在Touch Mode模式下正确获取到焦点Focus，可以使用View.requestFocusInTouchMode()来代替 View.requestFocus();</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">View.isInTouchMode(); 全局范围内可以用来判断当前设备是否处于 Touch Mode状态。</span><br><span class="line"></span><br><span class="line">其他参考：</span><br><span class="line">View.isFocusable()</span><br><span class="line">View.setFocusable()</span><br><span class="line">View.isFocusableInTouchMode()</span><br><span class="line">View.setFocusableInTouchMode()</span><br></pre></td></tr></table></figure>
-<font color="red">On devices running Android 9 (API level 28) or higher, activities don’t assign an initial focus. Instead, you must explicitly request initial focus, if desired.</font>
-
-<h3 id="操作方式"><a href="#操作方式" class="headerlink" title="操作方式"></a>操作方式</h3><table>
+<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">View.isInTouchMode(); 全局范围内可以用来判断当前设备是否处于 Touch Mode状态。</span><br><span class="line"></span><br><span class="line">其他参考：</span><br><span class="line">View.isFocusable()</span><br><span class="line">View.setFocusable()</span><br><span class="line">View.isFocusableInTouchMode()</span><br><span class="line">View.setFocusableInTouchMode()</span><br></pre></td></tr></table></figure></p>
+<p>&lt;font color=&quot;red&quot;&gt;On devices running Android 9 (API level 28) or higher, activities don't assign an initial focus. Instead, you must explicitly request initial focus, if desired.&lt;/font&gt;</p>
+<h3>操作方式</h3>
+<table>
 <thead>
 <tr>
 <th>名称</th>
@@ -196,7 +198,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="EventListeners"><a href="#EventListeners" class="headerlink" title="EventListeners"></a>EventListeners</h3><table>
+<h3>EventListeners</h3>
+<table>
 <thead>
 <tr>
 <th>名称</th>
@@ -209,13 +212,13 @@
 <tr>
 <td>onClick</td>
 <td>View.OnClickListener</td>
-<td>case 1、Touch（In Touch Mode）<br>case 2、Focus&amp;Press “enter” key with navigation-keys or trackball</td>
+<td>case 1、Touch（In Touch Mode）&lt;br&gt;case 2、Focus&amp;Press &quot;enter&quot; key with navigation-keys or trackball</td>
 <td></td>
 </tr>
 <tr>
 <td>onLongClick</td>
 <td>View.OnLongClickListener</td>
-<td>case 1、Touch&amp;hold（In Touch Mode）<br>case 2、Focus&amp;Press&amp;hold “enter” key with navigation-keys or trackball<p></p></td>
+<td>case 1、Touch&amp;hold（In Touch Mode）&lt;br&gt;case 2、Focus&amp;Press&amp;hold &quot;enter&quot; key with navigation-keys or trackball&lt;p&gt;</td>
 <td>按住持续1秒</td>
 </tr>
 <tr>
@@ -233,17 +236,19 @@
 <tr>
 <td>onTouch</td>
 <td>View.OnTouchListener</td>
-<td>当用户执行特定的 Touch Event 时触发，包括：一个press事件，一个release事件，或者还有多个move事件==&gt;<font color="red">处理 MotionEvent</font></td>
+<td>当用户执行特定的 Touch Event 时触发，包括：一个press事件，一个release事件，或者还有多个move事件==&gt;&lt;font color=&quot;red&quot;&gt;处理 MotionEvent&lt;/font&gt;</td>
 <td>事件发生 within the bounds of the item</td>
 </tr>
 <tr>
 <td>onCreateContextMenu</td>
 <td>View.OnCreateContextMenuListener</td>
 <td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<h3 id="EventHandlers"><a href="#EventHandlers" class="headerlink" title="EventHandlers"></a>EventHandlers</h3><table>
+<h3>EventHandlers</h3>
+<table>
 <thead>
 <tr>
 <th>名称</th>
@@ -269,12 +274,13 @@
 </tr>
 <tr>
 <td>onTouchEvent(MotionEvent)</td>
-<td>Called when a <font color="red">touch screen motion event</font> occurs.</td>
+<td>Called when a &lt;font color=&quot;red&quot;&gt;touch screen motion event&lt;/font&gt; occurs.</td>
 <td></td>
 </tr>
 <tr>
 <td>onFocusChanged(boolean, int, Rect)</td>
 <td>Called when the view gains or loses focus</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -308,7 +314,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Touch-amp-Input"><span class="toc-number">1.</span> <span class="toc-text">Touch &amp; Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Focus和Touch-Mode以及requestFocusInTouchMode"><span class="toc-number">2.</span> <span class="toc-text">Focus和Touch Mode以及requestFocusInTouchMode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作方式"><span class="toc-number">3.</span> <span class="toc-text">操作方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EventListeners"><span class="toc-number">4.</span> <span class="toc-text">EventListeners</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EventHandlers"><span class="toc-number">5.</span> <span class="toc-text">EventHandlers</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">Touch &amp; Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">Focus和Touch Mode以及requestFocusInTouchMode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">操作方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">EventListeners</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">EventHandlers</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
