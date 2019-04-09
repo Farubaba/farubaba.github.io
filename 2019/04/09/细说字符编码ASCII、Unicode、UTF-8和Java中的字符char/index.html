@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Farubaba">
 <meta property="og:description" content="计算机内存数据基本单元   中文名 英文名 描述     二进制位 bit 代表一个二进制位，0或者1   字节 byte 代表8个二进制位，如 10101010    一、计算机中字符编码发展简述Character_encoding字符编码详细资料 第一阶段：单字节字符集阶段–ASCII编码&amp;nbsp;&amp;nbsp;计算机最初的字符编码主要用于显示现代英语和其他西欧语言。这就是最早的ASCII码">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-09T15:43:06.425Z">
+<meta property="og:updated_time" content="2019-04-09T15:53:34.090Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="细说字符编码ASCII、Unicode、UTF-8和Java中的字符char">
 <meta name="twitter:description" content="计算机内存数据基本单元   中文名 英文名 描述     二进制位 bit 代表一个二进制位，0或者1   字节 byte 代表8个二进制位，如 10101010    一、计算机中字符编码发展简述Character_encoding字符编码详细资料 第一阶段：单字节字符集阶段–ASCII编码&amp;nbsp;&amp;nbsp;计算机最初的字符编码主要用于显示现代英语和其他西欧语言。这就是最早的ASCII码">
@@ -207,7 +207,7 @@
 <font color="red"><br>简体中文字符集：GBK &gt; GB2312<br>繁体中文字符集：Big5<br></font>
 
 <h3 id="第三阶段：统一字符集阶段–Unicode编码"><a href="#第三阶段：统一字符集阶段–Unicode编码" class="headerlink" title="第三阶段：统一字符集阶段–Unicode编码"></a>第三阶段：统一字符集阶段–Unicode编码</h3><p>&nbsp;&nbsp;由于ANSI编码阶段，导致乱码问题出现，这一问题也促使了unicode码的诞生。Unicode编码将世界上所有的符号都纳入其中，无论是英文、日文、还是中文等，大家都使用这个编码表，就不会出现编码不匹配现象。每个符号对应一个唯一的编码，乱码问题就不存在了。Unicode固然统一了编码方式，但它固定使用4个字节来表示，效率不高。比如UCS-4(Unicode的标准之一)规定用4个字节存储一个符号，那么每个英文字母前都必然有三个字节是0，这对存储和传输来说都很耗资源。<br></p>
-<p>&nbsp;&nbsp;查看最新<a href="https://www.unicode.org/Public/UCD/latest/charts/CodeCharts.pdf" target="_blank" rel="noopener">Unicode码表</a>得知，目前Unicode字符集编码支持从00000000~0010FFFF 即从（0 ~ 1114111）一百多万个字符。所以Unicode字符二进制编码本身长度可以为 1 - 4 个字节，但Unicode只规定了符号的二进制代码，却没有规定这个二进制代码应该如何存储。</p>
+<p>&nbsp;&nbsp;查看最新<a href="https://www.unicode.org/Public/UCD/latest/charts/CodeCharts.pdf" target="_blank" rel="noopener">Unicode码表</a>得知，目前Unicode字符集编码支持从00000000~0010FFFF 即从（0 ~ 1114111 对应Character.MIN_CODE_POINT - Character.MAX_CODE_POINT),一百多万个字符。所以Unicode字符二进制编码本身长度可以为 1 - 4 个字节，但Unicode只规定了符号的二进制代码，却没有规定这个二进制代码应该如何存储。</p>
 <h3 id="二、Unicode字符集效率优化之UTF-8"><a href="#二、Unicode字符集效率优化之UTF-8" class="headerlink" title="二、Unicode字符集效率优化之UTF-8"></a>二、Unicode字符集效率优化之UTF-8</h3><p>&nbsp;&nbsp;为了提高Unicode的编码效率，于是就出现了UTF-8编码。UTF-8编码优化了Unicode编码的存储方式，可以根据不同的符号自动选择编码的长短，并不固定使用4个字节来存储。比如英文字母可以只用1个字节就够了。UTF-8的编码是这样得出来的，以”汉”这个字为例：<br><br>&nbsp;&nbsp;“汉”字的Unicode编码是U+00006C49，然后把U+00006C49通过UTF-8编码器进行编码，最后输出的UTF-8编码是E6B189。Unicode字符为4字节，优化后为3字节。</p>
 <pre>
 UTF-8就是对Unicode编码的一种优化存储方案实现。具体实现方式见下表：
