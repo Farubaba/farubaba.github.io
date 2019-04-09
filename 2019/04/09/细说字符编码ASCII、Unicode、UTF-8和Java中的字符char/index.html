@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Farubaba">
 <meta property="og:description" content="计算机内存数据基本单元   中文名 英文名 描述     二进制位 bit 代表一个二进制位，0或者1   字节 byte 代表8个二进制位，如 10101010    一、计算机中字符编码发展简述Character_encoding字符编码详细资料 第一阶段：单字节字符集阶段–ASCII编码&amp;nbsp;&amp;nbsp;计算机最初的字符编码主要用于显示现代英语和其他西欧语言。这就是最早的ASCII码">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-09T16:12:28.838Z">
+<meta property="og:updated_time" content="2019-04-09T16:17:20.603Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="细说字符编码ASCII、Unicode、UTF-8和Java中的字符char">
 <meta name="twitter:description" content="计算机内存数据基本单元   中文名 英文名 描述     二进制位 bit 代表一个二进制位，0或者1   字节 byte 代表8个二进制位，如 10101010    一、计算机中字符编码发展简述Character_encoding字符编码详细资料 第一阶段：单字节字符集阶段–ASCII编码&amp;nbsp;&amp;nbsp;计算机最初的字符编码主要用于显示现代英语和其他西欧语言。这就是最早的ASCII码">
@@ -238,7 +238,7 @@ double--> Double-----> Double.BYTES ===== 8 (4.9E-324 ~ 1.7976931348623157E308)
 <p>byte(1字节) &lt; char(2字节) = short(2字节) &lt; int(4字节) = float(4字节) &lt; long(8字节) &lt; double(8字节)</p>
 <font color="red">所以： 大于0的byte 和无符号 unsigned byte 和大于0的short 和无符号 unsigned short 都可以无失真地转化成对应的char，但int、long在大于char的最大值65535时，转化成char将失真。 </font>
 
-<h3 id="3-3-简述Java中字符存储和读取逻辑"><a href="#3-3-简述Java中字符存储和读取逻辑" class="headerlink" title="3.3 简述Java中字符存储和读取逻辑"></a>3.3 简述Java中字符存储和读取逻辑</h3><p>在计算机内存中，统一使用Unicode编码，当需要保存到硬盘或者需要传输的时候，就转换为UTF-8编码。</p>
+<h3 id="3-3-简述Java中字符存储和读取逻辑"><a href="#3-3-简述Java中字符存储和读取逻辑" class="headerlink" title="3.3 简述Java中字符存储和读取逻辑"></a>3.3 简述Java中字符存储和读取逻辑</h3><p><b><font color="#239f60">在计算机内存中，统一使用Unicode编码，当需要保存到硬盘或者需要传输的时候，就转换为UTF-8编码。</font></b></p>
 <p>以中文汉字的“汉”为例：</p>
 <p>字符存储逻辑：”汉”–&gt;内存中存储Unicode码：U+00006C49（4字节)–&gt;输入UTF-8编码器优化编码为：E6B189(3字节)–&gt;存入文件</p>
 <p>字符读取逻辑：读入UTF-8编码：E6B189–&gt;输入UTF-8解码器解转成Unicode码：U+00006C49 存入内存–&gt;”汉“</p>
