@@ -6,19 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="title:有图会BB经典图片&amp;lt;div align=&amp;quot;center&amp;quot;&amp;gt; &amp;lt;img src=&amp;quot;&amp;quot; width=&amp;quot;90%&amp;quot; /&amp;gt; &amp;lt;/div&amp;gt;  Java8 Desugar http://mobile.51cto.com/android-555779.htm">
+    <meta name="description" content="title:有图会BB经典图片&amp;lt;div align=&amp;quot;center&amp;quot;&amp;gt; &amp;lt;img src=&amp;quot;&amp;quot; width=&amp;quot;90%&amp;quot; /&amp;gt; &amp;lt;/div&amp;gt;  Java8 Desugar http://mobile.51cto.com/android-555779.htm   Unicode编码和UTF-8编码  Un">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Farubaba">
 <meta property="og:url" content="http://yoursite.com/2019/03/31/Coding有图会BB/index.html">
 <meta property="og:site_name" content="Farubaba">
-<meta property="og:description" content="title:有图会BB经典图片&amp;lt;div align=&amp;quot;center&amp;quot;&amp;gt; &amp;lt;img src=&amp;quot;&amp;quot; width=&amp;quot;90%&amp;quot; /&amp;gt; &amp;lt;/div&amp;gt;  Java8 Desugar http://mobile.51cto.com/android-555779.htm">
+<meta property="og:description" content="title:有图会BB经典图片&amp;lt;div align=&amp;quot;center&amp;quot;&amp;gt; &amp;lt;img src=&amp;quot;&amp;quot; width=&amp;quot;90%&amp;quot; /&amp;gt; &amp;lt;/div&amp;gt;  Java8 Desugar http://mobile.51cto.com/android-555779.htm   Unicode编码和UTF-8编码  Un">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://s3.51cto.com/oss/201710/30/e0e2f1efc8e33041820e0a5390d74e2c.png-wh_651x-s_3945328197.png">
-<meta property="og:updated_time" content="2019-03-30T16:32:05.839Z">
+<meta property="og:updated_time" content="2019-04-09T08:34:04.903Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Farubaba">
-<meta name="twitter:description" content="title:有图会BB经典图片&amp;lt;div align=&amp;quot;center&amp;quot;&amp;gt; &amp;lt;img src=&amp;quot;&amp;quot; width=&amp;quot;90%&amp;quot; /&amp;gt; &amp;lt;/div&amp;gt;  Java8 Desugar http://mobile.51cto.com/android-555779.htm">
+<meta name="twitter:description" content="title:有图会BB经典图片&amp;lt;div align=&amp;quot;center&amp;quot;&amp;gt; &amp;lt;img src=&amp;quot;&amp;quot; width=&amp;quot;90%&amp;quot; /&amp;gt; &amp;lt;/div&amp;gt;  Java8 Desugar http://mobile.51cto.com/android-555779.htm   Unicode编码和UTF-8编码  Un">
 <meta name="twitter:image" content="https://s3.51cto.com/oss/201710/30/e0e2f1efc8e33041820e0a5390d74e2c.png-wh_651x-s_3945328197.png">
     
     
@@ -173,7 +173,67 @@
 <li><p>Java8 Desugar <a href="http://mobile.51cto.com/android-555779.htm" target="_blank" rel="noopener">http://mobile.51cto.com/android-555779.htm</a></p>
 <div align="center"><br><img src="https://s3.51cto.com/oss/201710/30/e0e2f1efc8e33041820e0a5390d74e2c.png-wh_651x-s_3945328197.png" width="90%"><br></div>
 </li>
-<li><div align="center"><br><img src="" width="90%"><br></div></li>
+<li><p><a href="http://www.unicode.org/" target="_blank" rel="noopener">Unicode编码</a>和<a href="http://www.utf-8.com/" target="_blank" rel="noopener">UTF-8编码</a></p>
+<blockquote>
+<p>Unicode一种编码，将世界上所有的符号都纳入其中。每一个符号都给予一个独一无二的编码，不存在编码转换，那么乱码问题就会消失。这就是 Unicode，就像它的名字都表示的，这是一种所有符号的编码，查看最新<a href="https://www.unicode.org/Public/UCD/latest/charts/CodeCharts.pdf" target="_blank" rel="noopener">Unicode码表</a>得知，目前Unicode字符集编码支持从0000~10FFFF 即从（0 ~ 1114111）一百多万个字符。所以Unicode字符二进制编码本身长度可以为 1 - 4 个字节，但Unicode只规定了符号的二进制代码，却没有规定这个二进制代码应该如何存储。<br></p>
+</blockquote>
+</li>
+</ol>
+<pre><code>&lt;pre&gt;
+[UTF-8、UTF-16、UTF-32]就是对Unicode编码的一种存储方案实现。具体实现方式见下表：
+--------------------+---------------------------------------+-------------- 
+Unicode符号范围      |        UTF-8编码方式                    | 存储字节数
+(十六进制)           |         （二进制）                      |
+--------------------+---------------------------------------+--------------
+0000 0000-0000 007F | 0xxxxxxx                              |  1字节存储
+0000 0080-0000 07FF | 110xxxxx 10xxxxxx                     |  2字节存储
+0000 0800-0000 FFFF | 1110xxxx 10xxxxxx 10xxxxxx            |  3字节存储
+0001 0000-0010 FFFF | 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx   |  4字节存储
+&lt;/pre&gt;
+</code></pre><ol>
+<li><p><a href="https://www.cnblogs.com/123hll/p/5805040.html" target="_blank" rel="noopener">Java基本数据类型</a>存储和转换</p>
+<p>Java中所说的字符编码，简单理解就是字符char的二进制编码，Java字符（char）默认采用<a href="http://www.unicode.org/" target="_blank" rel="noopener">Unicode编码</a>字符集，并默认使用<a href="http://www.utf-8.com/" target="_blank" rel="noopener">UTF-8编码</a>来存储这些Unicode字符（char）。不同版本Java，都只支持Unicode字符集的一个特定版本。Java 11将支持最新版的Unicode。Java 9实现了Unicode 8.0。JDK1.8中Character类型的BYTES = 2 ，并不支持2字节以上的Unicode字符。</p>
+<pre><code>/**
+ * 不同版本Java，都只支持Unicode字符集的一个特定版本。
+ * 以下测试代码运行在JDK=1.8的环境中。
+ * 
+ * 以下Unicode编码字符并非文字，详细信息请根据编码值，查看Unicode码表。
+ * https://www.unicode.org/Public/UCD/latest/charts/CodeCharts.pdf 
+ * 
+ * Unicode编码&quot;262F&quot;对应字符为：太极图案 ☯ ️
+ * Unicode编码&quot;262FF&quot;对应文字为：上面一个横“目”，下面一个“曹”字（java8目前不支持，我的环境中无法显示，所以只能描述）
+ * 
+ * 输出结果为：
+ * ☯ ️
+ * ☯F --&gt;并没有输出 \u262FF 对应的文字，只是输出了前4位（两个字节2626）的内容在Unicode码表中的对应符号☯，原样输出最后一个F️
+ * 
+ * 得出结论：Java8并不支持2字节以上的Unicode字符。{@link Character#BYTES} 为2，也正好说明了该事实。
+ * 
+ */
+@Test
+public void testJavaUnicodeSupport() {
+    //Unicode = 262F表示太极符号：☯
+    System.out.println(&quot;\u262F&quot;);
+    //Unicode = 262FF表示上面一个横“目”，下面一个“曹”字.实际输出 ☯F
+    System.out.println(&quot;\u262FF&quot;);
+}
+</code></pre><blockquote>
+<p>计算机数据存储基本单元</p>
+</blockquote>
+<p>|中文名|英文名|描述|<br>|—-|—-|—-|<br>|二进制位|bit|代表一个二进制位，0或者1|<br>|字节|byte|代表8个二进制位，如 10101010|</p>
+<blockquote>
+<p>Java基本数据类型</p>
+</blockquote>
+<p>|中文名称|布尔型|字符型|字节型|短整型|整型|长整型|浮点型|双精度浮点型|<br>|—-|—-|—-|—-|—-|—-|—-|—-|—-|<br>|英文名称|boolean|char|byte|short|int|long|float|double|<br>|包装类型|Boolean|Character|Byte|Short|Integer|Long|Float|Double|<br>|存储长度||Character.SIZE=16bit<br>Character.BYTES=2|Byte.SIZE=8bit<br>Byte.BYTES=1|Short.SIZE=16bit<br>Short.BYTES=2|Integer.SIZE=32bit<br>Integer.BYTES=4|Long.SIZE=64bit<br>Long.BYTES=8|Float.SIZE=32bit<br>Float.BYTES=4|Double.SIZE=64bit<br>Double.BYTES=8|<br>|取值范围||0 ~ 65535|-128 ~ 127|-32768 ~ 32767|-2147483648 ~ 2147483647|-9223372036854775808 ~ 9223372036854775807|1.4E-45 ~ 3.4028235E38|4.9E-324 ~ 1.7976931348623157E308|</p>
+<p>byte(1字节) &lt; char(2字节) = short(2字节) &lt; int(4字节) = float(4字节) &lt; long(8字节) &lt; double(8字节)<br><pre><br>Byte =(-128 ~ 127)<br>Character =(0 ~ 65535)<br>Short =(-32768 ~ 32767)<br>Integer =(-2147483648 ~ 2147483647)<br>Float =(1.4E-45 ~ 3.4028235E38)<br>Long =(-9223372036854775808 ~ 9223372036854775807)<br>Double =(4.9E-324 ~ 1.7976931348623157E308)<br></pre> </p>
+<font color="red">所以： 大于0的byte 和无符号 unsigned byte 和大于0的short 和无符号 unsigned short 都可以无失真地转化成对应的char，但int、long在大于char的最大值65535时，转化成char将失真。 </font>
+
+
+
+</li>
+</ol>
+<ol start="2">
+<li>双方都<div align="center"><br><img src="" width="90%"><br></div></li>
 </ol>
 
   </div>
