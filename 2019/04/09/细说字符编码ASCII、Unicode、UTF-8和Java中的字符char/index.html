@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Farubaba">
 <meta property="og:description" content="计算机内存数据基本单元   中文名 英文名 描述     二进制位 bit 代表一个二进制位，0或者1   字节 byte 代表8个二进制位，如 10101010    一、计算机中字符编码发展简述第一阶段：单字节字符集阶段–ASCII编码&amp;nbsp;&amp;nbsp;计算机最早是美国人发明的，所以最初的字符编码主要用于显示现代英语和其他西欧语言。这就是最早的ASCII码表，ASCII是America">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-09T13:31:08.292Z">
+<meta property="og:updated_time" content="2019-04-09T13:33:11.320Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="细说字符编码ASCII、Unicode、UTF-8和Java中的字符char">
 <meta name="twitter:description" content="计算机内存数据基本单元   中文名 英文名 描述     二进制位 bit 代表一个二进制位，0或者1   字节 byte 代表8个二进制位，如 10101010    一、计算机中字符编码发展简述第一阶段：单字节字符集阶段–ASCII编码&amp;nbsp;&amp;nbsp;计算机最早是美国人发明的，所以最初的字符编码主要用于显示现代英语和其他西欧语言。这就是最早的ASCII码表，ASCII是America">
@@ -261,15 +261,15 @@ public void testJavaUnicodeSupport() {
     System.out.println(&quot;\u262FF&quot;);
     String value = &quot;汉&quot;;
     //输出 6c49
-    System.out.println(ConvertUtil.unicodeToString(value));
+    System.out.println(unicodeToString(value));
     //输出 e6b189
-    System.out.println(ConvertUtil.stringToUtf8HexCode(value));
+    System.out.println(stringToUtf8HexCode(value));
     //输出”汉“字的Unicode编码为：6c49
-    System.out.println(value+&quot;字的Unicode编码为：&quot;+ConvertUtil.stringToUnicode(value,false));
+    System.out.println(value+&quot;字的Unicode编码为：&quot;+stringToUnicode(value,false));
     //输出”汉“字的Unicode编码为（带前缀\u）：\u6c49
-    System.out.println(value+&quot;字的Unicode编码为（带前缀\u）：&quot;+ConvertUtil.stringToUnicode(value));
+    System.out.println(value+&quot;字的Unicode编码为（带前缀\u）：&quot;+stringToUnicode(value));
     //输出”汉“字的UTF-8编码为：e6b189
-    System.out.println(value+&quot;字的UTF-8编码为：&quot;+ConvertUtil.stringToUtf8HexCode(value));
+    System.out.println(value+&quot;字的UTF-8编码为：&quot;+stringToUtf8HexCode(value));
 }
 
 /**
