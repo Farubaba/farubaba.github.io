@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="技术专题 Android 开发总结资料 Android中.SO相关问题  在 apk 文件中提供所有FAT Binary 版本的 .so 是一种很不经济的做法： 1. mips / mips64: 极少用于手机可以忽略 2. x86 / x86_64: x86 架构的手机都会包含由 Intel 提供的称为 Houdini 的指令集动态转码工具， 实现对 arm .so 的兼容，再考虑 x86 1%">
+    <meta name="description" content="技术专题   Android 开发总结资料   [Android中.SO相关问题] 在 apk 文件中提供所有FAT Binary 版本的 .so 是一种很不经济的做法： 1. mips / mips64: 极少用于手机可以忽略 2. x86 / x86_64: x86 架构的手机都会包含由 Intel 提供的称为 Houdini 的指令集动态转码工具， 实现对 arm .so 的兼容，再考虑 x">
 <meta name="keywords" content="技术专题,Coding">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Coding技术专题">
 <meta property="og:url" content="http://yoursite.com/2019/03/31/Coding技术专题/index.html">
 <meta property="og:site_name" content="Farubaba">
-<meta property="og:description" content="技术专题 Android 开发总结资料 Android中.SO相关问题  在 apk 文件中提供所有FAT Binary 版本的 .so 是一种很不经济的做法： 1. mips / mips64: 极少用于手机可以忽略 2. x86 / x86_64: x86 架构的手机都会包含由 Intel 提供的称为 Houdini 的指令集动态转码工具， 实现对 arm .so 的兼容，再考虑 x86 1%">
+<meta property="og:description" content="技术专题   Android 开发总结资料   [Android中.SO相关问题] 在 apk 文件中提供所有FAT Binary 版本的 .so 是一种很不经济的做法： 1. mips / mips64: 极少用于手机可以忽略 2. x86 / x86_64: x86 架构的手机都会包含由 Intel 提供的称为 Houdini 的指令集动态转码工具， 实现对 arm .so 的兼容，再考虑 x">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-03-31T03:01:39.001Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Coding技术专题">
-<meta name="twitter:description" content="技术专题 Android 开发总结资料 Android中.SO相关问题  在 apk 文件中提供所有FAT Binary 版本的 .so 是一种很不经济的做法： 1. mips / mips64: 极少用于手机可以忽略 2. x86 / x86_64: x86 架构的手机都会包含由 Intel 提供的称为 Houdini 的指令集动态转码工具， 实现对 arm .so 的兼容，再考虑 x86 1%">
+<meta name="twitter:description" content="技术专题   Android 开发总结资料   [Android中.SO相关问题] 在 apk 文件中提供所有FAT Binary 版本的 .so 是一种很不经济的做法： 1. mips / mips64: 极少用于手机可以忽略 2. x86 / x86_64: x86 架构的手机都会包含由 Intel 提供的称为 Houdini 的指令集动态转码工具， 实现对 arm .so 的兼容，再考虑 x">
     
     
         
@@ -101,7 +101,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#技术专题"><span class="toc-number">1.</span> <span class="toc-text">技术专题</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">技术专题</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -168,10 +168,14 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h3 id="技术专题"><a href="#技术专题" class="headerlink" title="技术专题"></a>技术专题</h3><ol>
-<li><a href="https://github.com/SusionSuc/AdvancedAndroid" target="_blank" rel="noopener">Android 开发总结资料</a></li>
-<li><p><a href="https://zhuanlan.zhihu.com/p/21359984" target="_blank" rel="noopener">Android中.SO相关问题</a></p>
-<pre><code> 在 apk 文件中提供所有FAT Binary 版本的 .so 是一种很不经济的做法：
+    <h3>技术专题</h3>
+<ol>
+<li>
+<p><a href="https://github.com/SusionSuc/AdvancedAndroid" target="_blank" rel="noopener">Android 开发总结资料</a></p>
+</li>
+<li>
+<p>[Android中.SO相关问题]</p>
+<pre><code>在 apk 文件中提供所有FAT Binary 版本的 .so 是一种很不经济的做法：
 1. mips / mips64: 极少用于手机可以忽略
 2. x86 / x86_64: x86 架构的手机都会包含由 Intel 提供的称为 Houdini 的指令集动态转码工具，
 实现对 arm .so 的兼容，再考虑 x86 1% 以下的市场占有率，x86 相关的两个 .so 也是可以忽略的
@@ -182,23 +186,32 @@
 
 结论1）：为了减小 apk 体积，只保留 armeabi 和 armeabi-v7a 两个文件夹，并保证这两个文件夹中 .so 数量一致；
 结论2）：对只提供 armeabi 版本的第三方 .so，原样复制一份到 armeabi-v7a 文件夹
-</code></pre></li>
-<li><p>Java函数式编程</p>
-<p> <a href="https://www.cnblogs.com/CarpenterLee/category/965121.html" target="_blank" rel="noopener">https://www.cnblogs.com/CarpenterLee/category/965121.html</a></p>
+</code></pre>
 </li>
-<li><p>Java集合框架</p>
-<p> <a href="https://www.cnblogs.com/CarpenterLee/category/828184.html" target="_blank" rel="noopener">https://www.cnblogs.com/CarpenterLee/category/828184.html</a></p>
+<li>
+<p>Java函数式编程</p>
+<p><a href="https://www.cnblogs.com/CarpenterLee/category/965121.html" target="_blank" rel="noopener">https://www.cnblogs.com/CarpenterLee/category/965121.html</a></p>
 </li>
-<li><p>Android 屏幕适配</p>
-<p> 屏幕适配终结者：<a href="https://blankj.com/2018/12/18/android-adapt-screen-killer/#more" target="_blank" rel="noopener">https://blankj.com/2018/12/18/android-adapt-screen-killer/#more</a></p>
+<li>
+<p>Java集合框架</p>
+<p><a href="https://www.cnblogs.com/CarpenterLee/category/828184.html" target="_blank" rel="noopener">https://www.cnblogs.com/CarpenterLee/category/828184.html</a></p>
 </li>
-<li><p>FragmentPagerAdapter 和 FragmentStatePagerAdapter</p>
-<p> <a href="https://developer.android.com/training/implementing-navigation/lateral.html#java" target="_blank" rel="noopener">https://developer.android.com/training/implementing-navigation/lateral.html#java</a></p>
+<li>
+<p>Android 屏幕适配</p>
+<p>屏幕适配终结者：<a href="https://blankj.com/2018/12/18/android-adapt-screen-killer/#more" target="_blank" rel="noopener">https://blankj.com/2018/12/18/android-adapt-screen-killer/#more</a></p>
 </li>
-<li><p>Android Lint</p>
-<p> <a href="https://developer.android.com/studio/write/lint" target="_blank" rel="noopener">https://developer.android.com/studio/write/lint</a></p>
+<li>
+<p>FragmentPagerAdapter 和 FragmentStatePagerAdapter</p>
+<p><a href="https://developer.android.com/training/implementing-navigation/lateral.html#java" target="_blank" rel="noopener">https://developer.android.com/training/implementing-navigation/lateral.html#java</a></p>
 </li>
-<li>sdf</li>
+<li>
+<p>Android Lint</p>
+<p><a href="https://developer.android.com/studio/write/lint" target="_blank" rel="noopener">https://developer.android.com/studio/write/lint</a></p>
+</li>
+<li>
+<p>sdf
+[Android中.SO相关问题]:https://zhuanlan.zhihu.com/p/21359984</p>
+</li>
 </ol>
 
   </div>
@@ -230,7 +243,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#技术专题"><span class="toc-number">1.</span> <span class="toc-text">技术专题</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">技术专题</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
