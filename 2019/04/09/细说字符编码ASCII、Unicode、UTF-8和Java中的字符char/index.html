@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="计算机内存数据基本单元   中文名 英文名 描述     二进制位 bit 代表一个二进制位，0或者1   字节 byte 代表8个二进制位，如 10101010    一、计算机中字符编码发展简述第一阶段：单字节字符集阶段–ASCII编码&amp;nbsp;&amp;nbsp;计算机最早是美国人发明的，所以最初的字符编码主要用于显示现代英语和其他西欧语言。这就是最早的ASCII码表，ASCII是America">
+    <meta name="description" content="计算机内存数据基本单元   中文名 英文名 描述     二进制位 bit 代表一个二进制位，0或者1   字节 byte 代表8个二进制位，如 10101010    一、计算机中字符编码发展简述Character_encoding字符编码详细资料 第一阶段：单字节字符集阶段–ASCII编码&amp;nbsp;&amp;nbsp;计算机最早是美国人发明的，所以最初的字符编码主要用于显示现代英语和其他西欧语言。">
 <meta name="keywords" content="Unicode,UTF-8,UTF-16,UTF-32,char,Character">
 <meta property="og:type" content="article">
 <meta property="og:title" content="细说字符编码ASCII、Unicode、UTF-8和Java中的字符char">
 <meta property="og:url" content="http://yoursite.com/2019/04/09/细说字符编码ASCII、Unicode、UTF-8和Java中的字符char/index.html">
 <meta property="og:site_name" content="Farubaba">
-<meta property="og:description" content="计算机内存数据基本单元   中文名 英文名 描述     二进制位 bit 代表一个二进制位，0或者1   字节 byte 代表8个二进制位，如 10101010    一、计算机中字符编码发展简述第一阶段：单字节字符集阶段–ASCII编码&amp;nbsp;&amp;nbsp;计算机最早是美国人发明的，所以最初的字符编码主要用于显示现代英语和其他西欧语言。这就是最早的ASCII码表，ASCII是America">
+<meta property="og:description" content="计算机内存数据基本单元   中文名 英文名 描述     二进制位 bit 代表一个二进制位，0或者1   字节 byte 代表8个二进制位，如 10101010    一、计算机中字符编码发展简述Character_encoding字符编码详细资料 第一阶段：单字节字符集阶段–ASCII编码&amp;nbsp;&amp;nbsp;计算机最早是美国人发明的，所以最初的字符编码主要用于显示现代英语和其他西欧语言。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-09T14:18:22.710Z">
+<meta property="og:updated_time" content="2019-04-09T14:25:25.226Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="细说字符编码ASCII、Unicode、UTF-8和Java中的字符char">
-<meta name="twitter:description" content="计算机内存数据基本单元   中文名 英文名 描述     二进制位 bit 代表一个二进制位，0或者1   字节 byte 代表8个二进制位，如 10101010    一、计算机中字符编码发展简述第一阶段：单字节字符集阶段–ASCII编码&amp;nbsp;&amp;nbsp;计算机最早是美国人发明的，所以最初的字符编码主要用于显示现代英语和其他西欧语言。这就是最早的ASCII码表，ASCII是America">
+<meta name="twitter:description" content="计算机内存数据基本单元   中文名 英文名 描述     二进制位 bit 代表一个二进制位，0或者1   字节 byte 代表8个二进制位，如 10101010    一、计算机中字符编码发展简述Character_encoding字符编码详细资料 第一阶段：单字节字符集阶段–ASCII编码&amp;nbsp;&amp;nbsp;计算机最早是美国人发明的，所以最初的字符编码主要用于显示现代英语和其他西欧语言。">
     
     
         
@@ -201,7 +201,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="一、计算机中字符编码发展简述"><a href="#一、计算机中字符编码发展简述" class="headerlink" title="一、计算机中字符编码发展简述"></a>一、<a href="https://baike.baidu.com/item/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/8446880?fr=aladdin" target="_blank" rel="noopener">计算机中字符编码发展简述</a></h3><h3 id="第一阶段：单字节字符集阶段–ASCII编码"><a href="#第一阶段：单字节字符集阶段–ASCII编码" class="headerlink" title="第一阶段：单字节字符集阶段–ASCII编码"></a>第一阶段：单字节字符集阶段–ASCII编码</h3><p>&nbsp;&nbsp;计算机最早是美国人发明的，所以最初的字符编码主要用于显示现代英语和其他西欧语言。这就是最早的ASCII码表，ASCII是American Standard Code for Information Interchange缩写。基本的 ASCII 字符集共有 128 个字符，其中有 96 个可打印字符，包括常用的字母、数字、标点符号等，另外还有 32 个控制字符。但表示的字符集相当有限，这一缺陷明显。</p>
+<h3 id="一、计算机中字符编码发展简述"><a href="#一、计算机中字符编码发展简述" class="headerlink" title="一、计算机中字符编码发展简述"></a>一、<a href="https://baike.baidu.com/item/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/8446880?fr=aladdin" target="_blank" rel="noopener">计算机中字符编码发展简述</a></h3><p><a href="https://en.wikipedia.org/wiki/Character_encoding" target="_blank" rel="noopener">Character_encoding字符编码详细资料</a></p>
+<h3 id="第一阶段：单字节字符集阶段–ASCII编码"><a href="#第一阶段：单字节字符集阶段–ASCII编码" class="headerlink" title="第一阶段：单字节字符集阶段–ASCII编码"></a>第一阶段：单字节字符集阶段–ASCII编码</h3><p>&nbsp;&nbsp;计算机最早是美国人发明的，所以最初的字符编码主要用于显示现代英语和其他西欧语言。这就是最早的<a href="https://en.wikipedia.org/wiki/ASCII" target="_blank" rel="noopener">ASCII</a>码表，ASCII是American Standard Code for Information Interchange缩写。基本的 ASCII 字符集共有 128 个字符，其中有 96 个可打印字符，包括常用的字母、数字、标点符号等，另外还有 32 个控制字符。但表示的字符集相当有限，这一缺陷明显。</p>
 <h3 id="第二阶段：多字节字符集阶段–ANSI编码"><a href="#第二阶段：多字节字符集阶段–ANSI编码" class="headerlink" title="第二阶段：多字节字符集阶段–ANSI编码"></a>第二阶段：多字节字符集阶段–ANSI编码</h3><p>&nbsp;&nbsp;为了扩充ASCII编码，以用于显示本国的语言，不同的国家和地区制定了不同的标准，由此产生了 GB2312, BIG5, JIS 等各自的编码标准。这些使用 2 个字节来代表一个字符的各种汉字延伸编码方式，称为 ANSI 编码，又称为”MBCS（Muilti-Bytes Charecter Set，多字节字符集）”。<br><br>&nbsp;&nbsp;在简体中文系统下，ANSI 编码代表 GB2312 编码，在日文操作系统下，ANSI 编码代表 JIS 编码，所以在中文 windows下要转码成gb2312,gbk只需要把文本保存为ANSI 编码即可。 不同 ANSI 编码之间互不兼容，当信息在国际间交流时，无法将属于两种语言的文字，存储在同一段 ANSI 编码的文本中。一个很大的缺点是，同一个编码值，在不同的编码体系里代表着不同的字。这样就容易造成混乱。导致了unicode码的诞生。比如: 支持法语的字符集，支持西班牙的字符集，支持中文的字符集，每个字符集中都定义了自己能够表示的所有字符。<br><br>&nbsp;&nbsp;乱码问题：比如同一个字符，比如太极☯️，可能在中文字符集中有，但在法语字符集中没有。这样一来当一个使用中文字符编码来存储的文件，在使用法语字符集来打开时，找不到对应的☯️符号，或者找到另外一个完全不同的符号，于是，原本该显示☯️的地方，就显示出一个乱码。 多字符集之间的转换会出现乱码。</p>
 <font color="red"><br>简体中文字符集：GBK &gt; GB2312<br>繁体中文字符集：Big5<br></font>
 
