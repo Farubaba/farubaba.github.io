@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Farubaba">
 <meta property="og:description" content="计算机内存数据基本单元   中文名 英文名 描述     二进制位 bit 代表一个二进制位，0或者1   字节 byte 代表8个二进制位，如 10101010    一、计算机中字符编码发展简述第一阶段：单字节字符集阶段–ASCII编码&amp;nbsp;&amp;nbsp;计算机最早是美国人发明的，所以最初的字符编码主要用于显示现代英语和其他西欧语言。这就是最早的ASCII码表，ASCII是America">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-09T13:37:12.589Z">
+<meta property="og:updated_time" content="2019-04-09T13:57:35.249Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="细说字符编码ASCII、Unicode、UTF-8和Java中的字符char">
 <meta name="twitter:description" content="计算机内存数据基本单元   中文名 英文名 描述     二进制位 bit 代表一个二进制位，0或者1   字节 byte 代表8个二进制位，如 10101010    一、计算机中字符编码发展简述第一阶段：单字节字符集阶段–ASCII编码&amp;nbsp;&amp;nbsp;计算机最早是美国人发明的，所以最初的字符编码主要用于显示现代英语和其他西欧语言。这就是最早的ASCII码表，ASCII是America">
@@ -221,7 +221,8 @@ Unicode符号范围      |        UTF-8编码方式                    | UTF-8�
 </pre>
 
 
-<h3 id="三、Java支持的Unicode字符集和UTF-8存储"><a href="#三、Java支持的Unicode字符集和UTF-8存储" class="headerlink" title="三、Java支持的Unicode字符集和UTF-8存储"></a>三、Java支持的Unicode字符集和UTF-8存储</h3><h3 id="3-1-Java默认采用Unicode字符集，默认采用UTF-8优化Unicode字符存储"><a href="#3-1-Java默认采用Unicode字符集，默认采用UTF-8优化Unicode字符存储" class="headerlink" title="3.1 Java默认采用Unicode字符集，默认采用UTF-8优化Unicode字符存储"></a>3.1 Java默认采用Unicode字符集，默认采用UTF-8优化Unicode字符存储</h3><p>&nbsp;&nbsp;Java中所说的字符编码，简单理解就是字符char的二进制编码，Java字符（char）默认采用<a href="http://www.unicode.org/" target="_blank" rel="noopener">Unicode编码</a>字符集，并默认使用<a href="http://www.utf-8.com/" target="_blank" rel="noopener">UTF-8编码</a>来存储这些Unicode字符（char）。不同版本Java，都只支持Unicode字符集的一个特定版本。Java 11将支持最新版的Unicode。Java 9实现了Unicode 8.0。JDK1.8中Character类型的BYTES = 2 ，并不支持2字节以上的Unicode字符。<a href="https://blog.csdn.net/guxiaonuan/article/details/78678043" target="_blank" rel="noopener">UTF-8、UTF-16、UTF-32</a>    </p>
+<h3 id="三、Java支持的Unicode字符集和UTF-8存储"><a href="#三、Java支持的Unicode字符集和UTF-8存储" class="headerlink" title="三、Java支持的Unicode字符集和UTF-8存储"></a>三、Java支持的Unicode字符集和UTF-8存储</h3><p><a href="https://unicode-table.com/cn/" target="_blank" rel="noopener">Unicode码表和对应的Html实体编码</a></p>
+<h3 id="3-1-Java默认采用Unicode字符集，默认采用UTF-8优化Unicode字符存储"><a href="#3-1-Java默认采用Unicode字符集，默认采用UTF-8优化Unicode字符存储" class="headerlink" title="3.1 Java默认采用Unicode字符集，默认采用UTF-8优化Unicode字符存储"></a>3.1 Java默认采用Unicode字符集，默认采用UTF-8优化Unicode字符存储</h3><p>&nbsp;&nbsp;Java中所说的字符编码，简单理解就是字符char的二进制编码，Java字符（char）默认采用<a href="http://www.unicode.org/" target="_blank" rel="noopener">Unicode编码</a>字符集，并默认使用<a href="http://www.utf-8.com/" target="_blank" rel="noopener">UTF-8编码</a>来存储这些Unicode字符（char）。不同版本Java，都只支持Unicode字符集的一个特定版本。Java 11将支持最新版的Unicode。Java 9实现了Unicode 8.0。JDK1.8中Character类型的BYTES = 2 ，并不支持2字节以上的Unicode字符。<a href="https://blog.csdn.net/guxiaonuan/article/details/78678043" target="_blank" rel="noopener">UTF-8、UTF-16、UTF-32</a>    </p>
 <h3 id="3-2-Java基本数据类型"><a href="#3-2-Java基本数据类型" class="headerlink" title="3.2 Java基本数据类型"></a>3.2 <a href="https://www.cnblogs.com/123hll/p/5805040.html" target="_blank" rel="noopener">Java基本数据类型</a></h3><blockquote>
 <pre>
 byte----> Byte-------> Byte.BYTES ======= 1 (-128 ~ 127)
