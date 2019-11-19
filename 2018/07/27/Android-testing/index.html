@@ -6,18 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="相关资源 网友博客android-testing Mockito官网 BDDMockito guide Use Mockito in Android with dexmaker TDD [BDD] Test-Driven Development on Android with the Android Testing Support Library (Google I/O &apos;17) jetpack">
+    <meta name="description" content="相关资源网友博客android-testing Mockito官网 BDDMockito guide Use Mockito in Android with dexmaker TDD [BDD] Test-Driven Development on Android with the Android Testing Support Library (Google I/O ‘17) jetpack 测">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android测试：单元测试、集成测试、UI测试">
 <meta property="og:url" content="http://yoursite.com/2018/07/27/Android-testing/index.html">
 <meta property="og:site_name" content="Farubaba">
-<meta property="og:description" content="相关资源 网友博客android-testing Mockito官网 BDDMockito guide Use Mockito in Android with dexmaker TDD [BDD] Test-Driven Development on Android with the Android Testing Support Library (Google I/O &apos;17) jetpack">
+<meta property="og:description" content="相关资源网友博客android-testing Mockito官网 BDDMockito guide Use Mockito in Android with dexmaker TDD [BDD] Test-Driven Development on Android with the Android Testing Support Library (Google I/O ‘17) jetpack 测">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/TDD-testing-workflow.png">
+<meta property="og:image" content="http://yoursite.com/images/testing-pyramid-2x.png">
 <meta property="og:updated_time" content="2018-07-27T15:56:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android测试：单元测试、集成测试、UI测试">
-<meta name="twitter:description" content="相关资源 网友博客android-testing Mockito官网 BDDMockito guide Use Mockito in Android with dexmaker TDD [BDD] Test-Driven Development on Android with the Android Testing Support Library (Google I/O &apos;17) jetpack">
+<meta name="twitter:description" content="相关资源网友博客android-testing Mockito官网 BDDMockito guide Use Mockito in Android with dexmaker TDD [BDD] Test-Driven Development on Android with the Android Testing Support Library (Google I/O ‘17) jetpack 测">
+<meta name="twitter:image" content="http://yoursite.com/images/TDD-testing-workflow.png">
     
     
         
@@ -101,7 +104,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">相关资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">测试驱动开发TDD（test-driven development）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">测试金字塔</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">多种测试框架及辅助测试工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">参考文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">6.</span> <span class="toc-text">Mock Android Issue Track</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">7.</span> <span class="toc-text">Android项目中引入Mockito支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">8.</span> <span class="toc-text">初始化mockito及MockitoAnnotations</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#相关资源"><span class="toc-number">1.</span> <span class="toc-text">相关资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试驱动开发TDD（test-driven-development）"><span class="toc-number">2.</span> <span class="toc-text">测试驱动开发TDD（test-driven development）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试金字塔"><span class="toc-number">3.</span> <span class="toc-text">测试金字塔</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多种测试框架及辅助测试工具"><span class="toc-number">4.</span> <span class="toc-text">多种测试框架及辅助测试工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文档"><span class="toc-number">5.</span> <span class="toc-text">参考文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mock-Android-Issue-Track"><span class="toc-number">6.</span> <span class="toc-text">Mock Android Issue Track</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android项目中引入Mockito支持"><span class="toc-number">7.</span> <span class="toc-text">Android项目中引入Mockito支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化mockito及MockitoAnnotations"><span class="toc-number">8.</span> <span class="toc-text">初始化mockito及MockitoAnnotations</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -163,41 +166,35 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h3>相关资源</h3>
-<p><a href="https://blog.csdn.net/u012496940/article/details/49081151" target="_blank" rel="noopener">网友博客android-testing</a></p>
+    <h3 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h3><p><a href="https://blog.csdn.net/u012496940/article/details/49081151" target="_blank" rel="noopener">网友博客android-testing</a></p>
 <p><a href="http://site.mockito.org/#training" target="_blank" rel="noopener">Mockito官网</a></p>
 <p><a href="http://static.javadoc.io/org.mockito/mockito-core/2.20.0/org/mockito/BDDMockito.html" target="_blank" rel="noopener">BDDMockito guide</a></p>
 <p><a href="https://github.com/linkedin/dexmaker" target="_blank" rel="noopener">Use Mockito in Android with dexmaker</a></p>
 <p><a href="https://baike.baidu.com/item/TDD/9064369" target="_blank" rel="noopener">TDD</a></p>
 <p>[BDD]</p>
-<p><a href="https://www.youtube.com/watch?v=pK7W5npkhho&amp;start=111" target="_blank" rel="noopener">Test-Driven Development on Android with the Android Testing Support Library (Google I/O '17)</a></p>
+<p><a href="https://www.youtube.com/watch?v=pK7W5npkhho&amp;start=111" target="_blank" rel="noopener">Test-Driven Development on Android with the Android Testing Support Library (Google I/O ‘17)</a></p>
 <p><a href="https://developer.android.com/jetpack/" target="_blank" rel="noopener">jetpack</a></p>
-<h3>测试驱动开发TDD（test-driven development）</h3>
-<p>&lt;div align=&quot;center&quot;&gt;
-	&lt;img src=&quot;/images/TDD-testing-workflow.png&quot; width=&quot;90%&quot; /&gt;
-&lt;/div&gt;</p>
+<h3 id="测试驱动开发TDD（test-driven-development）"><a href="#测试驱动开发TDD（test-driven-development）" class="headerlink" title="测试驱动开发TDD（test-driven development）"></a>测试驱动开发TDD（test-driven development）</h3><div align="center"><br>    <img src="/images/TDD-testing-workflow.png" width="90%"><br></div>
+
 <ol>
-<li>Unit Test 				(Small Tests)</li>
-<li>UI Test   				(Large Tests)</li>
+<li>Unit Test                 (Small Tests)</li>
+<li>UI Test                   (Large Tests)</li>
 </ol>
-<h3>测试金字塔</h3>
-<p>&lt;div align=&quot;center&quot;&gt;
-	&lt;img src=&quot;/images/testing-pyramid-2x.png&quot; width=&quot;90%&quot; /&gt;
-&lt;/div&gt;</p>
+<h3 id="测试金字塔"><a href="#测试金字塔" class="headerlink" title="测试金字塔"></a>测试金字塔</h3><div align="center"><br>    <img src="/images/testing-pyramid-2x.png" width="90%"><br></div>
+
 <ol>
-<li>Unit Test 				(Small Tests)</li>
+<li>Unit Test                 (Small Tests)   </li>
 </ol>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">推荐多写单元测试，因为他运行在本地电脑，并且mocked或者stubed很多至关重要的核心组件，例如Android中Context对象；</span><br><span class="line">该类测试旨在测试语法，异常，逻辑是否如我们所设计的一样被执行。并不能说明程序就没有错误。提前发现错误</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">推荐多写单元测试，因为他运行在本地电脑，并且mocked或者stubed很多至关重要的核心组件，例如Android中Context对象；</span><br><span class="line">该类测试旨在测试语法，异常，逻辑是否如我们所设计的一样被执行。并不能说明程序就没有错误。提前发现错误</span><br></pre></td></tr></table></figure>
 <ol start="2">
-<li>integration Test		(Medium Tests)</li>
+<li>integration Test        (Medium Tests)</li>
 </ol>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">this kind of Tests told you that your function is actually works。</span><br><span class="line">这种测试被运行在真机或者模拟器中，用于测试你的程序真的可以正常工作。</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">this kind of Tests told you that your function is actually works。</span><br><span class="line">这种测试被运行在真机或者模拟器中，用于测试你的程序真的可以正常工作。</span><br></pre></td></tr></table></figure>
 <ol start="3">
-<li>UI Test   				(Large Tests)</li>
+<li>UI Test                   (Large Tests)</li>
 </ol>
-<p>推荐各种类型的测试用例占比为： &lt;b&gt;70 percent small, 20 percent medium, and 10 percent large.&lt;/b&gt;</p>
-<h3>多种测试框架及辅助测试工具</h3>
-<table>
+<p>推荐各种类型的测试用例占比为： <b>70 percent small, 20 percent medium, and 10 percent large.</b></p>
+<h3 id="多种测试框架及辅助测试工具"><a href="#多种测试框架及辅助测试工具" class="headerlink" title="多种测试框架及辅助测试工具"></a>多种测试框架及辅助测试工具</h3><table>
 <thead>
 <tr>
 <th>名称</th>
@@ -264,54 +261,45 @@
 <tr>
 <td>ServiceTestRule</td>
 <td>不支持IntentService</td>
-<td></td>
 </tr>
 </tbody>
 </table>
 <ol>
 <li>org.junit.runners.JUnit4</li>
 </ol>
-<p><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: <span class="string">'com.android.application'</span></span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">26</span></span><br><span class="line">    buildToolsVersion rootProject.buildToolsVersion</span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        applicationId <span class="string">"com.example.android.testing.unittesting.BasicSample"</span></span><br><span class="line">        minSdkVersion <span class="number">9</span></span><br><span class="line">        versionCode <span class="number">1</span></span><br><span class="line">        versionName <span class="string">"1.0"</span></span><br><span class="line">        targetSdkVersion <span class="number">26</span></span><br><span class="line">    &#125;</span><br><span class="line">    productFlavors &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line">    <span class="comment">// Unit testing dependencies.</span></span><br><span class="line">    testCompile <span class="string">'junit:junit:'</span> + rootProject.junitVersion;</span><br><span class="line">    testCompile <span class="string">"org.mockito:mockito-inline:+"</span></span><br><span class="line">    <span class="comment">//testCompile 'org.mockito:mockito-core:' + rootProject.mockitoVersion;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: <span class="string">'com.android.application'</span></span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">26</span></span><br><span class="line">    buildToolsVersion rootProject.buildToolsVersion</span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        applicationId <span class="string">"com.example.android.testing.unittesting.BasicSample"</span></span><br><span class="line">        minSdkVersion <span class="number">9</span></span><br><span class="line">        versionCode <span class="number">1</span></span><br><span class="line">        versionName <span class="string">"1.0"</span></span><br><span class="line">        targetSdkVersion <span class="number">26</span></span><br><span class="line">    &#125;</span><br><span class="line">    productFlavors &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line">    <span class="comment">// Unit testing dependencies.</span></span><br><span class="line">    testCompile <span class="string">'junit:junit:'</span> + rootProject.junitVersion;</span><br><span class="line">    testCompile <span class="string">"org.mockito:mockito-inline:+"</span></span><br><span class="line">    <span class="comment">//testCompile 'org.mockito:mockito-core:' + rootProject.mockitoVersion;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>android.support.test.runner.AndroidJUnitRunner</li>
 </ol>
-<p><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: <span class="string">'com.android.application'</span></span><br><span class="line">	</span><br><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">26</span></span><br><span class="line">    buildToolsVersion rootProject.buildToolsVersion</span><br><span class="line">	</span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        applicationId <span class="string">"com.example.android.testing.unittesting.basicunitandroidtest"</span></span><br><span class="line">        minSdkVersion <span class="number">9</span></span><br><span class="line">        targetSdkVersion <span class="number">26</span></span><br><span class="line">        versionCode <span class="number">1</span></span><br><span class="line">        versionName <span class="string">"1.0"</span></span><br><span class="line">        testInstrumentationRunner <span class="string">"android.support.test.runner.AndroidJUnitRunner"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line">    <span class="comment">// Testing-only dependencies</span></span><br><span class="line">    <span class="comment">// Force usage of support annotations in the test app, since it is internally used by the runner module.</span></span><br><span class="line">    androidTestCompile <span class="string">'com.android.support:support-annotations:'</span> + rootProject.supportLibVersion;</span><br><span class="line">    androidTestCompile <span class="string">'com.android.support.test:runner:'</span> + rootProject.runnerVersion;</span><br><span class="line">    androidTestCompile <span class="string">'org.hamcrest:hamcrest-library:'</span> + rootProject.hamcrestVersion;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: <span class="string">'com.android.application'</span></span><br><span class="line">	</span><br><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">26</span></span><br><span class="line">    buildToolsVersion rootProject.buildToolsVersion</span><br><span class="line">	</span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        applicationId <span class="string">"com.example.android.testing.unittesting.basicunitandroidtest"</span></span><br><span class="line">        minSdkVersion <span class="number">9</span></span><br><span class="line">        targetSdkVersion <span class="number">26</span></span><br><span class="line">        versionCode <span class="number">1</span></span><br><span class="line">        versionName <span class="string">"1.0"</span></span><br><span class="line">        testInstrumentationRunner <span class="string">"android.support.test.runner.AndroidJUnitRunner"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line">    <span class="comment">// Testing-only dependencies</span></span><br><span class="line">    <span class="comment">// Force usage of support annotations in the test app, since it is internally used by the runner module.</span></span><br><span class="line">    androidTestCompile <span class="string">'com.android.support:support-annotations:'</span> + rootProject.supportLibVersion;</span><br><span class="line">    androidTestCompile <span class="string">'com.android.support.test:runner:'</span> + rootProject.runnerVersion;</span><br><span class="line">    androidTestCompile <span class="string">'org.hamcrest:hamcrest-library:'</span> + rootProject.hamcrestVersion;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="3">
 <li>水电费</li>
 </ol>
-<p><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <ol start="4">
 <li>sfd</li>
 </ol>
-<h3>参考文档</h3>
-<p><a href="http://static.javadoc.io/org.mockito/mockito-core/2.20.0/org/mockito/Mockito.html" target="_blank" rel="noopener">Mockito guide</a></p>
+<h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a href="http://static.javadoc.io/org.mockito/mockito-core/2.20.0/org/mockito/Mockito.html" target="_blank" rel="noopener">Mockito guide</a></p>
 <p><a href="https://blog.csdn.net/qq_17766199/article/details/78450007" target="_blank" rel="noopener">Mocktio 语法简介</a></p>
-<h3>Mock Android Issue Track</h3>
-<p><a href="https://github.com/mockito/mockito/issues/new" target="_blank" rel="noopener">mockito android issues</a></p>
-<h3>Android项目中引入Mockito支持</h3>
-<ol>
-<li>
-<p>使用官方提供的androidTestCompile支持</p>
-<p><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">repositories</span> &#123;</span><br><span class="line">  jcenter()</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line">  <span class="comment">//对普通java mock测试支持</span></span><br><span class="line">  testCompile <span class="string">"org.mockito:mockito-core:+"</span></span><br><span class="line">  <span class="comment">//mockito官方于mockito 2.6.1开始对android依赖库提供mock支持</span></span><br><span class="line">  androidTestCompile <span class="string">"org.mockito:mockito-android:+"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Mock-Android-Issue-Track"><a href="#Mock-Android-Issue-Track" class="headerlink" title="Mock Android Issue Track"></a>Mock Android Issue Track</h3><p><a href="https://github.com/mockito/mockito/issues/new" target="_blank" rel="noopener">mockito android issues</a></p>
+<h3 id="Android项目中引入Mockito支持"><a href="#Android项目中引入Mockito支持" class="headerlink" title="Android项目中引入Mockito支持"></a>Android项目中引入Mockito支持</h3><ol>
+<li><p>使用官方提供的androidTestCompile支持</p>
+ <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">repositories</span> &#123;</span><br><span class="line">  jcenter()</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line">  <span class="comment">//对普通java mock测试支持</span></span><br><span class="line">  testCompile <span class="string">"org.mockito:mockito-core:+"</span></span><br><span class="line">  <span class="comment">//mockito官方于mockito 2.6.1开始对android依赖库提供mock支持</span></span><br><span class="line">  androidTestCompile <span class="string">"org.mockito:mockito-android:+"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <ol start="2">
-<li>
-<p>使用LinkedIn公司dexmaker团队基于mockito提供的androidTestCompile支持</p>
-<p><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">repositories</span> &#123;</span><br><span class="line">  jcenter()</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line">  <span class="comment">//对普通java mock测试支持</span></span><br><span class="line">  testCompile <span class="string">"org.mockito:mockito-core:+"</span></span><br><span class="line">  <span class="comment">//使用LinkedIn公司dexmaker团队基于mockito提供的androidTestCompile支持</span></span><br><span class="line">  androidTestCompile <span class="string">'com.linkedin.dexmaker:dexmaker-mockito:2.19.0'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<li><p>使用LinkedIn公司dexmaker团队基于mockito提供的androidTestCompile支持</p>
+ <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">repositories</span> &#123;</span><br><span class="line">  jcenter()</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line">  <span class="comment">//对普通java mock测试支持</span></span><br><span class="line">  testCompile <span class="string">"org.mockito:mockito-core:+"</span></span><br><span class="line">  <span class="comment">//使用LinkedIn公司dexmaker团队基于mockito提供的androidTestCompile支持</span></span><br><span class="line">  androidTestCompile <span class="string">'com.linkedin.dexmaker:dexmaker-mockito:2.19.0'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <ol start="3">
-<li>
-<p>Mocking final types, enums and final methods (Since 2.1.0)</p>
-<p><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">repositories</span> &#123;</span><br><span class="line">   jcenter()</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">dependencies</span> &#123;</span><br><span class="line">   <span class="comment">//想要mock final types，enums，final methods</span></span><br><span class="line">   <span class="comment">//使用mockito-inline替换mockito-core</span></span><br><span class="line">   testCompile <span class="string">"org.mockito:mockito-inline:+"</span></span><br><span class="line">   <span class="comment">//androidTestCompile "org.mockito:mockito-android:+"</span></span><br><span class="line">   <span class="comment">//androidTestCompile 'com.linkedin.dexmaker:dexmaker-mockito:2.19.0'</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<li><p>Mocking final types, enums and final methods (Since 2.1.0)</p>
+ <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">repositories</span> &#123;</span><br><span class="line">   jcenter()</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">dependencies</span> &#123;</span><br><span class="line">   <span class="comment">//想要mock final types，enums，final methods</span></span><br><span class="line">   <span class="comment">//使用mockito-inline替换mockito-core</span></span><br><span class="line">   testCompile <span class="string">"org.mockito:mockito-inline:+"</span></span><br><span class="line">   <span class="comment">//androidTestCompile "org.mockito:mockito-android:+"</span></span><br><span class="line">   <span class="comment">//androidTestCompile 'com.linkedin.dexmaker:dexmaker-mockito:2.19.0'</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>sdfsf</p>
+<li><p>sdfsf</p>
 </li>
 </ol>
-<h3>初始化mockito及MockitoAnnotations</h3>
-<ol>
+<h3 id="初始化mockito及MockitoAnnotations"><a href="#初始化mockito及MockitoAnnotations" class="headerlink" title="初始化mockito及MockitoAnnotations"></a>初始化mockito及MockitoAnnotations</h3><ol>
 <li>MockitoAnnotations</li>
 <li>MockitoJUnitRunner</li>
 <li>MockitoRule</li>
@@ -347,7 +335,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">相关资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">测试驱动开发TDD（test-driven development）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">测试金字塔</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">多种测试框架及辅助测试工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">参考文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">6.</span> <span class="toc-text">Mock Android Issue Track</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">7.</span> <span class="toc-text">Android项目中引入Mockito支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">8.</span> <span class="toc-text">初始化mockito及MockitoAnnotations</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#相关资源"><span class="toc-number">1.</span> <span class="toc-text">相关资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试驱动开发TDD（test-driven-development）"><span class="toc-number">2.</span> <span class="toc-text">测试驱动开发TDD（test-driven development）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试金字塔"><span class="toc-number">3.</span> <span class="toc-text">测试金字塔</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多种测试框架及辅助测试工具"><span class="toc-number">4.</span> <span class="toc-text">多种测试框架及辅助测试工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文档"><span class="toc-number">5.</span> <span class="toc-text">参考文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mock-Android-Issue-Track"><span class="toc-number">6.</span> <span class="toc-text">Mock Android Issue Track</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android项目中引入Mockito支持"><span class="toc-number">7.</span> <span class="toc-text">Android项目中引入Mockito支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化mockito及MockitoAnnotations"><span class="toc-number">8.</span> <span class="toc-text">初始化mockito及MockitoAnnotations</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

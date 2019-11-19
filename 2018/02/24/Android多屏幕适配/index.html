@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="一、相关参考 方案越来越先进。    screens_support Android知识梳理之屏幕适配全攻略 使用系统自带Percent库: compile &apos;com.android.support:percent:23.3.0&apos;, 但是deprecated in API level 26.0.0-beta1。推荐使用ConstraintLayout。 鸿洋AndroidAutoLayout 一行">
+    <meta name="description" content="一、相关参考方案越来越先进。   screens_support Android知识梳理之屏幕适配全攻略 使用系统自带Percent库: compile ‘com.android.support:percent:23.3.0’, 但是deprecated in API level 26.0.0-beta1。推荐使用ConstraintLayout。 鸿洋AndroidAutoLayout 一行代码">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android屏幕适配">
 <meta property="og:url" content="http://yoursite.com/2018/02/24/Android多屏幕适配/index.html">
 <meta property="og:site_name" content="Farubaba">
-<meta property="og:description" content="一、相关参考 方案越来越先进。    screens_support Android知识梳理之屏幕适配全攻略 使用系统自带Percent库: compile &apos;com.android.support:percent:23.3.0&apos;, 但是deprecated in API level 26.0.0-beta1。推荐使用ConstraintLayout。 鸿洋AndroidAutoLayout 一行">
+<meta property="og:description" content="一、相关参考方案越来越先进。   screens_support Android知识梳理之屏幕适配全攻略 使用系统自带Percent库: compile ‘com.android.support:percent:23.3.0’, 但是deprecated in API level 26.0.0-beta1。推荐使用ConstraintLayout。 鸿洋AndroidAutoLayout 一行代码">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/944365-a1b32092b08e27cd.png">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/944365-ced9745859537daf.png?imageMogr2/auto-orient/">
@@ -20,10 +20,84 @@
 <meta property="og:image" content="https://www.2cto.com/uploadfile/Collfiles/20160505/20160505090552153.png">
 <meta property="og:image" content="https://www.2cto.com/uploadfile/Collfiles/20160505/20160505090552159.png">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6322932-89d993c158f0125b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://yoursite.com/images/syntax-property-annimation.png">
+<meta property="og:image" content="http://yoursite.com/images/example-property-animation.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-view-annimation.png">
+<meta property="og:image" content="http://yoursite.com/images/example-view-animation.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-interplator.png">
+<meta property="og:image" content="http://yoursite.com/images/example-interpolator.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-frame-annimation.png">
+<meta property="og:image" content="http://yoursite.com/images/example-frame-animation.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-color-state-list.png">
+<meta property="og:image" content="http://yoursite.com/images/example-color-state-list.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/example-bitmap.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-xml-bitmap.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/syntax-xml-nine-patch.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/syntax-layer-list.png">
+<meta property="og:image" content="http://yoursite.com/images/sample-layer-list.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-state-list.png">
+<meta property="og:image" content="http://yoursite.com/images/sample-state-list.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-level-list.png">
+<meta property="og:image" content="http://yoursite.com/images/sample-level-list.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-transition-drawable.png">
+<meta property="og:image" content="http://yoursite.com/images/sample-transition-drawable.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-inset-drawable.png">
+<meta property="og:image" content="http://yoursite.com/images/example-inset-drawable.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-clip-drawable.png">
+<meta property="og:image" content="http://yoursite.com/images/sample-clip-drawable.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-scale-drawable.png">
+<meta property="og:image" content="http://yoursite.com/images/sample-scale-drawable.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-shape-drawable.png">
+<meta property="og:image" content="http://yoursite.com/images/sample-shape-drawable.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/syntax-menu.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/syntax-string-array.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/syntax-quantity-string.png">
+<meta property="og:image" content="http://yoursite.com/images/sample-quantity-string.png">
+<meta property="og:image" content="http://yoursite.com/images/syntax-formating-string.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/syntax-html-markup.png">
+<meta property="og:image" content="http://yoursite.com/images/sample-html-markup-string.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/syntax-style.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/sample-font-resources.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/sample-downloadable-font.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/sample-bool.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/sample-color.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/sample-dimensions.png">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/sample-typedarray.png">
 <meta property="og:updated_time" content="2018-11-30T06:58:19.842Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android屏幕适配">
-<meta name="twitter:description" content="一、相关参考 方案越来越先进。    screens_support Android知识梳理之屏幕适配全攻略 使用系统自带Percent库: compile &apos;com.android.support:percent:23.3.0&apos;, 但是deprecated in API level 26.0.0-beta1。推荐使用ConstraintLayout。 鸿洋AndroidAutoLayout 一行">
+<meta name="twitter:description" content="一、相关参考方案越来越先进。   screens_support Android知识梳理之屏幕适配全攻略 使用系统自带Percent库: compile ‘com.android.support:percent:23.3.0’, 但是deprecated in API level 26.0.0-beta1。推荐使用ConstraintLayout。 鸿洋AndroidAutoLayout 一行代码">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/944365-a1b32092b08e27cd.png">
     
     
@@ -106,7 +180,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、相关参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、Android屏幕密度及代表分辨率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">三、基础知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">四、图片适配屏幕密度xhdpi</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">五、Android资源类型、存放位置及示例代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">6.</span> <span class="toc-text">六、使用SVG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">7.</span> <span class="toc-text">七、使用webp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">8.</span> <span class="toc-text">参考文档</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、相关参考"><span class="toc-number">1.</span> <span class="toc-text">一、相关参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、Android屏幕密度及代表分辨率"><span class="toc-number">2.</span> <span class="toc-text">二、Android屏幕密度及代表分辨率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、基础知识"><span class="toc-number">3.</span> <span class="toc-text">三、基础知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、图片适配屏幕密度xhdpi"><span class="toc-number">4.</span> <span class="toc-text">四、图片适配屏幕密度xhdpi</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、Android资源类型、存放位置及示例代码"><span class="toc-number">5.</span> <span class="toc-text">五、Android资源类型、存放位置及示例代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、使用SVG"><span class="toc-number">6.</span> <span class="toc-text">六、使用SVG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七、使用webp"><span class="toc-number">7.</span> <span class="toc-text">七、使用webp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文档"><span class="toc-number">8.</span> <span class="toc-text">参考文档</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -168,25 +242,22 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h3>一、相关参考</h3>
-<pre><code>方案越来越先进。
-</code></pre>
-<blockquote>
+    <h3 id="一、相关参考"><a href="#一、相关参考" class="headerlink" title="一、相关参考"></a>一、相关参考</h3><pre><code>方案越来越先进。
+</code></pre><blockquote>
 <ol>
 <li><a href="http://developer.android.com/guide/practices/screens_support.html" target="_blank" rel="noopener">screens_support</a></li>
 <li><a href="https://www.2cto.com/kf/201605/505770.html" target="_blank" rel="noopener">Android知识梳理之屏幕适配全攻略</a></li>
-<li>使用系统自带Percent库: compile 'com.android.support:percent:23.3.0', 但是deprecated in API level 26.0.0-beta1。推荐使用ConstraintLayout。</li>
+<li>使用系统自带Percent库: compile ‘com.android.support:percent:23.3.0’, 但是deprecated in API level 26.0.0-beta1。推荐使用ConstraintLayout。</li>
 <li><a href="https://github.com/hongyangAndroid/AndroidAutoLayout" target="_blank" rel="noopener">鸿洋AndroidAutoLayout</a></li>
 <li><a href="https://feisher.github.io/ScreenAdapter/" target="_blank" rel="noopener">一行代码搞定安卓全屏幕适配</a></li>
-<li><a href="http://blog.csdn.net/zhaokaiqiang1992/article/details/45419023" target="_blank" rel="noopener">凯子--Android屏幕适配全攻略(最权威的官方适配指导)</a></li>
+<li><a href="http://blog.csdn.net/zhaokaiqiang1992/article/details/45419023" target="_blank" rel="noopener">凯子–Android屏幕适配全攻略(最权威的官方适配指导)</a></li>
 <li><a href="https://www.jianshu.com/p/ec5a1a30694b" target="_blank" rel="noopener">Android 屏幕适配：最全面的解决方案</a></li>
 <li><a href="http://blog.csdn.net/zouzhigang96/article/details/79004355" target="_blank" rel="noopener">Android 适配18：9全面屏</a></li>
 <li><a href="http://blog.csdn.net/wqbs369/article/details/78641952" target="_blank" rel="noopener">Android手机 全面屏（18：9屏幕）适配指南</a></li>
 <li><a href="https://developer.android.com/about/dashboards/index.html#Screens" target="_blank" rel="noopener">现有设备系统版本、屏幕密度、OpenGL版本实时信息</a></li>
 </ol>
 </blockquote>
-<h3>二、Android屏幕密度及代表分辨率</h3>
-<table>
+<h3 id="二、Android屏幕密度及代表分辨率"><a href="#二、Android屏幕密度及代表分辨率" class="headerlink" title="二、Android屏幕密度及代表分辨率"></a>二、Android屏幕密度及代表分辨率</h3><table>
 <thead>
 <tr>
 <th>密度类型</th>
@@ -219,8 +290,8 @@
 <td>6</td>
 </tr>
 <tr>
-<td>超高密度&lt;font color=&quot;red&quot;&gt;（xhdpi） &lt;/font&gt;</td>
-<td>&lt;font color=&quot;red&quot;&gt;720x1280&lt;/font&gt;</td>
+<td>超高密度<font color="red">（xhdpi） </font></td>
+<td><font color="red">720x1280</font></td>
 <td>320</td>
 <td>1dp=2px</td>
 <td>8</td>
@@ -234,8 +305,7 @@
 </tr>
 </tbody>
 </table>
-<h3>三、基础知识</h3>
-<table>
+<h3 id="三、基础知识"><a href="#三、基础知识" class="headerlink" title="三、基础知识"></a>三、基础知识</h3><table>
 <thead>
 <tr>
 <th>名称</th>
@@ -256,7 +326,7 @@
 </tr>
 <tr>
 <td>解决两种类型屏幕适配问题</td>
-<td>1.解决在不同屏幕的分辨率上面的适配。&lt;/br&gt;2.解决在不同尺寸设备上面的适配。&lt;/br&gt;<a href="http://developer.android.com/guide/practices/screens_support.html" target="_blank" rel="noopener">http://developer.android.com/guide/practices/screens_support.html</a></td>
+<td>1.解决在不同屏幕的分辨率上面的适配。<br>2.解决在不同尺寸设备上面的适配。<br><a href="http://developer.android.com/guide/practices/screens_support.html" target="_blank" rel="noopener">http://developer.android.com/guide/practices/screens_support.html</a></td>
 <td><a href="https://www.2cto.com/kf/201605/505770.html" target="_blank" rel="noopener">Android知识梳理之屏幕适配全攻略</a></td>
 </tr>
 <tr>
@@ -270,24 +340,22 @@
 <td><a href="https://www.2cto.com/kf/201605/505770.html" target="_blank" rel="noopener">Android知识梳理之屏幕适配全攻略</a></td>
 </tr>
 <tr>
-<td>&lt;font color=&quot;red&quot;&gt;1、解决在不同屏幕的分辨率上面的适配&lt;/font&gt;</td>
-<td>方案：&lt;font color=&quot;red&quot;&gt;使用dp&lt;/font&gt;&lt;/br&gt;dp解决了同一数值在不同分辨率中展示相同尺寸大小的问题（即屏幕像素密度匹配问题），但却没有解决设备尺寸大小匹配的问题（即屏幕尺寸匹配问题）。屏幕的物理尺寸相差很大的话使用dp就无能为力了.也就是所通过dp我们可以解决Android分辨率碎片化的问题,但是却不能够解决Android物理尺寸碎片化的问题.</td>
+<td><font color="red">1、解决在不同屏幕的分辨率上面的适配</font></td>
+<td>方案：<font color="red">使用dp</font><br>dp解决了同一数值在不同分辨率中展示相同尺寸大小的问题（即屏幕像素密度匹配问题），但却没有解决设备尺寸大小匹配的问题（即屏幕尺寸匹配问题）。屏幕的物理尺寸相差很大的话使用dp就无能为力了.也就是所通过dp我们可以解决Android分辨率碎片化的问题,但是却不能够解决Android物理尺寸碎片化的问题.</td>
 <td><a href="https://www.2cto.com/kf/201605/505770.html" target="_blank" rel="noopener">Android知识梳理之屏幕适配全攻略</a></td>
 </tr>
 <tr>
 <td>资源查找循序</td>
-<td><img src="https://www.2cto.com/uploadfile/Collfiles/20160505/20160505090552159.png" alt="资源查找循序"> &lt;font color=&quot;red&quot;&gt;结论:&lt;/font&gt;根据实际的测量结果也是这样如果在设备对用的dpi的drawable文件夹下面没有对应的图片,那么首先是要去dpi最高的文件夹里面找看是否有对应的图片.如果有则按照相应的缩放比例进行缩放显示,如果没有则到低一级的dpi文件夹里面取查找是否有对应的图片.以此类推.如果在所有的比自己dpi都高的文件夹里面都找不到对应的文件,则去比自己低一级dpi的文件夹里面找相关的资源.如果还是找不到资源就去默认的drawable文件夹里面找,如果drawable文件夹里面还是没有相关的资源那么程序就会报错.</td>
+<td><img src="https://www.2cto.com/uploadfile/Collfiles/20160505/20160505090552159.png" alt="资源查找循序"> <font color="red">结论:</font>根据实际的测量结果也是这样如果在设备对用的dpi的drawable文件夹下面没有对应的图片,那么首先是要去dpi最高的文件夹里面找看是否有对应的图片.如果有则按照相应的缩放比例进行缩放显示,如果没有则到低一级的dpi文件夹里面取查找是否有对应的图片.以此类推.如果在所有的比自己dpi都高的文件夹里面都找不到对应的文件,则去比自己低一级dpi的文件夹里面找相关的资源.如果还是找不到资源就去默认的drawable文件夹里面找,如果drawable文件夹里面还是没有相关的资源那么程序就会报错.</td>
 <td><a href="https://www.2cto.com/kf/201605/505770.html" target="_blank" rel="noopener">Android知识梳理之屏幕适配全攻略</a></td>
 </tr>
 <tr>
-<td>&lt;font color=&quot;red&quot;&gt;2、解决在不同尺寸设备上面的适配&lt;/font&gt;</td>
-<td>方案一：使用权重android:layout_weight,match_parent(填充父窗体)来初步的适配.&lt;/br&gt;方案二：使用限定符，例如：layout-sw600dp、layout-sw600dp-land&lt;/br&gt;方案三：根据DisplayMetrics代码动态适配&lt;/br&gt;方案四：使用百分比库(官方自带的),compile 'com.android.support:percent:23.3.0'&lt;/br&gt;方案五：使用第三方框架(鸿洋大神版)&lt;/br&gt;github地址:<a href="https://github.com/hongyangAndroid/AndroidAutoLayout" target="_blank" rel="noopener">https://github.com/hongyangAndroid/AndroidAutoLayout</a></td>
-<td></td>
+<td><font color="red">2、解决在不同尺寸设备上面的适配</font></td>
+<td>方案一：使用权重android:layout_weight,match_parent(填充父窗体)来初步的适配.<br>方案二：使用限定符，例如：layout-sw600dp、layout-sw600dp-land<br>方案三：根据DisplayMetrics代码动态适配<br>方案四：使用百分比库(官方自带的),compile ‘com.android.support:percent:23.3.0’<br>方案五：使用第三方框架(鸿洋大神版)<br>github地址:<a href="https://github.com/hongyangAndroid/AndroidAutoLayout" target="_blank" rel="noopener">https://github.com/hongyangAndroid/AndroidAutoLayout</a></td>
 </tr>
 </tbody>
 </table>
-<h3>四、图片适配屏幕密度xhdpi</h3>
-<blockquote>
+<h3 id="四、图片适配屏幕密度xhdpi"><a href="#四、图片适配屏幕密度xhdpi" class="headerlink" title="四、图片适配屏幕密度xhdpi"></a>四、图片适配屏幕密度xhdpi</h3><blockquote>
 <ol>
 <li>大部分的设备属于xhdpi屏幕密度范围,xxhdpi设备也有相当保有量。</li>
 <li>分辨率太低的图片，在高密度设备下会被放大儿变模糊，hdpi中的图片会在xhdpi和xxhdpi设备中变得模糊，所以不采用hdpi来适配。</li>
@@ -295,11 +363,9 @@
 <li>大部分的设备属于xhdpi屏幕密度范围，我们只提供xhdpi一套图片即可完成图片适配。这样在面对hdpi和xxhdpi的设备时候，性能和显示清晰度都可以做到不错。</li>
 </ol>
 </blockquote>
-<p>&lt;font color=&quot;red&quot;&gt;推荐：提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。</p>
-<p>当然也可以只提供一套xxhdpi的图片，见官方文档推荐如下：&lt;/font&gt;
-<img src="http://upload-images.jianshu.io/upload_images/6322932-89d993c158f0125b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片适配xxhdpi"></p>
-<h3>五、Android资源类型、存放位置及示例代码</h3>
-<table>
+<p><font color="red">推荐：提供一套 xhdpi （UI设计按：720x1080设计）图片来做大部分图片缩放适配。</font></p>
+<p>当然也可以只提供一套xxhdpi的图片，见官方文档推荐如下：<br><img src="http://upload-images.jianshu.io/upload_images/6322932-89d993c158f0125b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片适配xxhdpi"></p>
+<h3 id="五、Android资源类型、存放位置及示例代码"><a href="#五、Android资源类型、存放位置及示例代码" class="headerlink" title="五、Android资源类型、存放位置及示例代码"></a>五、Android资源类型、存放位置及示例代码</h3><table>
 <thead>
 <tr>
 <th>序号</th>
@@ -313,33 +379,32 @@
 <tr>
 <td>1</td>
 <td>Property animation</td>
-<td>存放:res/animator/filename.xml&lt;br&gt;引用:R.animator.filename&lt;br&gt;对应类:ValueAnimator, ObjectAnimator, or AnimatorSet</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/syntax-property-annimation.png&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/example-property-animation.png&quot;&gt;&lt;/div&gt;</td>
+<td>存放:res/animator/filename.xml<br>引用:R.animator.filename<br>对应类:ValueAnimator, ObjectAnimator, or AnimatorSet</td>
+<td><div align="center"><img src="/images/syntax-property-annimation.png"></div></td>
+<td><div align="center"><img src="/images/example-property-animation.png"></div></td>
 </tr>
 <tr>
 <td>2</td>
 <td>View animation</td>
-<td>存放:res/anim/filename.xml&lt;br&gt;引用:R.anim.filename&lt;br&gt;对应类:Animation</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/syntax-view-annimation.png&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/example-view-animation.png&quot;&gt;&lt;/div&gt;</td>
+<td>存放:res/anim/filename.xml<br>引用:R.anim.filename<br>对应类:Animation</td>
+<td><div align="center"><img src="/images/syntax-view-annimation.png"></div></td>
+<td><div align="center"><img src="/images/example-view-animation.png"></div></td>
 </tr>
 <tr>
 <td>3</td>
 <td>interpolator</td>
-<td>存放:res/anim/filename.xml&lt;br&gt;引用:@anim/my_overshoot_interpolator&lt;br&gt;对应类:</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/syntax-interplator.png&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/example-interpolator.png&quot;&gt;&lt;/div&gt;</td>
+<td>存放:res/anim/filename.xml<br>引用:@anim/my_overshoot_interpolator<br>对应类:</td>
+<td><div align="center"><img src="/images/syntax-interplator.png"></div></td>
+<td><div align="center"><img src="/images/example-interpolator.png"></div></td>
 </tr>
 <tr>
 <td>4</td>
 <td>Frame animation</td>
-<td>存放:res/drawable/filename.xml&lt;br&gt;引用:R.drawable.filename&lt;br&gt;对应类:</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/syntax-frame-annimation.png&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/example-frame-animation.png&quot;&gt;&lt;/div&gt;</td>
+<td>存放:res/drawable/filename.xml<br>引用:R.drawable.filename<br>对应类:</td>
+<td><div align="center"><img src="/images/syntax-frame-annimation.png"></div></td>
+<td><div align="center"><img src="/images/example-frame-animation.png"></div></td>
 </tr>
 <tr>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -348,12 +413,11 @@
 <tr>
 <td>5</td>
 <td>Color state list</td>
-<td>存放:res/color/filename.xml&lt;br&gt;引用:R.color.filename&lt;br&gt;对应类:ColorStateList</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/syntax-color-state-list.png&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/example-color-state-list.png&quot;&gt;&lt;/div&gt;</td>
+<td>存放:res/color/filename.xml<br>引用:R.color.filename<br>对应类:ColorStateList</td>
+<td><div align="center"><img src="/images/syntax-color-state-list.png"></div></td>
+<td><div align="center"><img src="/images/example-color-state-list.png"></div></td>
 </tr>
 <tr>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -362,89 +426,88 @@
 <tr>
 <td>6</td>
 <td>Bitmap</td>
-<td>存放:res/drawable/filename.png (.png, .jpg, or .gif)&lt;br&gt;引用:R.drawable.filename&lt;br&gt;对应类:BitmapDrawable</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/example-bitmap.png&quot;&gt;&lt;/div&gt;</td>
+<td>存放:res/drawable/filename.png (.png, .jpg, or .gif)<br>引用:R.drawable.filename<br>对应类:BitmapDrawable</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/example-bitmap.png"></div></td>
 </tr>
 <tr>
 <td>7</td>
 <td>XML bitmap</td>
-<td>存放:res/drawable/filename.xml&lt;br&gt;引用:R.drawable.filename&lt;br&gt;对应类:BitmapDrawable</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/syntax-xml-bitmap.png&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
+<td>存放:res/drawable/filename.xml<br>引用:R.drawable.filename<br>对应类:BitmapDrawable</td>
+<td><div align="center"><img src="/images/syntax-xml-bitmap.png"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
 </tr>
 <tr>
 <td>8</td>
 <td>Nine-Patch</td>
-<td>存放:res/drawable/filename.9.png&lt;br&gt;引用:R.drawable.filename&lt;br&gt;对应类:NinePatchDrawable</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
+<td>存放:res/drawable/filename.9.png<br>引用:R.drawable.filename<br>对应类:NinePatchDrawable</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
 </tr>
 <tr>
 <td>9</td>
 <td>XML Nine-Patch</td>
-<td>存放:res/drawable/filename.xml&lt;br&gt;引用:R.drawable.filename&lt;br&gt;对应类:NinePatchDrawable</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/syntax-xml-nine-patch.png&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
+<td>存放:res/drawable/filename.xml<br>引用:R.drawable.filename<br>对应类:NinePatchDrawable</td>
+<td><div align="center"><img src="/images/syntax-xml-nine-patch.png"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
 </tr>
 <tr>
 <td>10</td>
 <td>Layer list</td>
-<td>存放:res/drawable/filename.xml&lt;br&gt;引用:R.drawable.filename&lt;br&gt;对应类:LayerDrawable</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/syntax-layer-list.png&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/sample-layer-list.png&quot;&gt;&lt;/div&gt;</td>
+<td>存放:res/drawable/filename.xml<br>引用:R.drawable.filename<br>对应类:LayerDrawable</td>
+<td><div align="center"><img src="/images/syntax-layer-list.png"></div></td>
+<td><div align="center"><img src="/images/sample-layer-list.png"></div></td>
 </tr>
 <tr>
 <td>11</td>
 <td>State list</td>
-<td>存放:res/drawable/filename.xml&lt;br&gt;引用:R.drawable.filename&lt;br&gt;对应类:StateListDrawable</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/syntax-state-list.png&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/sample-state-list.png&quot;&gt;&lt;/div&gt;</td>
+<td>存放:res/drawable/filename.xml<br>引用:R.drawable.filename<br>对应类:StateListDrawable</td>
+<td><div align="center"><img src="/images/syntax-state-list.png"></div></td>
+<td><div align="center"><img src="/images/sample-state-list.png"></div></td>
 </tr>
 <tr>
 <td>12</td>
 <td>Level list</td>
-<td>存放:res/drawable/filename.xml&lt;br&gt;引用:R.drawable.filename&lt;br&gt;对应类:LevelListDrawable</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/syntax-level-list.png&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/sample-level-list.png&quot;&gt;&lt;/div&gt;</td>
+<td>存放:res/drawable/filename.xml<br>引用:R.drawable.filename<br>对应类:LevelListDrawable</td>
+<td><div align="center"><img src="/images/syntax-level-list.png"></div></td>
+<td><div align="center"><img src="/images/sample-level-list.png"></div></td>
 </tr>
 <tr>
 <td>13</td>
 <td>Transition drawable</td>
-<td>存放:&lt;br&gt;引用:&lt;br&gt;对应类:TransitionDrawable</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/syntax-transition-drawable.png&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/sample-transition-drawable.png&quot;&gt;&lt;/div&gt;</td>
+<td>存放:<br>引用:<br>对应类:TransitionDrawable</td>
+<td><div align="center"><img src="/images/syntax-transition-drawable.png"></div></td>
+<td><div align="center"><img src="/images/sample-transition-drawable.png"></div></td>
 </tr>
 <tr>
 <td>14</td>
 <td>Inset drawable</td>
-<td>存放:&lt;br&gt;引用:&lt;br&gt;对应类:InsetDrawable</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/syntax-inset-drawable.png&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/example-inset-drawable.png&quot;&gt;&lt;/div&gt;</td>
+<td>存放:<br>引用:<br>对应类:InsetDrawable</td>
+<td><div align="center"><img src="/images/syntax-inset-drawable.png"></div></td>
+<td><div align="center"><img src="/images/example-inset-drawable.png"></div></td>
 </tr>
 <tr>
 <td>15</td>
 <td>Clip drawable</td>
-<td>存放:&lt;br&gt;引用:&lt;br&gt;对应类:ClipDrawable</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/syntax-clip-drawable.png&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/sample-clip-drawable.png&quot;&gt;&lt;/div&gt;</td>
+<td>存放:<br>引用:<br>对应类:ClipDrawable</td>
+<td><div align="center"><img src="/images/syntax-clip-drawable.png"></div></td>
+<td><div align="center"><img src="/images/sample-clip-drawable.png"></div></td>
 </tr>
 <tr>
 <td>16</td>
 <td>Scale drawable</td>
-<td>存放:&lt;br&gt;引用:&lt;br&gt;对应类:ScaleDrawable</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/syntax-scale-drawable.png&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/sample-scale-drawable.png&quot;&gt;&lt;/div&gt;</td>
+<td>存放:<br>引用:<br>对应类:ScaleDrawable</td>
+<td><div align="center"><img src="/images/syntax-scale-drawable.png"></div></td>
+<td><div align="center"><img src="/images/sample-scale-drawable.png"></div></td>
 </tr>
 <tr>
 <td>17</td>
 <td>Shape drawable</td>
-<td>存放:&lt;br&gt;引用:&lt;br&gt;对应类:GradientDrawable</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/syntax-shape-drawable.png&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/sample-shape-drawable.png&quot;&gt;&lt;/div&gt;</td>
+<td>存放:<br>引用:<br>对应类:GradientDrawable</td>
+<td><div align="center"><img src="/images/syntax-shape-drawable.png"></div></td>
+<td><div align="center"><img src="/images/sample-shape-drawable.png"></div></td>
 </tr>
 <tr>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -453,75 +516,74 @@
 <tr>
 <td>18</td>
 <td>layout</td>
-<td>存放:&lt;br&gt;引用:&lt;br&gt;对应类:</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
+<td>存放:<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
 </tr>
 <tr>
 <td>19</td>
 <td>menu</td>
-<td>存放:res/menu/filename.xml&lt;br&gt;引用:&lt;br&gt;对应类:Menu</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/syntax-menu.png&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
+<td>存放:res/menu/filename.xml<br>引用:<br>对应类:Menu</td>
+<td><div align="center"><img src="/images/syntax-menu.png"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
 </tr>
 <tr>
 <td>20</td>
 <td>String</td>
-<td>存放:res/values/filename.xml&lt;br&gt;引用:&lt;br&gt;对应类:</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
+<td>存放:res/values/filename.xml<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
 </tr>
 <tr>
 <td>21</td>
 <td>String array</td>
-<td>存放:res/values/filename.xml&lt;br&gt;引用:R.array.string_array_name&lt;br&gt;对应类:</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/syntax-string-array.png&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
+<td>存放:res/values/filename.xml<br>引用:R.array.string_array_name<br>对应类:</td>
+<td><div align="center"><img src="/images/syntax-string-array.png"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
 </tr>
 <tr>
 <td>22</td>
 <td>Quantity strings</td>
-<td>存放:&lt;br&gt;引用:R.plurals.plural_name&lt;br&gt;对应类:</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/syntax-quantity-string.png&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/sample-quantity-string.png&quot;&gt;&lt;/div&gt;</td>
+<td>存放:<br>引用:R.plurals.plural_name<br>对应类:</td>
+<td><div align="center"><img src="/images/syntax-quantity-string.png"></div></td>
+<td><div align="center"><img src="/images/sample-quantity-string.png"></div></td>
 </tr>
 <tr>
 <td>23</td>
 <td>Formatting strings</td>
-<td>存放:&lt;br&gt;引用:&lt;br&gt;对应类:</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/syntax-formating-string.png&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
+<td>存放:<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/syntax-formating-string.png"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
 </tr>
 <tr>
 <td>24</td>
 <td>Styling with HTML markup</td>
-<td>存放:&lt;br&gt;引用:&lt;br&gt;对应类:</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/syntax-html-markup.png&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/sample-html-markup-string.png&quot;&gt;&lt;/div&gt;</td>
+<td>存放:<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/syntax-html-markup.png"></div></td>
+<td><div align="center"><img src="/images/sample-html-markup-string.png"></div></td>
 </tr>
 <tr>
 <td>25</td>
 <td>Styling with spannables</td>
-<td>存放:&lt;br&gt;引用:&lt;br&gt;对应类:</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
+<td>存放:<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
 </tr>
 <tr>
 <td>26</td>
 <td>Styling with annotations</td>
-<td>存放:&lt;br&gt;引用:&lt;br&gt;对应类:</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
+<td>存放:<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
 </tr>
 <tr>
 <td>27</td>
 <td>Annotation spans and text parceling</td>
-<td>存放:&lt;br&gt;引用:&lt;br&gt;对应类:</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
+<td>存放:<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
 </tr>
 <tr>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -530,26 +592,25 @@
 <tr>
 <td>28</td>
 <td>Style resource</td>
-<td>存放:&lt;br&gt;引用:&lt;br&gt;对应类:</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/syntax-style.png&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
+<td>存放:<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/syntax-style.png"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
 </tr>
 <tr>
 <td>29</td>
 <td>Font resources</td>
-<td>存放:res/font/filename.ttf (.ttf, .ttc, .otf, or .xml)&lt;br&gt;引用:&lt;br&gt;对应类:</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/sample-font-resources.png&quot;&gt;&lt;/div&gt;</td>
+<td>存放:res/font/filename.ttf (.ttf, .ttc, .otf, or .xml)<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/sample-font-resources.png"></div></td>
 </tr>
 <tr>
 <td>30</td>
 <td>Downloadable font</td>
-<td>存放:&lt;br&gt;引用:&lt;br&gt;对应类:</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/sample-downloadable-font.png&quot;&gt;&lt;/div&gt;</td>
+<td>存放:<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/sample-downloadable-font.png"></div></td>
 </tr>
 <tr>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -558,58 +619,55 @@
 <tr>
 <td>31</td>
 <td>Bool</td>
-<td>存放:&lt;br&gt;引用:R.bool.bool_name&lt;br&gt;对应类:</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/sample-bool.png&quot;&gt;&lt;/div&gt;</td>
+<td>存放:<br>引用:R.bool.bool_name<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/sample-bool.png"></div></td>
 </tr>
 <tr>
 <td>32</td>
 <td>Color</td>
-<td>存放:&lt;br&gt;引用:R.color.color_name&lt;br&gt;对应类:</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/sample-color.png&quot;&gt;&lt;/div&gt;</td>
+<td>存放:<br>引用:R.color.color_name<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/sample-color.png"></div></td>
 </tr>
 <tr>
 <td>33</td>
 <td>Dimension</td>
-<td>存放:&lt;br&gt;引用:R.dimen.dimension_name&lt;br&gt;对应类:</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/sample-dimensions.png&quot;&gt;&lt;/div&gt;</td>
+<td>存放:<br>引用:R.dimen.dimension_name<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/sample-dimensions.png"></div></td>
 </tr>
 <tr>
 <td>34</td>
 <td>ID</td>
-<td>存放:&lt;br&gt;引用:&lt;br&gt;对应类:</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
+<td>存放:<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
 </tr>
 <tr>
 <td>35</td>
 <td>Integer</td>
-<td>存放:&lt;br&gt;引用:&lt;br&gt;对应类:</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
+<td>存放:<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
 </tr>
 <tr>
 <td>36</td>
 <td>Integer Array</td>
-<td>存放:&lt;br&gt;引用:&lt;br&gt;对应类:</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
+<td>存放:<br>引用:<br>对应类:</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/"></div></td>
 </tr>
 <tr>
 <td>37</td>
 <td>Typed array</td>
-<td>存放:&lt;br&gt;引用:&lt;br&gt;对应类:TypedArray</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/&quot;&gt;&lt;/div&gt;</td>
-<td>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/sample-typedarray.png&quot;&gt;&lt;/div&gt;</td>
+<td>存放:<br>引用:<br>对应类:TypedArray</td>
+<td><div align="center"><img src="/images/"></div></td>
+<td><div align="center"><img src="/images/sample-typedarray.png"></div></td>
 </tr>
 </tbody>
 </table>
-<h3>六、使用SVG</h3>
-<h3>七、使用webp</h3>
-<h3>参考文档</h3>
-<p><a href="https://www.jianshu.com/p/4583755b4f69" target="_blank" rel="noopener">web前段适配移动端</a></p>
+<h3 id="六、使用SVG"><a href="#六、使用SVG" class="headerlink" title="六、使用SVG"></a>六、使用SVG</h3><h3 id="七、使用webp"><a href="#七、使用webp" class="headerlink" title="七、使用webp"></a>七、使用webp</h3><h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a href="https://www.jianshu.com/p/4583755b4f69" target="_blank" rel="noopener">web前段适配移动端</a></p>
 
   </div>
 </article>
@@ -640,7 +698,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、相关参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、Android屏幕密度及代表分辨率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">三、基础知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">四、图片适配屏幕密度xhdpi</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">五、Android资源类型、存放位置及示例代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">6.</span> <span class="toc-text">六、使用SVG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">7.</span> <span class="toc-text">七、使用webp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">8.</span> <span class="toc-text">参考文档</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、相关参考"><span class="toc-number">1.</span> <span class="toc-text">一、相关参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、Android屏幕密度及代表分辨率"><span class="toc-number">2.</span> <span class="toc-text">二、Android屏幕密度及代表分辨率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、基础知识"><span class="toc-number">3.</span> <span class="toc-text">三、基础知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、图片适配屏幕密度xhdpi"><span class="toc-number">4.</span> <span class="toc-text">四、图片适配屏幕密度xhdpi</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、Android资源类型、存放位置及示例代码"><span class="toc-number">5.</span> <span class="toc-text">五、Android资源类型、存放位置及示例代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、使用SVG"><span class="toc-number">6.</span> <span class="toc-text">六、使用SVG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七、使用webp"><span class="toc-number">7.</span> <span class="toc-text">七、使用webp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文档"><span class="toc-number">8.</span> <span class="toc-text">参考文档</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
