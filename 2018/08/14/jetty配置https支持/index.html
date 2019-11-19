@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="一、jetty配置https支持HTTPS及SSL TLS概述 通俗理解HTTPS https握手链接过程详解 jetty javadoc for 配置 ERR_SSL_VERSION_OR_CIPHER_MISMATCH 错误 Android Https IBM Java 安全套接字编程以及 keytool 使用最佳实践 /start.ini  &amp;gt; /etc/jetty-http.xml">
+    <meta name="description" content="一、jetty配置https支持 HTTPS及SSL TLS概述 通俗理解HTTPS https握手链接过程详解 jetty javadoc for 配置 ERR_SSL_VERSION_OR_CIPHER_MISMATCH 错误 Android Https IBM Java 安全套接字编程以及 keytool 使用最佳实践 /start.ini  &amp;gt; /etc/jetty-http.xml">
 <meta name="keywords" content="Jetty,HTTPS,SSL,TLS,Http2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Jetty配置https支持">
 <meta property="og:url" content="http://yoursite.com/2018/08/14/jetty配置https支持/index.html">
 <meta property="og:site_name" content="Farubaba">
-<meta property="og:description" content="一、jetty配置https支持HTTPS及SSL TLS概述 通俗理解HTTPS https握手链接过程详解 jetty javadoc for 配置 ERR_SSL_VERSION_OR_CIPHER_MISMATCH 错误 Android Https IBM Java 安全套接字编程以及 keytool 使用最佳实践 /start.ini  &amp;gt; /etc/jetty-http.xml">
+<meta property="og:description" content="一、jetty配置https支持 HTTPS及SSL TLS概述 通俗理解HTTPS https握手链接过程详解 jetty javadoc for 配置 ERR_SSL_VERSION_OR_CIPHER_MISMATCH 错误 Android Https IBM Java 安全套接字编程以及 keytool 使用最佳实践 /start.ini  &amp;gt; /etc/jetty-http.xml">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-09-11T08:28:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jetty配置https支持">
-<meta name="twitter:description" content="一、jetty配置https支持HTTPS及SSL TLS概述 通俗理解HTTPS https握手链接过程详解 jetty javadoc for 配置 ERR_SSL_VERSION_OR_CIPHER_MISMATCH 错误 Android Https IBM Java 安全套接字编程以及 keytool 使用最佳实践 /start.ini  &amp;gt; /etc/jetty-http.xml">
+<meta name="twitter:description" content="一、jetty配置https支持 HTTPS及SSL TLS概述 通俗理解HTTPS https握手链接过程详解 jetty javadoc for 配置 ERR_SSL_VERSION_OR_CIPHER_MISMATCH 错误 Android Https IBM Java 安全套接字编程以及 keytool 使用最佳实践 /start.ini  &amp;gt; /etc/jetty-http.xml">
     
     
         
@@ -101,7 +101,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、jetty配置https支持"><span class="toc-number">1.</span> <span class="toc-text">一、jetty配置https支持</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-TLS-and-SSL-versions"><span class="toc-number">1.1.</span> <span class="toc-text">1. TLS and SSL versions</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-使用keytool生成minimal-requirements-key-to-run-an-SSL"><span class="toc-number">1.2.</span> <span class="toc-text">2. 使用keytool生成minimal requirements key to run an SSL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-创建适合商用SSL-的key"><span class="toc-number">1.3.</span> <span class="toc-text">4. 创建适合商用SSL 的key</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-独立安装的Jetty配置https支持"><span class="toc-number">1.4.</span> <span class="toc-text">3. 独立安装的Jetty配置https支持</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、常见链接中间人：反向代理（Reverse-Proxy）和负载均衡（Load-Banlancer）"><span class="toc-number">2.</span> <span class="toc-text">二、常见链接中间人：反向代理（Reverse Proxy）和负载均衡（Load Banlancer）</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、jetty配置https支持</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">1. TLS and SSL versions</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">2. 使用keytool生成minimal requirements key to run an SSL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.</span> <span class="toc-text">4. 创建适合商用SSL 的key</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.</span> <span class="toc-text">3. 独立安装的Jetty配置https支持</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、常见链接中间人：反向代理（Reverse Proxy）和负载均衡（Load Banlancer）</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -168,7 +168,8 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h3 id="一、jetty配置https支持"><a href="#一、jetty配置https支持" class="headerlink" title="一、jetty配置https支持"></a>一、jetty配置https支持</h3><p><a href="HTTPS及SSL-TLS概述.md">HTTPS及SSL TLS概述</a></p>
+    <h3>一、jetty配置https支持</h3>
+<p><a href="HTTPS%E5%8F%8ASSL-TLS%E6%A6%82%E8%BF%B0.md">HTTPS及SSL TLS概述</a></p>
 <p><a href="https://www.cnblogs.com/zhangshitong/p/6478721.html" target="_blank" rel="noopener">通俗理解HTTPS</a></p>
 <p><a href="https://www.jianshu.com/p/7158568e4867" target="_blank" rel="noopener">https握手链接过程详解</a></p>
 <p><a href="http://www.eclipse.org/jetty/javadoc/9.4.11.v20180605/overview-summary.html" target="_blank" rel="noopener">jetty javadoc for 配置</a></p>
@@ -227,6 +228,7 @@
 <td>org.eclipse.jetty.webapp.WebAppContext</td>
 <td></td>
 <td>after web.xml overrideDescriptor</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -237,12 +239,13 @@
 <p><a href="http://www.eclipse.org/jetty/documentation/current/configuring-connectors.html" target="_blank" rel="noopener">jetty-config-connectors</a></p>
 <p><a href="http://www.eclipse.org/jetty/documentation/current/configuring-ssl.html" target="_blank" rel="noopener">jetty-configuring-ssl</a></p>
 <p><a href="http://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html" target="_blank" rel="noopener">configuring-jetty-maven-plugin</a></p>
-<h4 id="1-TLS-and-SSL-versions"><a href="#1-TLS-and-SSL-versions" class="headerlink" title="1. TLS and SSL versions"></a>1. TLS and SSL versions</h4><p>Which browser/OS supports which protocols can be found on Wikipedia.<a href="https://en.wikipedia.org/wiki/Transport_Layer_Security#Web_browsers" target="_blank" rel="noopener">Transport_Layer_Security in Web_browsers</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TLS v1.0 -&gt; TLS v1.1 -&gt; TLS v1.2</span><br><span class="line">SSL v1   -&gt; SSL v2   -&gt; SSL v3</span><br></pre></td></tr></table></figure>
+<h4>1. TLS and SSL versions</h4>
+<p>Which browser/OS supports which protocols can be found on Wikipedia.<a href="https://en.wikipedia.org/wiki/Transport_Layer_Security#Web_browsers" target="_blank" rel="noopener">Transport_Layer_Security in Web_browsers</a></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TLS v1.0 -&gt; TLS v1.1 -&gt; TLS v1.2</span><br><span class="line">SSL v1   -&gt; SSL v2   -&gt; SSL v3</span><br></pre></td></tr></table></figure></p>
 <p>Older Protocols</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TLS v1.0, v1.1 and SSL v3 are no longer supported by default.</span><br></pre></td></tr></table></figure>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TLS v1.0, v1.1 and SSL v3 are no longer supported by default.</span><br></pre></td></tr></table></figure></p>
 <p>New Protocol</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TLS v1.2</span><br><span class="line">The protocol which should be used wherever possible. All CBC based ciphers are supported since Java 7, the new GCM modes are supported since Java 8</span><br></pre></td></tr></table></figure>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TLS v1.2</span><br><span class="line">The protocol which should be used wherever possible. All CBC based ciphers are supported since Java 7, the new GCM modes are supported since Java 8</span><br></pre></td></tr></table></figure></p>
 <p>名词解释：</p>
 <p>CA:</p>
 <p>CSR:</p>
@@ -260,15 +263,20 @@
 <p><a href="https://www.ibm.com/developerworks/community/groups/service/html/communityview?communityUuid=6fb00498-f6ea-4f65-bf0c-adc5bd0c5fcc" target="_blank" rel="noopener">https://www.ibm.com/developerworks/community/groups/service/html/communityview?communityUuid=6fb00498-f6ea-4f65-bf0c-adc5bd0c5fcc</a></p>
 <p>OpenSSL:</p>
 <p><a href="https://www.openssl.org/docs/faq.html" target="_blank" rel="noopener">https://www.openssl.org/docs/faq.html</a></p>
-<h4 id="2-使用keytool生成minimal-requirements-key-to-run-an-SSL"><a href="#2-使用keytool生成minimal-requirements-key-to-run-an-SSL" class="headerlink" title="2. 使用keytool生成minimal requirements key to run an SSL"></a>2. 使用keytool生成minimal requirements key to run an SSL</h4><p>The following command generates a key pair and certificate directly into file keystore</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -keystore keystore -alias jetty -genkey -keyalg RSA</span><br></pre></td></tr></table></figure>
+<h4>2. 使用keytool生成minimal requirements key to run an SSL</h4>
+<p>The following command generates a key pair and certificate directly into file keystore</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -keystore keystore -alias jetty -genkey -keyalg RSA</span><br></pre></td></tr></table></figure></p>
 <p>完整一点的key,需要提供更多的信息，正式环境还不能使用它，但在测试环境中足够了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -keystore keystore -alias jetty -genkey -keyalg RSA -sigalg SHA256withRSA</span><br></pre></td></tr></table></figure>
-<h4 id="4-创建适合商用SSL-的key"><a href="#4-创建适合商用SSL-的key" class="headerlink" title="4. 创建适合商用SSL 的key"></a>4. 创建适合商用SSL 的key</h4><p><a href="http://www.eclipse.org/jetty/documentation/current/configuring-ssl.html#generating-csr-from-keytool" target="_blank" rel="noopener">http://www.eclipse.org/jetty/documentation/current/configuring-ssl.html#generating-csr-from-keytool</a></p>
-<h4 id="3-独立安装的Jetty配置https支持"><a href="#3-独立安装的Jetty配置https支持" class="headerlink" title="3. 独立安装的Jetty配置https支持"></a>3. 独立安装的Jetty配置https支持</h4><p>1). 相关命令</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -keystore keystore -alias jetty -genkey -keyalg RSA -sigalg SHA256withRSA</span><br></pre></td></tr></table></figure></p>
+<h4>4. 创建适合商用SSL 的key</h4>
+<p><a href="http://www.eclipse.org/jetty/documentation/current/configuring-ssl.html#generating-csr-from-keytool" target="_blank" rel="noopener">http://www.eclipse.org/jetty/documentation/current/configuring-ssl.html#generating-csr-from-keytool</a></p>
+<h4>3. 独立安装的Jetty配置https支持</h4>
+<p>1). 相关命令</p>
 <pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">java -jar $JETTY_HOME/start.jar --list-modules=connector</span><br><span class="line"></span><br><span class="line">java -jar $JETTY_HOME/start.jar --create-startd</span><br><span class="line"></span><br><span class="line">java -jar $JETTY_HOME/start.jar --add-to-start=http,https</span><br><span class="line"></span><br><span class="line">tree</span><br><span class="line">	.</span><br><span class="line">	├── etc</span><br><span class="line">	│   └── keystore</span><br><span class="line">	└── start.d</span><br><span class="line">	    ├── http.ini</span><br><span class="line">	    └── https.ini</span><br><span class="line"></span><br><span class="line">java -jar $JETTY_HOME/start.jar</span><br></pre></td></tr></table></figure>
-</code></pre><p>2). 修改https.ini</p>
-<h3 id="二、常见链接中间人：反向代理（Reverse-Proxy）和负载均衡（Load-Banlancer）"><a href="#二、常见链接中间人：反向代理（Reverse-Proxy）和负载均衡（Load-Banlancer）" class="headerlink" title="二、常见链接中间人：反向代理（Reverse Proxy）和负载均衡（Load Banlancer）"></a>二、常见链接中间人：反向代理（Reverse Proxy）和负载均衡（Load Banlancer）</h3><p>Often a Connector needs to be configured to accept connections from an intermediary such as a Reverse Proxy and/or Load Balancer deployed in front of the server.</p>
+</code></pre>
+<p>2). 修改https.ini</p>
+<h3>二、常见链接中间人：反向代理（Reverse Proxy）和负载均衡（Load Banlancer）</h3>
+<p>Often a Connector needs to be configured to accept connections from an intermediary such as a Reverse Proxy and/or Load Balancer deployed in front of the server.</p>
 
   </div>
 </article>
@@ -299,7 +307,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、jetty配置https支持"><span class="toc-number">1.</span> <span class="toc-text">一、jetty配置https支持</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-TLS-and-SSL-versions"><span class="toc-number">1.1.</span> <span class="toc-text">1. TLS and SSL versions</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-使用keytool生成minimal-requirements-key-to-run-an-SSL"><span class="toc-number">1.2.</span> <span class="toc-text">2. 使用keytool生成minimal requirements key to run an SSL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-创建适合商用SSL-的key"><span class="toc-number">1.3.</span> <span class="toc-text">4. 创建适合商用SSL 的key</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-独立安装的Jetty配置https支持"><span class="toc-number">1.4.</span> <span class="toc-text">3. 独立安装的Jetty配置https支持</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、常见链接中间人：反向代理（Reverse-Proxy）和负载均衡（Load-Banlancer）"><span class="toc-number">2.</span> <span class="toc-text">二、常见链接中间人：反向代理（Reverse Proxy）和负载均衡（Load Banlancer）</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、jetty配置https支持</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">1. TLS and SSL versions</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">2. 使用keytool生成minimal requirements key to run an SSL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.</span> <span class="toc-text">4. 创建适合商用SSL 的key</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.</span> <span class="toc-text">3. 独立安装的Jetty配置https支持</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、常见链接中间人：反向代理（Reverse Proxy）和负载均衡（Load Banlancer）</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Android应用启动原理参考Android事件分发机制详解：史上最全面、最易懂 一文读懂Android View事件分发机制 漫天尘沙-图解Android Zygote, System Server 启动分析 漫天尘沙-图解Android GUI系统 Android启动过程视频 计算机位运算符及内存操作    1 2 3 4 5 6     Window PhoneWindow WindowMa">
+    <meta name="description" content="Android应用启动原理 参考 Android事件分发机制详解：史上最全面、最易懂 一文读懂Android View事件分发机制 漫天尘沙-图解Android Zygote, System Server 启动分析 漫天尘沙-图解Android GUI系统 Android启动过程视频 计算机位运算符及内存操作    1 2 3 4 5 6     Window PhoneWindow Window">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android 应用启动原理-事件传递及window理解">
 <meta property="og:url" content="http://yoursite.com/2018/10/27/Android 应用启动原理-事件传递及window理解/index.html">
 <meta property="og:site_name" content="Farubaba">
-<meta property="og:description" content="Android应用启动原理参考Android事件分发机制详解：史上最全面、最易懂 一文读懂Android View事件分发机制 漫天尘沙-图解Android Zygote, System Server 启动分析 漫天尘沙-图解Android GUI系统 Android启动过程视频 计算机位运算符及内存操作    1 2 3 4 5 6     Window PhoneWindow WindowMa">
+<meta property="og:description" content="Android应用启动原理 参考 Android事件分发机制详解：史上最全面、最易懂 一文读懂Android View事件分发机制 漫天尘沙-图解Android Zygote, System Server 启动分析 漫天尘沙-图解Android GUI系统 Android启动过程视频 计算机位运算符及内存操作    1 2 3 4 5 6     Window PhoneWindow Window">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-12-12T06:32:15.915Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 应用启动原理-事件传递及window理解">
-<meta name="twitter:description" content="Android应用启动原理参考Android事件分发机制详解：史上最全面、最易懂 一文读懂Android View事件分发机制 漫天尘沙-图解Android Zygote, System Server 启动分析 漫天尘沙-图解Android GUI系统 Android启动过程视频 计算机位运算符及内存操作    1 2 3 4 5 6     Window PhoneWindow WindowMa">
+<meta name="twitter:description" content="Android应用启动原理 参考 Android事件分发机制详解：史上最全面、最易懂 一文读懂Android View事件分发机制 漫天尘沙-图解Android Zygote, System Server 启动分析 漫天尘沙-图解Android GUI系统 Android启动过程视频 计算机位运算符及内存操作    1 2 3 4 5 6     Window PhoneWindow Window">
     
     
         
@@ -101,7 +101,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Android应用启动原理"><span class="toc-number">1.</span> <span class="toc-text">Android应用启动原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">2.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一、应用启动"><span class="toc-number">3.</span> <span class="toc-text">一、应用启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、点击事件传递"><span class="toc-number">4.</span> <span class="toc-text">二、点击事件传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件到达Activity之后，在child-view中传递"><span class="toc-number">5.</span> <span class="toc-text">事件到达Activity之后，在child view中传递</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">Android应用启动原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">一、应用启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">二、点击事件传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">事件到达Activity之后，在child view中传递</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -163,7 +163,9 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h3 id="Android应用启动原理"><a href="#Android应用启动原理" class="headerlink" title="Android应用启动原理"></a>Android应用启动原理</h3><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://www.jianshu.com/p/38015afcdb58" target="_blank" rel="noopener">Android事件分发机制详解：史上最全面、最易懂</a></p>
+    <h3>Android应用启动原理</h3>
+<h3>参考</h3>
+<p><a href="https://www.jianshu.com/p/38015afcdb58" target="_blank" rel="noopener">Android事件分发机制详解：史上最全面、最易懂</a></p>
 <p><a href="https://www.jianshu.com/p/238d1b753e64" target="_blank" rel="noopener">一文读懂Android View事件分发机制</a></p>
 <p><a href="https://www.cnblogs.com/samchen2009/p/3294713.html" target="_blank" rel="noopener">漫天尘沙-图解Android Zygote, System Server 启动分析</a></p>
 <p><a href="https://www.cnblogs.com/samchen2009/" target="_blank" rel="noopener">漫天尘沙-图解Android GUI系统</a></p>
@@ -211,44 +213,51 @@
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<h3 id="一、应用启动"><a href="#一、应用启动" class="headerlink" title="一、应用启动"></a>一、应用启动</h3><ol>
-<li><p>com.android.internal.os.ZygoteInit–&gt;main()</p>
+<h3>一、应用启动</h3>
+<ol>
+<li>
+<p>com.android.internal.os.ZygoteInit--&gt;main()</p>
 </li>
-<li><p>com.android.internal.os.ZygoteInit$MethodAndArgsCaller–&gt;run() </p>
-<p> run()方法中反射调用ActivityThread的main()方法:java.lang.reflect.Method.invoke()</p>
+<li>
+<p>com.android.internal.os.ZygoteInit$MethodAndArgsCaller--&gt;run()</p>
+<p>run()方法中反射调用ActivityThread的main()方法:java.lang.reflect.Method.invoke()</p>
 </li>
-<li><p>android.app.ActivityThread–&gt;main()</p>
-<p> main()方法启动了一个进程，并拥有一个主线程。</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">main()方法中执行</span><br><span class="line">Looper.prepareMainLooper();</span><br><span class="line">ActivityThread thread = new ActivityThread();</span><br><span class="line">  thread.attach(false);</span><br><span class="line">sMainThreadHandler = thread.getHandler();</span><br><span class="line">Looper.loop();</span><br></pre></td></tr></table></figure>
+<li>
+<p>android.app.ActivityThread--&gt;main()</p>
+<p>main()方法启动了一个进程，并拥有一个主线程。</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">main()方法中执行</span><br><span class="line">Looper.prepareMainLooper();</span><br><span class="line">ActivityThread thread = new ActivityThread();</span><br><span class="line">  thread.attach(false);</span><br><span class="line">sMainThreadHandler = thread.getHandler();</span><br><span class="line">Looper.loop();</span><br></pre></td></tr></table></figure></p>
 </li>
 </ol>
-<h3 id="二、点击事件传递"><a href="#二、点击事件传递" class="headerlink" title="二、点击事件传递"></a>二、点击事件传递</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">在ActivityThread的MessageQueue接收到消息，然后开始传递：</span><br><span class="line">经过以下对象最终传递到Activity.dispatchTouchEvent()</span><br><span class="line"></span><br><span class="line">1. ActivityThread</span><br><span class="line">2. Looper</span><br><span class="line">3. MessageQueue</span><br><span class="line">4. InputEventReceiver</span><br><span class="line">5. ViewRootImpl$WindowInputEventReceiver</span><br><span class="line">6. ViewRootImpl</span><br><span class="line">7. ViewRootImpl$InputStage</span><br><span class="line">8. ViewRootImpl$AsyncInputStage</span><br><span class="line">9. ViewRootImpl$ViewPostImeInputSate</span><br><span class="line">10. View</span><br><span class="line">11. PhoneWindow$DecorView</span><br><span class="line">12. WindowCallbackWrapper</span><br><span class="line">13. Activity</span><br></pre></td></tr></table></figure>
+<h3>二、点击事件传递</h3>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">在ActivityThread的MessageQueue接收到消息，然后开始传递：</span><br><span class="line">经过以下对象最终传递到Activity.dispatchTouchEvent()</span><br><span class="line"></span><br><span class="line">1. ActivityThread</span><br><span class="line">2. Looper</span><br><span class="line">3. MessageQueue</span><br><span class="line">4. InputEventReceiver</span><br><span class="line">5. ViewRootImpl$WindowInputEventReceiver</span><br><span class="line">6. ViewRootImpl</span><br><span class="line">7. ViewRootImpl$InputStage</span><br><span class="line">8. ViewRootImpl$AsyncInputStage</span><br><span class="line">9. ViewRootImpl$ViewPostImeInputSate</span><br><span class="line">10. View</span><br><span class="line">11. PhoneWindow$DecorView</span><br><span class="line">12. WindowCallbackWrapper</span><br><span class="line">13. Activity</span><br></pre></td></tr></table></figure></p>
 <p>方法调用链如下：</p>
 <ol>
-<li>android.os.MessageQueue–&gt;next()</li>
-<li>android.os.MessageQueue–&gt;nativePollOnce()</li>
-<li>android.view.InputEventReceiver–&gt;dispatchInputEvent()</li>
-<li>android.view.ViewRootImpl$WindowInputEventReceiver–&gt;onInputEvent();</li>
-<li>android.view.ViewRootImpl–&gt;enqueueInputEvent()</li>
-<li>android.view.ViewRootImpl–&gt;doProgressInputEvents()</li>
-<li>android.view.ViewRootImpl–&gt;deliverInputEvent()</li>
-<li>android.view.ViewRootImpl$InputStage–&gt;deliver()</li>
-<li>android.view.ViewRootImpl$InputStage–&gt;apply()</li>
-<li>android.view.ViewRootImpl$InputStage–&gt;forward()</li>
-<li>android.view.ViewRootImpl$InputStage–&gt;onDeliverToNext()</li>
-<li>android.view.ViewRootImpl$AsyncInputStage–&gt;apply()</li>
-<li>android.view.ViewRootImpl$AsyncInputStage–&gt;forward()</li>
-<li>android.view.ViewRootImpl$AsyncInputStage–&gt;onProcess()</li>
-<li>android.view.ViewRootImpl$ViewPostImeInputStage–&gt;ProcessPointerEvent()</li>
-<li>android.view.View–&gt;dispatchPointerEvent()</li>
-<li>com.android.internal.policy.PhoneWindow$DecorView–&gt;dispatchTouchEvent()</li>
-<li>com.support.v7.view.WindowCallbackWrapper–&gt;dispatchTouchEvent()</li>
-<li>com.yours.activity.MainActivity–&gt;dispatchTouchEvent()</li>
+<li>android.os.MessageQueue--&gt;next()</li>
+<li>android.os.MessageQueue--&gt;nativePollOnce()</li>
+<li>android.view.InputEventReceiver--&gt;dispatchInputEvent()</li>
+<li>android.view.ViewRootImpl$WindowInputEventReceiver--&gt;onInputEvent();</li>
+<li>android.view.ViewRootImpl--&gt;enqueueInputEvent()</li>
+<li>android.view.ViewRootImpl--&gt;doProgressInputEvents()</li>
+<li>android.view.ViewRootImpl--&gt;deliverInputEvent()</li>
+<li>android.view.ViewRootImpl$InputStage--&gt;deliver()</li>
+<li>android.view.ViewRootImpl$InputStage--&gt;apply()</li>
+<li>android.view.ViewRootImpl$InputStage--&gt;forward()</li>
+<li>android.view.ViewRootImpl$InputStage--&gt;onDeliverToNext()</li>
+<li>android.view.ViewRootImpl$AsyncInputStage--&gt;apply()</li>
+<li>android.view.ViewRootImpl$AsyncInputStage--&gt;forward()</li>
+<li>android.view.ViewRootImpl$AsyncInputStage--&gt;onProcess()</li>
+<li>android.view.ViewRootImpl$ViewPostImeInputStage--&gt;ProcessPointerEvent()</li>
+<li>android.view.View--&gt;dispatchPointerEvent()</li>
+<li>com.android.internal.policy.PhoneWindow$DecorView--&gt;dispatchTouchEvent()</li>
+<li>com.support.v7.view.WindowCallbackWrapper--&gt;dispatchTouchEvent()</li>
+<li>com.yours.activity.MainActivity--&gt;dispatchTouchEvent()</li>
 </ol>
-<h3 id="事件到达Activity之后，在child-view中传递"><a href="#事件到达Activity之后，在child-view中传递" class="headerlink" title="事件到达Activity之后，在child view中传递"></a>事件到达Activity之后，在child view中传递</h3>
+<h3>事件到达Activity之后，在child view中传递</h3>
+
   </div>
 </article>
 
@@ -278,7 +287,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Android应用启动原理"><span class="toc-number">1.</span> <span class="toc-text">Android应用启动原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">2.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一、应用启动"><span class="toc-number">3.</span> <span class="toc-text">一、应用启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、点击事件传递"><span class="toc-number">4.</span> <span class="toc-text">二、点击事件传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件到达Activity之后，在child-view中传递"><span class="toc-number">5.</span> <span class="toc-text">事件到达Activity之后，在child view中传递</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">Android应用启动原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">一、应用启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">二、点击事件传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">事件到达Activity之后，在child view中传递</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
