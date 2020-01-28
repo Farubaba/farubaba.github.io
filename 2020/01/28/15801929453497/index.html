@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="DocToc  Generates table of contents for markdown files inside local git repository. Links are compatible with anchors generatedby github or other sites via a command line flag.   Table of Contents  ge">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Farubaba">
+<meta property="og:url" content="http://yoursite.com/2020/01/28/15801929453497/index.html">
+<meta property="og:site_name" content="Farubaba">
+<meta property="og:description" content="DocToc  Generates table of contents for markdown files inside local git repository. Links are compatible with anchors generatedby github or other sites via a command line flag.   Table of Contents  ge">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://secure.travis-ci.org/thlorenz/doctoc.svg">
+<meta property="og:image" content="https://c5.patreon.com/external/logo/become_a_patron_button.png">
+<meta property="og:updated_time" content="2020-01-28T06:32:43.377Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Farubaba">
+<meta name="twitter:description" content="DocToc  Generates table of contents for markdown files inside local git repository. Links are compatible with anchors generatedby github or other sites via a command line flag.   Table of Contents  ge">
+<meta name="twitter:image" content="https://secure.travis-ci.org/thlorenz/doctoc.svg">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Farubaba</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/farubaba">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2020/01/28/15801828680673/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2020/01/28/15801929453497/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2020/01/28/15801929453497/&text="><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2020/01/28/15801929453497/&title="><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2020/01/28/15801929453497/&is_video=false&description="><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=&body=Check out this article: http://yoursite.com/2020/01/28/15801929453497/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2020/01/28/15801929453497/&title="><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2020/01/28/15801929453497/&title="><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2020/01/28/15801929453497/&title="><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2020/01/28/15801929453497/&title="><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2020/01/28/15801929453497/&name=&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#DocToc"><span class="toc-number">1.</span> <span class="toc-text">DocToc </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Installation"><span class="toc-number">1.1.</span> <span class="toc-text">Installation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Usage"><span class="toc-number">1.2.</span> <span class="toc-text">Usage</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Adding-toc-to-all-files-in-a-directory-and-sub-directories"><span class="toc-number">1.2.1.</span> <span class="toc-text">Adding toc to all files in a directory and sub directories</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Update-existing-doctoc-TOCs-effortlessly"><span class="toc-number">1.2.2.</span> <span class="toc-text">Update existing doctoc TOCs effortlessly</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Adding-toc-to-individual-files"><span class="toc-number">1.2.3.</span> <span class="toc-text">Adding toc to individual files</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Examples"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">Examples</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-doctoc-to-generate-links-compatible-with-other-sites"><span class="toc-number">1.2.4.</span> <span class="toc-text">Using doctoc to generate links compatible with other sites</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">Example</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Specifying-location-of-toc"><span class="toc-number">1.2.5.</span> <span class="toc-text">Specifying location of toc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Specifying-a-custom-TOC-title"><span class="toc-number">1.2.6.</span> <span class="toc-text">Specifying a custom TOC title</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Specifying-a-maximum-heading-level-for-TOC-entries"><span class="toc-number">1.2.7.</span> <span class="toc-text">Specifying a maximum heading level for TOC entries</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Printing-to-stdout"><span class="toc-number">1.2.8.</span> <span class="toc-text">Printing to stdout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Usage-as-a-git-hook"><span class="toc-number">1.2.9.</span> <span class="toc-text">Usage as a git hook</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <header id="header">
+  <a href="/">
+  
+    
+      <div id="logo" style="background-image: url(/images/logo.png);"></div>
+    
+  
+    <div id="title">
+      <h1>Farubaba</h1>
+    </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#"><i class="fas fa-bars fa-2x"></i></a>
+      </li>
+       
+        <li><a href="/">Home</a></li>
+       
+        <li><a href="/archives/">Writing</a></li>
+       
+        <li><a href="http://github.com/farubaba">Projects</a></li>
+      
+    </ul>
+  </div>
+</header>
+
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Farubaba</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2020-01-28T06:32:43.377Z" itemprop="datePublished">2020-01-28</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="DocToc"><a href="#DocToc" class="headerlink" title="DocToc "></a>DocToc <a href="http://travis-ci.org/thlorenz/doctoc" target="_blank" rel="noopener"><img src="https://secure.travis-ci.org/thlorenz/doctoc.svg" alt="build status"></a></h1><p><a href="https://www.patreon.com/bePatron?u=8663953" target="_blank" rel="noopener"><img alt="become a patron" src="https://c5.patreon.com/external/logo/become_a_patron_button.png" height="35px"></a></p>
+<p>Generates table of contents for markdown files inside local git repository. Links are compatible with anchors generated<br>by github or other sites via a command line flag.</p>
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<p><strong>Table of Contents</strong>  <em>generated with <a href="https://github.com/thlorenz/doctoc" target="_blank" rel="noopener">DocToc</a></em></p>
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#usage">Usage</a><ul>
+<li><a href="#adding-toc-to-all-files-in-a-directory-and-sub-directories">Adding toc to all files in a directory and sub directories</a></li>
+<li><a href="#update-existing-doctoc-tocs-effortlessly">Update existing doctoc TOCs effortlessly</a></li>
+<li><a href="#adding-toc-to-individual-files">Adding toc to individual files</a><ul>
+<li><a href="#examples">Examples</a></li>
+</ul>
+</li>
+<li><a href="#using-doctoc-to-generate-links-compatible-with-other-sites">Using doctoc to generate links compatible with other sites</a><ul>
+<li><a href="#example">Example</a></li>
+</ul>
+</li>
+<li><a href="#specifying-location-of-toc">Specifying location of toc</a></li>
+<li><a href="#specifying-a-custom-toc-title">Specifying a custom TOC title</a></li>
+<li><a href="#specifying-a-maximum-heading-level-for-toc-entries">Specifying a maximum heading level for TOC entries</a></li>
+<li><a href="#printing-to-stdout">Printing to stdout</a></li>
+<li><a href="#usage-as-a-git-hook">Usage as a <code>git</code> hook</a></li>
+</ul>
+</li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><pre><code>npm install -g doctoc
+</code></pre><h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>In its simplest usage, you can pass one or more files or folders to the<br><code>doctoc</code> command. This will update the TOCs of each file specified as well as of<br>each markdown file found by recursively searching each folder. Below are some<br>examples.</p>
+<h3 id="Adding-toc-to-all-files-in-a-directory-and-sub-directories"><a href="#Adding-toc-to-all-files-in-a-directory-and-sub-directories" class="headerlink" title="Adding toc to all files in a directory and sub directories"></a>Adding toc to all files in a directory and sub directories</h3><p>Go into the directory that contains you local git project and type:</p>
+<pre><code>doctoc .
+</code></pre><p>This will update all markdown files in the current directory and all its<br>subdirectories with a table of content that will point at the anchors generated<br>by the markdown parser. Doctoc defaults to using the GitHub parser, but other<br><a href="#using-doctoc-to-generate-links-compatible-with-other-sites">modes can be<br>specified</a>.</p>
+<h3 id="Update-existing-doctoc-TOCs-effortlessly"><a href="#Update-existing-doctoc-TOCs-effortlessly" class="headerlink" title="Update existing doctoc TOCs effortlessly"></a>Update existing doctoc TOCs effortlessly</h3><p>If you already have a TOC inserted by doctoc, it will automatically be updated by running the command (rather than inserting a duplicate toc). Doctoc locates the TOC by the <code>&lt;!-- START doctoc --&gt;</code> and <code>&lt;!-- END doctoc --&gt;</code> comments, so you can also move a generated TOC to any other portion of your document and it will be updated there.</p>
+<h3 id="Adding-toc-to-individual-files"><a href="#Adding-toc-to-individual-files" class="headerlink" title="Adding toc to individual files"></a>Adding toc to individual files</h3><p>If you want to convert only specific files, do:</p>
+<pre><code>doctoc /path/to/file [...]
+</code></pre><h4 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h4><pre><code>doctoc README.md
+
+doctoc CONTRIBUTING.md LICENSE.md
+</code></pre><p>You can use this feature to do more sophisticated things. For example, if you<br>have <a href="http://beyondgrep.com/" target="_blank" rel="noopener">ack</a> installed, you could add <code>&lt;!-- DOCTOC SKIP --&gt;</code> to specific<br>files and then use</p>
+<pre><code>ack -L &apos;DOCTOC SKIP&apos; | xargs doctoc
+</code></pre><p>to recompile only those files which don’t have the DOCTOC SKIP comment.</p>
+<h3 id="Using-doctoc-to-generate-links-compatible-with-other-sites"><a href="#Using-doctoc-to-generate-links-compatible-with-other-sites" class="headerlink" title="Using doctoc to generate links compatible with other sites"></a>Using doctoc to generate links compatible with other sites</h3><p>In order to add a table of contents whose links are compatible other sites add the appropriate mode flag:</p>
+<p>Available modes are:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">--bitbucket bitbucket.org</span><br><span class="line">--nodejs    nodejs.org</span><br><span class="line">--github    github.com</span><br><span class="line">--gitlab    gitlab.com</span><br><span class="line">--ghost     ghost.org</span><br></pre></td></tr></table></figure>
+<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><pre><code>doctoc README.md --bitbucket
+</code></pre><h3 id="Specifying-location-of-toc"><a href="#Specifying-location-of-toc" class="headerlink" title="Specifying location of toc"></a>Specifying location of toc</h3><p>By default, doctoc places the toc at the top of the file. You can indicate to have it placed elsewhere with the following format:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- START doctoc --&gt;</span><br><span class="line">&lt;!-- END doctoc --&gt;</span><br></pre></td></tr></table></figure>
+<p>You place this code directly in your .md file. For example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// my_new_post.md</span><br><span class="line">Here we are, introducing the post. It&apos;s going to be great!</span><br><span class="line">But first: a TOC for easy reference.</span><br><span class="line"></span><br><span class="line">&lt;!-- START doctoc --&gt;</span><br><span class="line">&lt;!-- END doctoc --&gt;</span><br><span class="line"></span><br><span class="line"># Section One</span><br><span class="line"></span><br><span class="line">Here we&apos;ll discuss...</span><br></pre></td></tr></table></figure>
+<p>Running doctoc will insert the toc at that location.</p>
+<h3 id="Specifying-a-custom-TOC-title"><a href="#Specifying-a-custom-TOC-title" class="headerlink" title="Specifying a custom TOC title"></a>Specifying a custom TOC title</h3><p>Use the <code>--title</code> option to specify a (Markdown-formatted) custom TOC title; e.g., <code>doctoc --title &#39;**Contents**&#39; .</code> From then on, you can simply run <code>doctoc &lt;file&gt;</code> and doctoc will will keep the title you specified.</p>
+<p>Alternatively, to blank out the title with a newline, use the <code>--notitle</code> option. This will simply remove the title from the TOC.</p>
+<h3 id="Specifying-a-maximum-heading-level-for-TOC-entries"><a href="#Specifying-a-maximum-heading-level-for-TOC-entries" class="headerlink" title="Specifying a maximum heading level for TOC entries"></a>Specifying a maximum heading level for TOC entries</h3><p>Use the <code>--maxlevel</code> option to limit TOC entries to headings only up to the specified level; e.g., <code>doctoc --maxlevel 3 .</code></p>
+<p>By default,</p>
+<ul>
+<li>no limit is placed on Markdown-formatted headings,</li>
+<li>whereas headings from embedded HTML are limited to 4 levels.</li>
+</ul>
+<h3 id="Printing-to-stdout"><a href="#Printing-to-stdout" class="headerlink" title="Printing to stdout"></a>Printing to stdout</h3><p>You can print to stdout by using the <code>-s</code> or <code>--stdout</code> option.</p>
+<h3 id="Usage-as-a-git-hook"><a href="#Usage-as-a-git-hook" class="headerlink" title="Usage as a git hook"></a>Usage as a <code>git</code> hook</h3><p>doctoc can be used as a <a href="http://pre-commit.com" target="_blank" rel="noopener">pre-commit</a> hook by using the<br>following configuration:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">repos:</span></span><br><span class="line"><span class="attr">-   repo:</span> <span class="attr">https://github.com/thlorenz/doctoc</span></span><br><span class="line"><span class="attr">    sha:</span> <span class="string">...</span>  <span class="comment"># substitute a tagged version</span></span><br><span class="line"><span class="attr">    hooks:</span></span><br><span class="line"><span class="attr">    -   id:</span> <span class="string">doctoc</span></span><br></pre></td></tr></table></figure>
+<p>This will run <code>doctoc</code> against markdown files when committing to ensure the<br>TOC stays up-to-date.</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/farubaba">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#DocToc"><span class="toc-number">1.</span> <span class="toc-text">DocToc </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Installation"><span class="toc-number">1.1.</span> <span class="toc-text">Installation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Usage"><span class="toc-number">1.2.</span> <span class="toc-text">Usage</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Adding-toc-to-all-files-in-a-directory-and-sub-directories"><span class="toc-number">1.2.1.</span> <span class="toc-text">Adding toc to all files in a directory and sub directories</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Update-existing-doctoc-TOCs-effortlessly"><span class="toc-number">1.2.2.</span> <span class="toc-text">Update existing doctoc TOCs effortlessly</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Adding-toc-to-individual-files"><span class="toc-number">1.2.3.</span> <span class="toc-text">Adding toc to individual files</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Examples"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">Examples</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-doctoc-to-generate-links-compatible-with-other-sites"><span class="toc-number">1.2.4.</span> <span class="toc-text">Using doctoc to generate links compatible with other sites</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">Example</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Specifying-location-of-toc"><span class="toc-number">1.2.5.</span> <span class="toc-text">Specifying location of toc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Specifying-a-custom-TOC-title"><span class="toc-number">1.2.6.</span> <span class="toc-text">Specifying a custom TOC title</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Specifying-a-maximum-heading-level-for-TOC-entries"><span class="toc-number">1.2.7.</span> <span class="toc-text">Specifying a maximum heading level for TOC entries</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Printing-to-stdout"><span class="toc-number">1.2.8.</span> <span class="toc-text">Printing to stdout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Usage-as-a-git-hook"><span class="toc-number">1.2.9.</span> <span class="toc-text">Usage as a git hook</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2020/01/28/15801929453497/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2020/01/28/15801929453497/&text="><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2020/01/28/15801929453497/&title="><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2020/01/28/15801929453497/&is_video=false&description="><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=&body=Check out this article: http://yoursite.com/2020/01/28/15801929453497/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2020/01/28/15801929453497/&title="><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2020/01/28/15801929453497/&title="><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2020/01/28/15801929453497/&title="><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2020/01/28/15801929453497/&title="><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2020/01/28/15801929453497/&name=&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Farubaba
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/farubaba">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+    <!-- Start of LiveChat (www.livechatinc.com) code -->
+    <script type="text/javascript">
+      window.__lc = window.__lc || {};
+      window.__lc.license = 11335842;
+      (function() {
+        var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+        lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+      })();
+    </script>
+    <noscript>
+    <a href="https://www.livechatinc.com/chat-with/11335842/" rel="nofollow">Chat with us</a>,
+    powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>
+    </noscript>
+    <!-- End of LiveChat code -->
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
